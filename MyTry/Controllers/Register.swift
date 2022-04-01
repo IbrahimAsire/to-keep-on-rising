@@ -228,11 +228,12 @@ class Register: UITableViewController {
     }
     
     @objc func loginGo() {
-//        navigationController?.pushViewController(Login(), animated: true)
+        navigationController?.pushViewController(Login(), animated: true)
     }
     
     // MARK: - to register a new user and save the info for database
     @objc func register(){
+        print("Register Done")
         if let email = emailTF.text, email.isEmpty == false,
            let password = passTf.text, password.isEmpty == false {
             
@@ -242,11 +243,11 @@ class Register: UITableViewController {
                     let myId =  UUID().uuidString
                     
                     if self.isProvider == true {
-                        let userNew = UserSignUp(id: userId, name: self.nameTF.text, email: self.emailTF.text)
+                        let userNew = UserSignUp(id: userId, name: self.nameTF.text, email: self.emailTF.text, myId: myId)
                         self.db.collection("user").document(myId).setData(userNew.getData())
                         
                     } else {
-                        let userNew = UserSignUp(id: userId, name: self.nameTF.text, email: self.emailTF.text)
+                        let userNew = UserSignUp(id: userId, name: self.nameTF.text, email: self.emailTF.text, myId: myId)
                         self.db.collection("provider").document(myId).setData(userNew.getData())
                     }
 //                    self.navigationController?.pushViewController(ProfileVC(), animated: true)
