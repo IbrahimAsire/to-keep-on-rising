@@ -4,7 +4,7 @@ import FirebaseAuth
 
 class Register: UITableViewController {
     
-    let db = Firestore.firestore().collection("users")
+    let db = Firestore.firestore()
     
 //    Used here Generic Function
     public static func InitUI<Type>(value : Type, block: (_ object: Type) -> Void) -> Type {
@@ -238,25 +238,22 @@ class Register: UITableViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if error == nil {
+                    let userId = result?.user.uid
+                    let myId =  UUID().uuidString
+                    
+                    if self.isProvider == true {
+                        let userNew = UserSignUp(id: userId, name: self.nameTF.text, email: self.emailTF.text)
+                        self.db.collection("user").document(myId).setData(userNew.getData())
+                        
+                    } else {
+                        let userNew = UserSignUp(id: userId, name: self.nameTF.text, email: self.emailTF.text)
+                        self.db.collection("provider").document(myId).setData(userNew.getData())
+                    }
 //                    self.navigationController?.pushViewController(ProfileVC(), animated: true)
                     
                 } else {
                     print(error?.localizedDescription ?? "")
-                }
-                guard let user = result?.user else {return}
-                
-                self.db.document(user.uid).setData([
-                    "name": self.nameTF.text ?? "",
-                    "email": String(user.email!),
-                    "userID": user.uid,
-                ], merge: true) { err in
-                    if let err = err {
-                        print("Error writing document: \(err)")
-                    } else {
-                        print("Document successfully written!")
-                    }
-                }
-                
+                }                
             }
         }
         
