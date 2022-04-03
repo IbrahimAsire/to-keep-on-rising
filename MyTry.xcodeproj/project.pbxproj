@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F239E8727F741BE0059396F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F239E8627F741BE0059396F /* Login.swift */; };
+		0F26E3EA27FA355A00736A9D /* CheakUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F26E3E927FA355A00736A9D /* CheakUser.swift */; };
 		0F6BB22527F6F4FE0083742A /* UsersSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BB22427F6F4FE0083742A /* UsersSignUp.swift */; };
 		0F991CE827F5D11800EFC028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991CE727F5D11800EFC028 /* AppDelegate.swift */; };
 		0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991CE927F5D11800EFC028 /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0F239E8627F741BE0059396F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		0F26E3E927FA355A00736A9D /* CheakUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheakUser.swift; sourceTree = "<group>"; };
 		0F6BB22427F6F4FE0083742A /* UsersSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersSignUp.swift; sourceTree = "<group>"; };
 		0F991CE427F5D11800EFC028 /* MyTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F991CE727F5D11800EFC028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				0F991CEB27F5D11800EFC028 /* Register.swift */,
 				0F239E8627F741BE0059396F /* Login.swift */,
+				0F26E3E927FA355A00736A9D /* CheakUser.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F239E8727F741BE0059396F /* Login.swift in Sources */,
+				0F26E3EA27FA355A00736A9D /* CheakUser.swift in Sources */,
 				0F991CEC27F5D11800EFC028 /* Register.swift in Sources */,
 				0F991CE827F5D11800EFC028 /* AppDelegate.swift in Sources */,
 				0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */,
