@@ -3,10 +3,10 @@ import UIKit
 import Firebase
 
 class CheakUser: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         let userID = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
@@ -18,14 +18,13 @@ class CheakUser: UIViewController {
                         print("Is a User")
                         self.navigationController?.pushViewController(
                             UsersVC(), animated: true)
-                        return
+                    }else{
+                        self.navigationController?.pushViewController(
+                            ProvidersVC(), animated: true)
                     }
                 }
-                self.navigationController?.pushViewController(
-                    ProvidersVC(), animated: true)
-
             }
         }
     }
-
+    
 }

@@ -244,11 +244,11 @@ class Register: UITableViewController {
                     
                     if self.isProvider == true {
                         let userNew = UserSignUp(id: userId, name: self.nameTF.text, email: self.emailTF.text, myId: myId)
-                        self.db.collection("Users").document(myId).setData(userNew.getData())
+                        self.db.collection("providers").document(myId).setData(userNew.getData())
                         
                     } else {
                         let userNew = UserSignUp(id: userId, name: self.nameTF.text, email: self.emailTF.text, myId: myId)
-                        self.db.collection("providers").document(myId).setData(userNew.getData())
+                        self.db.collection("Users").document(myId).setData(userNew.getData())
                     }
                     self.navigationController?.pushViewController(CheakUser(), animated: true)
                     
