@@ -23,16 +23,17 @@ class Login: UIViewController {
         emailTF.translatesAutoresizingMaskIntoConstraints = false
         loginBtn.translatesAutoresizingMaskIntoConstraints = false
         
-        nameTF.placeholder = "type your name"
+        nameTF.placeholder = "enter your email"
         nameTF.textAlignment = .center
         nameTF.borderStyle = .roundedRect
-        emailTF.placeholder = "type your email"
+        emailTF.placeholder = "password"
         emailTF.textAlignment = .center
         emailTF.borderStyle = .roundedRect
         loginBtn.setTitle("Login", for: .normal)
         loginBtn.setTitleColor(.systemPurple, for: .normal)
         loginBtn.backgroundColor = .white
         loginBtn.layer.cornerRadius = 5
+        loginBtn.addTarget(self, action: #selector(loginTpd), for: .touchUpInside)
         
         
         NSLayoutConstraint.activate([
@@ -54,6 +55,9 @@ class Login: UIViewController {
         ])
     }
     
+    @objc func loginTpd(){
+        navigationController?.pushViewController(CheakUser(), animated: true)
+    }
+    
 }
-
 

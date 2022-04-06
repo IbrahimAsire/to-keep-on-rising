@@ -13,14 +13,14 @@ class UsersVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemOrange
+        view.backgroundColor = .systemPurple
         
         view.addSubview(greetLbl)
         
         greetLbl.translatesAutoresizingMaskIntoConstraints = false
         greetLbl.text = "Welcome user"
         greetLbl.font = .systemFont(ofSize: 24)
-        greetLbl.textColor = .secondaryLabel
+        greetLbl.textColor = .black
         
         NSLayoutConstraint.activate([
             greetLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 77),

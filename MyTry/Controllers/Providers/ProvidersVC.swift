@@ -20,7 +20,7 @@ class ProvidersVC: UIViewController {
         greetLbl.translatesAutoresizingMaskIntoConstraints = false
         greetLbl.text = "Welcome provide"
         greetLbl.font = .systemFont(ofSize: 24)
-        greetLbl.textColor = .secondaryLabel
+        greetLbl.textColor = .black
         
         NSLayoutConstraint.activate([
             greetLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 77),
