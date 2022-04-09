@@ -1,0 +1,6 @@
+framework module Pods_MyTry {
+  umbrella header "Pods-MyTry-umbrella.h"
+
+  export *
+  module * { export * }
+}

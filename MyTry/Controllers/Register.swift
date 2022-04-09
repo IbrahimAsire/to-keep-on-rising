@@ -73,7 +73,7 @@ class Register: UITableViewController {
         $0.text = "As Provider"
         $0.textColor = .systemBrown
     }
-    var isProvider = true
+    var isProvider = false
     
     let chooseBtn = InitUI(value: UIButton()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -233,10 +233,10 @@ class Register: UITableViewController {
     
     // MARK: - to register a new user and save the info for database
     @objc func register(){
-        print("Register Done")
+        
         if let email = emailTF.text, email.isEmpty == false,
            let password = passTf.text, password.isEmpty == false {
-            
+            print("Register Done")
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if error == nil {
                     let userId = result?.user.uid
