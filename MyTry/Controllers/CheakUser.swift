@@ -14,7 +14,7 @@ class CheakUser: UIViewController {
             if error == nil {
                 let date = Snapshot!.documents
                 for ID in date {
-                    if userID == ID.documentID {
+                    if userID == ID["myId"] as! String {
                         print("Is a User")
                         self.navigationController?.pushViewController(
                             UsersVC(), animated: true)

@@ -11,3 +11,7 @@ struct UserSignUp {
         return ["UserId": id, "name": name, "email": email, "myId": myId]
     }
 }
+
+struct UserLogin {
+    let id: String
+}

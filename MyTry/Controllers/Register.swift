@@ -106,6 +106,8 @@ class Register: UITableViewController {
         //        title = "Register Page"
         setUpStackView()
         setUpConstraint()
+        
+        print(isProvider)
     }
     
     private func setUpConstraint() {
@@ -233,6 +235,7 @@ class Register: UITableViewController {
     
     // MARK: - to register a new user and save the info for database
     @objc func register(){
+        print(isProvider)
         
         if let email = emailTF.text, email.isEmpty == false,
            let password = passTf.text, password.isEmpty == false {

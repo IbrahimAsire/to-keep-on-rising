@@ -62,34 +62,34 @@ class Login: UIViewController {
             
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 
-                if let error = error as NSError? {
-                    switch AuthErrorCode(rawValue: error.code) {
-                    case .wrongPassword:
-                        
-                        let alert = UIAlertController(title: "Oops!".Localizable(), message: "you entered a wrong password".Localizable(), preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
-                        self.present(alert, animated: true)
-                        
-                    case .invalidEmail:
-                        
-                        let alert = UIAlertController(title: "Oops!".Localizable(), message: "are sure you typed the email correctly?".Localizable(), preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
-                        self.present(alert, animated: true)
-                        
-                    case .weakPassword:
-                        
-                        let alert = UIAlertController(title: "Oops!".Localizable(), message: "Your password is weak, please make sure it's strong.".Localizable(), preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
-                        self.present(alert, animated: true)
-                        
-                    default:
-                        
-                        let alert = UIAlertController(title: "Oops!".Localizable(), message: "\(error.localizedDescription)", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
-                        self.present(alert, animated: true)
-                        
-                    }
-                }else{
+//                if let error = error as NSError? {
+//                    switch AuthErrorCode(rawValue: error.code) {
+//                    case .wrongPassword:
+//
+//                        let alert = UIAlertController(title: "Oops!".Localizable(), message: "you entered a wrong password".Localizable(), preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
+//                        self.present(alert, animated: true)
+//
+//                    case .invalidEmail:
+//
+//                        let alert = UIAlertController(title: "Oops!".Localizable(), message: "are sure you typed the email correctly?".Localizable(), preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
+//                        self.present(alert, animated: true)
+//
+//                    case .weakPassword:
+//
+//                        let alert = UIAlertController(title: "Oops!".Localizable(), message: "Your password is weak, please make sure it's strong.".Localizable(), preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
+//                        self.present(alert, animated: true)
+//
+//                    default:
+//
+//                        let alert = UIAlertController(title: "Oops!".Localizable(), message: "\(error.localizedDescription)", preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
+//                        self.present(alert, animated: true)
+//
+//                    }
+//                }else{
                     
                     if error == nil {
                         
@@ -104,5 +104,4 @@ class Login: UIViewController {
             
         }
     }
-}
-
+//}
