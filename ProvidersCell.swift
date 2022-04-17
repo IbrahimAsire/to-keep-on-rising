@@ -1,9 +1,3 @@
-//
-//  ProvidersCell.swift
-//  MyTry
-//
-//  Created by ibrahim asiri on 15/09/1443 AH.
-//
 
 import UIKit
 

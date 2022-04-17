@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CC8280CB1A000689B33 /* AddNew.swift */; };
 		0F239E8727F741BE0059396F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F239E8627F741BE0059396F /* Login.swift */; };
 		0F26E3EA27FA355A00736A9D /* CheakUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F26E3E927FA355A00736A9D /* CheakUser.swift */; };
 		0F410BDA27FB700E003CDC15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F410BDC27FB700E003CDC15 /* Localizable.strings */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F0A5CC8280CB1A000689B33 /* AddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNew.swift; sourceTree = "<group>"; };
 		0F239E8627F741BE0059396F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0F26E3E927FA355A00736A9D /* CheakUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheakUser.swift; sourceTree = "<group>"; };
 		0F410BD627FB6F9E003CDC15 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				0F410BE327FB73BE003CDC15 /* ProvidersVC.swift */,
+				0F0A5CC8280CB1A000689B33 /* AddNew.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */,
 				0F6BB22527F6F4FE0083742A /* UsersSignUp.swift in Sources */,
 				0F991CF227F5D11800EFC028 /* MyTry.xcdatamodeld in Sources */,
+				0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */,
 				0F410BE227FB7381003CDC15 /* UsersVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,8 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         tableView.dataSource = self
         tableView.delegate = self
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add, target: self, action: #selector(addTpd))
         view.addSubview(greetLbl)
         view.addSubview(tableView)
         
@@ -47,6 +49,10 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.textLabel?.text = "Hi every one"
         
         return cell
+    }
+    
+    @objc func addTpd(){
+        navigationController?.pushViewController(AddNew(), animated: true)
     }
     
     
