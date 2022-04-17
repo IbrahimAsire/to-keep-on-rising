@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CC8280CB1A000689B33 /* AddNew.swift */; };
+		0F0A5CCB280CBA3D00689B33 /* ProvAddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CCA280CBA3D00689B33 /* ProvAddNew.swift */; };
 		0F239E8727F741BE0059396F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F239E8627F741BE0059396F /* Login.swift */; };
 		0F26E3EA27FA355A00736A9D /* CheakUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F26E3E927FA355A00736A9D /* CheakUser.swift */; };
 		0F410BDA27FB700E003CDC15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F410BDC27FB700E003CDC15 /* Localizable.strings */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		0F0A5CC8280CB1A000689B33 /* AddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNew.swift; sourceTree = "<group>"; };
+		0F0A5CCA280CBA3D00689B33 /* ProvAddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvAddNew.swift; sourceTree = "<group>"; };
 		0F239E8627F741BE0059396F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0F26E3E927FA355A00736A9D /* CheakUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheakUser.swift; sourceTree = "<group>"; };
 		0F410BD627FB6F9E003CDC15 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				0F6BB22427F6F4FE0083742A /* UsersSignUp.swift */,
+				0F0A5CCA280CBA3D00689B33 /* ProvAddNew.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,8 +138,8 @@
 		0F6BB22227F6F4930083742A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0F6C89B1280B5A8800BB1398 /* StartPages */,
 				0F410BDE27FB7267003CDC15 /* TabBarCustom */,
+				0F6C89B1280B5A8800BB1398 /* StartPages */,
 				0FACDB4B27FE2D3A007FDDA0 /* Users */,
 				0FACDB4A27FE2CFB007FDDA0 /* Providers */,
 			);
@@ -502,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F239E8727F741BE0059396F /* Login.swift in Sources */,
+				0F0A5CCB280CBA3D00689B33 /* ProvAddNew.swift in Sources */,
 				0F26E3EA27FA355A00736A9D /* CheakUser.swift in Sources */,
 				0F991CEC27F5D11800EFC028 /* Register.swift in Sources */,
 				0F991CE827F5D11800EFC028 /* AppDelegate.swift in Sources */,

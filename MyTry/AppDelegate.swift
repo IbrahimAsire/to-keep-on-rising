@@ -9,6 +9,8 @@ import UIKit
 import CoreData
 import Firebase
 
+let db = Firestore.firestore()
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -39,8 +39,11 @@ class AddNew: UIViewController {
     
     @objc func addTpd(){
         print("DONE")
+        let myId = UUID().uuidString
+        db.collection("provAdd").document(myId).setData([
+            "content": addTF.text
+        ])
         
     }
-    
     
 }
