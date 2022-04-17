@@ -1,13 +1,7 @@
-//
-//  Providers.swift
-//  MyTry
-//
-//  Created by ibrahim asiri on 03/09/1443 AH.
-//
 
 import UIKit
 
-class ProvidersVC: UIViewController, UITableViewDataSource {
+class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let greetLbl = UILabel()
     let tableView = UITableView()
@@ -16,6 +10,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
+        tableView.delegate = self
         
         view.addSubview(greetLbl)
         view.addSubview(tableView)
@@ -26,10 +21,17 @@ class ProvidersVC: UIViewController, UITableViewDataSource {
         greetLbl.textColor = .black
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+        tableView.register(ProvidersCell.self, forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = 80
+
         NSLayoutConstraint.activate([
             greetLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 77),
             greetLbl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: greetLbl.bottomAnchor, constant: 12),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         
         ])
 
