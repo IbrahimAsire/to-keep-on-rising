@@ -9,7 +9,13 @@ import UIKit
 
 class UsersVC: UIViewController {
     
+    
     let greetLbl = UILabel()
+    let tableView: UITableView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.register(UserCell.self, forCellReuseIdentifier: "userrCell")
+        return $0
+    }(UITableView())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +35,22 @@ class UsersVC: UIViewController {
         ])
 
     }
+    
+}
+
+extension UsersVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserCell
+        
+        return cell
+    }
+    
+    
+    
     
 }

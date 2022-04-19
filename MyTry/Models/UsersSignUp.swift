@@ -12,6 +12,6 @@ struct UserSignUp {
     }
 }
 
-struct UserLogin {
-    let id: String
-}
+//struct UserLogin {
+//    let id: String
+//}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F01FD82280F3DF200557511 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F01FD81280F3DF200557511 /* UserCell.swift */; };
 		0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CC8280CB1A000689B33 /* AddNew.swift */; };
 		0F0A5CCB280CBA3D00689B33 /* ProvAddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CCA280CBA3D00689B33 /* ProvAddNew.swift */; };
 		0F239E8727F741BE0059396F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F239E8627F741BE0059396F /* Login.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F01FD81280F3DF200557511 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = MyTry/Models/UserCell.swift; sourceTree = SOURCE_ROOT; };
 		0F0A5CC8280CB1A000689B33 /* AddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNew.swift; sourceTree = "<group>"; };
 		0F0A5CCA280CBA3D00689B33 /* ProvAddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvAddNew.swift; sourceTree = "<group>"; };
 		0F239E8627F741BE0059396F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				0F6C89B2280B5D0600BB1398 /* ProvidersCell.swift */,
+				0F01FD81280F3DF200557511 /* UserCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				0F991CEC27F5D11800EFC028 /* Register.swift in Sources */,
 				0F991CE827F5D11800EFC028 /* AppDelegate.swift in Sources */,
 				0F410BE427FB73BE003CDC15 /* ProvidersVC.swift in Sources */,
+				0F01FD82280F3DF200557511 /* UserCell.swift in Sources */,
 				0F410BE027FB7285003CDC15 /* TabBarMain.swift in Sources */,
 				0F6C89B3280B5D0600BB1398 /* ProvidersCell.swift in Sources */,
 				0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */,
