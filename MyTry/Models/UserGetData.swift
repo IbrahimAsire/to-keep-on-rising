@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct ProvAddNew {
+struct UserGetData {
     let myId: String?
     var content: String?
     

@@ -1,27 +1,28 @@
-//
-//  UsersVC.swift
-//  MyTry
-//
-//  Created by ibrahim asiri on 03/09/1443 AH.
-//
 
 import UIKit
 
 class UsersVC: UIViewController {
     
-    
+    var arrayData: [UserGetData] = []
+
     let greetLbl = UILabel()
     let tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.register(UserCell.self, forCellReuseIdentifier: "userrCell")
+        $0.register(UserCell.self, forCellReuseIdentifier: "userCell")
+        $0.rowHeight = 60
+        
         return $0
     }(UITableView())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemPurple
+        tableView.dataSource = self
+        tableView.delegate = self
+        readData()
         
         view.addSubview(greetLbl)
+        view.addSubview(tableView)
         
         greetLbl.translatesAutoresizingMaskIntoConstraints = false
         greetLbl.text = "Welcome user"
@@ -31,9 +32,34 @@ class UsersVC: UIViewController {
         NSLayoutConstraint.activate([
             greetLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 77),
             greetLbl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: greetLbl.bottomAnchor, constant: 12),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         
         ])
 
+    }
+    
+    func readData() {
+        db.collection("provAdd").addSnapshotListener { snapshot, error in
+            if error != nil {
+                return
+            }
+            
+            guard let docs = snapshot?.documents else {return}
+
+            for doc in docs {
+                let data = doc.data()
+                guard let content = data["content"] as? String
+                else {
+                    continue
+                }
+                self.arrayData.append(UserGetData(myId: nil, content: content))
+            }
+            self.tableView.reloadData()
+        }
     }
     
 }
@@ -41,16 +67,19 @@ class UsersVC: UIViewController {
 extension UsersVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return arrayData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserCell
         
+        let data = arrayData[indexPath.row]
+        
+        cell.textLabel?.text = data.content
+        cell.textLabel?.textColor = .systemOrange
+        
         return cell
     }
-    
-    
     
     
 }
