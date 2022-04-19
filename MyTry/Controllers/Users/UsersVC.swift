@@ -10,7 +10,6 @@ class UsersVC: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.register(UserCell.self, forCellReuseIdentifier: "userCell")
         $0.rowHeight = 60
-        
         return $0
     }(UITableView())
 
@@ -81,5 +80,15 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let myId = UUID().uuidString
+        let data = arrayData[indexPath.row]
+        db.collection("userschoices").document(myId).setData([
+            "conect" : data.content
+        ])
+        
+        print("add done")
+        
+    }
+
 }
