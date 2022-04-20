@@ -5,6 +5,7 @@ import FirebaseAuth
 class UsersVC: UIViewController {
     
     var arrayData: [UserGetData] = []
+    let userID = Auth.auth().currentUser?.uid
 
     let greetLbl = UILabel()
     let tableView: UITableView = {
@@ -83,15 +84,15 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let myId = UUID().uuidString
-        let userID = Auth.auth().currentUser
         let data = arrayData[indexPath.row]
         db.collection("userschoices").document(myId).setData([
             "conect" : data.content,
             "userID" : userID
         ])
-        
         print("add done")
-        
+        print(userID)
+        navigationController?.pushViewController(UserItems(), animated: true)
+    
     }
 
 }
