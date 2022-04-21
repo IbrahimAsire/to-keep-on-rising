@@ -22,6 +22,8 @@ class UsersVC: UIViewController {
         tableView.delegate = self
         readData()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Go your page", style: .done, target: self, action: #selector(goUserPage))
+        
         view.addSubview(greetLbl)
         view.addSubview(tableView)
         
@@ -63,6 +65,10 @@ class UsersVC: UIViewController {
         }
     }
     
+    @objc func goUserPage() {
+        navigationController?.pushViewController(UserItems(), animated: true)
+    }
+    
 }
 
 extension UsersVC: UITableViewDataSource, UITableViewDelegate {
@@ -86,7 +92,7 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
         let myId = UUID().uuidString
         let data = arrayData[indexPath.row]
         db.collection("userschoices").document(myId).setData([
-            "conect" : data.content,
+            "content" : data.content,
             "userID" : userID
         ])
         print("add done")

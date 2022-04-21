@@ -6,3 +6,8 @@ struct UserGetData {
     var content: String?
     
 }
+
+struct Userschoices {
+    let myID: String?
+    var content: String?
+}

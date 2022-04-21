@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  MyTry
-//
-//  Created by ibrahim asiri on 28/08/1443 AH.
-//
 
 import UIKit
 import CoreData
