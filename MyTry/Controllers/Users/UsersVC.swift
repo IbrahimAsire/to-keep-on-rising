@@ -23,7 +23,8 @@ class UsersVC: UIViewController {
         readData()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Go your page", style: .done, target: self, action: #selector(goUserPage))
-        
+        navigationItem.rightBarButtonItem?.tintColor = .systemMint
+
         view.addSubview(greetLbl)
         view.addSubview(tableView)
         
