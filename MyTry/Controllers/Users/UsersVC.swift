@@ -90,7 +90,6 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
             "userID" : userID
         ])
         print("add done")
-        print(userID)
         navigationController?.pushViewController(UserItems(), animated: true)
     
     }
