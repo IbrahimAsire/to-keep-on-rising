@@ -1,5 +1,6 @@
 
 import UIKit
+import FirebaseAuth
 
 class AddNew: UIViewController {
     
@@ -40,8 +41,10 @@ class AddNew: UIViewController {
     @objc func addTpd(){
         print("DONE")
         let myId = UUID().uuidString
+        let userID = Auth.auth().currentUser?.uid
         db.collection("provAdd").document(myId).setData([
-            "content": addTF.text
+            "content": addTF.text,
+            "userID": userID
         ])
         
     }

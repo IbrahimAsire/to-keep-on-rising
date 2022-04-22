@@ -3,6 +3,7 @@ import UIKit
 
 class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var arrayInfo: [ProviderInfo] = []
     let greetLbl = UILabel()
     let tableView = UITableView()
 
@@ -11,6 +12,8 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
         tableView.delegate = self
+        
+        readInfo()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
@@ -40,13 +43,13 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return arrayInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProvidersCell
-        
-        cell.textLabel?.text = "Hi every one"
+                
+        cell.nameLbl.text = arrayInfo[indexPath.row].proviederName
         
         return cell
     }
@@ -55,6 +58,18 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         navigationController?.pushViewController(AddNew(), animated: true)
     }
     
+    private func readInfo(){
+        db.collection("providers").addSnapshotListener { snapshot, error in
+            if error != nil{
+                return
+            }
+            guard let docs = snapshot?.documents else {return}
+            
+            for doc in docs{
+                self.arrayInfo.append(ProviderInfo(proviederName: doc.get("name") as! String))
+            }
+            self.tableView.reloadData()
+        }
+    }
     
-
 }
