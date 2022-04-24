@@ -5,7 +5,6 @@ import FirebaseAuth
 class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var arrayInfo: [ProviderInfo] = []
-    var arrayData: [UserGetData] = []
     let userID = Auth.auth().currentUser?.uid
     let greetLbl = UILabel()
     let tableView = UITableView()
@@ -16,7 +15,8 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         tableView.dataSource = self
         tableView.delegate = self
         
-        readInfo();readData()
+        readInfo()
+        readData()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
@@ -47,14 +47,14 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayInfo.count
-        return arrayData.count
     }
     
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProvidersCell
                 
         cell.nameLbl.text = arrayInfo[indexPath.row].proviederName
-        cell.contentLbl.text = arrayData[indexPath.row].content
+        cell.contentLbl.text = arrayInfo[indexPath.row].content
         
         return cell
     }
@@ -85,7 +85,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             guard let docs = snapshot?.documents else {return}
             
             for doc in docs{
-                self.arrayData.append(UserGetData(myId: doc.get("userID") as! String, content: doc.get("content") as! String))
+                self.arrayInfo.append(ProviderInfo(content: doc.get("content") as! String))
             }
             self.tableView.reloadData()
         }

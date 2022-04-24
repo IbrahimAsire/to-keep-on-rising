@@ -18,7 +18,6 @@ class ProvidersCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameLbl.rightAnchor.constraint(equalTo: rightAnchor, constant: -8),
             contentLbl.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
-            contentLbl.leftAnchor.constraint(equalTo: nameLbl.leftAnchor, constant: 5)
         
         ])
         
