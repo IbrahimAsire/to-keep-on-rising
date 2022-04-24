@@ -16,7 +16,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         tableView.delegate = self
         
         readInfo()
-        readData()
+//        readData()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
@@ -69,26 +69,14 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 return
             }
             guard let docs = snapshot?.documents else {return}
+            self.arrayInfo.removeAll()
             
             for doc in docs{
-                self.arrayInfo.append(ProviderInfo(proviederName: doc.get("name") as! String))
+                self.arrayInfo.append(ProviderInfo(proviederName: doc.get("name") as? String, content: doc.get("content") as? String))
             }
             self.tableView.reloadData()
         }
-    }
-    
-    private func readData(){
-        db.collection("provAdd").addSnapshotListener { snapshot, error in
-            if error != nil{
-                return
-            }
-            guard let docs = snapshot?.documents else {return}
-            
-            for doc in docs{
-                self.arrayInfo.append(ProviderInfo(content: doc.get("content") as! String))
-            }
-            self.tableView.reloadData()
-        }
+
     }
     
 }

@@ -42,7 +42,7 @@ class AddNew: UIViewController {
         print("DONE")
         let myId = UUID().uuidString
         let userID = Auth.auth().currentUser?.uid
-        db.collection("provAdd").document(myId).setData([
+        db.collection("providers").document(myId).setData([
             "content": addTF.text,
             "userID": userID
         ])
