@@ -11,6 +11,7 @@ class AddNew: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemGroupedBackground
+        print(nameProv)
         
         view.addSubview(addTF)
         view.addSubview(addBtn)

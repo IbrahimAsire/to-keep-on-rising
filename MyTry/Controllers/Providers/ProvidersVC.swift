@@ -16,6 +16,8 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
         tableView.delegate = self
+        print(nameProv)
+        print(userID)
         
         readInfo()
 //        readData()
@@ -81,6 +83,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 self.nameProv = doc.get("name") as? String
             }
             self.tableView.reloadData()
+            
         }
 
     }
