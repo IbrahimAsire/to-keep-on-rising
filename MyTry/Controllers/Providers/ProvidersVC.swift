@@ -8,6 +8,8 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     let userID = Auth.auth().currentUser?.uid
     let greetLbl = UILabel()
     let tableView = UITableView()
+    var nameProv: String?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +62,10 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     @objc func addTpd(){
-        navigationController?.pushViewController(AddNew(), animated: true)
+        let nextVC = AddNew()
+        
+        nextVC.nameProv = nameProv
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     private func readInfo(){
@@ -73,6 +78,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             
             for doc in docs{
                 self.arrayInfo.append(ProviderInfo(proviederName: doc.get("name") as? String, content: doc.get("content") as? String))
+                self.nameProv = doc.get("name") as? String
             }
             self.tableView.reloadData()
         }

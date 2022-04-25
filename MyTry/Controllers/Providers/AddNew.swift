@@ -6,6 +6,7 @@ class AddNew: UIViewController {
     
     let addTF = UITextField()
     let addBtn = UIButton()
+    var nameProv: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +43,12 @@ class AddNew: UIViewController {
         print("DONE")
         let myId = UUID().uuidString
         let userID = Auth.auth().currentUser?.uid
+        let userEmail = Auth.auth().currentUser?.email
         db.collection("providers").document(myId).setData([
             "content": addTF.text,
-            "userID": userID
+            "name": nameProv,
+            "userID": userID,
+            "email": userEmail
         ])
         
     }
