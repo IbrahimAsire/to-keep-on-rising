@@ -75,12 +75,13 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             if error != nil{
                 return
             }
+            
             guard let docs = snapshot?.documents else {return}
             self.arrayInfo.removeAll()
             
             for doc in docs{
                 self.arrayInfo.append(ProviderInfo(proviederName: doc.get("name") as? String, content: doc.get("content") as? String))
-                self.nameProv = doc.get("name") as? String
+                self.nameProv = doc["name"] as? String
             }
             self.tableView.reloadData()
             
