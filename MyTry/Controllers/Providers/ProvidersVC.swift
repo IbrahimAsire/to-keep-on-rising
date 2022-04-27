@@ -10,7 +10,6 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     let tableView = UITableView()
     var nameProv: String?
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
@@ -20,7 +19,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         print(userID)
         
         readInfo()
-//        readData()
+        readData()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
@@ -87,6 +86,20 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             
         }
 
+    }
+    
+  // MARK: - to shows data for me only 
+    func readData(){
+        let docRef = db.collection("providers").document("1481087F-E7E9-4A4E-8ECE-B712C94D8042")
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
     }
     
 }
