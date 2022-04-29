@@ -52,9 +52,13 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProvidersCell
+        let vc = AddNew()
                 
         cell.nameLbl.text = arrayInfo[indexPath.row].proviederName
         cell.contentLbl.text = arrayInfo[indexPath.row].content
+        
+        vc.nameProv = arrayInfo[indexPath.row].proviederName ?? "null"
+        vc.myId = arrayInfo[indexPath.row].myID ?? "null"
         
         return cell
     }
