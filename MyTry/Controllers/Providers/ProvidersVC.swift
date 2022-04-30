@@ -14,6 +14,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
         tableView.delegate = self
+        print(arrayInfo)
         
         readInfo()
         readData()
