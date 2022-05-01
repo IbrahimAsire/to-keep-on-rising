@@ -8,16 +8,17 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     let userID = Auth.auth().currentUser?.uid
     let greetLbl = UILabel()
     let tableView = UITableView()
+    var nameProv = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
         tableView.delegate = self
-        print(arrayInfo)
+        print(nameProv)
         
         readInfo()
-        readData()
+//        readData()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
@@ -53,13 +54,14 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProvidersCell
-        let vc = AddNew()
                 
         cell.nameLbl.text = arrayInfo[indexPath.row].proviederName
         cell.contentLbl.text = arrayInfo[indexPath.row].content
         
-        vc.nameProv = arrayInfo[indexPath.row].proviederName ?? "null"
-        vc.myId = arrayInfo[indexPath.row].myID ?? "null"
+        nameProv = arrayInfo[indexPath.row].proviederName ?? "null"
+//        myId = arrayInfo[indexPath.row].myID ?? "null"
+        
+//        print(vc.nameProv)
         
         return cell
     }
@@ -87,17 +89,17 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
   // MARK: - to shows data for me only 
-    func readData(){
-        let docRef = db.collection("providers").document("1481087F-E7E9-4A4E-8ECE-B712C94D8042")
-
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-            }
-        }
-    }
+//    func readData(){
+//        let docRef = db.collection("providers").document("EA2F06FF-0EEF-4180-B9B0-97CFDD213D0F")
+//
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
+//    }
     
 }
