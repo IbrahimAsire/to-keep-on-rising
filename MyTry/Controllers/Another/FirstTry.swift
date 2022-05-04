@@ -1,13 +1,25 @@
 
 import UIKit
 
-class FirstTry: UIViewController {
+class FirstTry: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemIndigo
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 7
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = "Here I will git Info from API"
+        
+        return cell
     }
     
     
