@@ -6,16 +6,16 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     var arrayInfo: [ProviderInfo] = []
     let userID = Auth.auth().currentUser?.uid
+    let userName = db.collection("providers")
     let greetLbl = UILabel()
     let tableView = UITableView()
-    var nameProv = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
         tableView.delegate = self
-        print(nameProv)
+        print(userName)
         
         readInfo()
 //        readData()
@@ -57,11 +57,6 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 
         cell.nameLbl.text = arrayInfo[indexPath.row].proviederName
         cell.contentLbl.text = arrayInfo[indexPath.row].content
-        
-        nameProv = arrayInfo[indexPath.row].proviederName ?? "null"
-//        myId = arrayInfo[indexPath.row].myID ?? "null"
-        
-//        print(vc.nameProv)
         
         return cell
     }
