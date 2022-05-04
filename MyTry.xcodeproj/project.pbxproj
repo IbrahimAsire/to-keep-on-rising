@@ -31,6 +31,7 @@
 		0F991D0C27F5D11900EFC028 /* MyTryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */; };
 		0F991D0E27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */; };
 		0F991D1B27F5D92F00EFC028 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */; };
+		0FFD1027282311F2006E0D5C /* FirstTry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD1026282311F2006E0D5C /* FirstTry.swift */; };
 		2B769AF00A745DA56CDE5145 /* Pods_MyTry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3666B5E475347EB328BB32 /* Pods_MyTry.framework */; };
 		3AF9E6B23B76EFB92ADBC257 /* Pods_MyTry_MyTryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909C67B3FF8EB722598DEC57 /* Pods_MyTry_MyTryUITests.framework */; };
 		7FA9C35270C2D788DB20B2F5 /* Pods_MyTryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C532786404074EA7878626B /* Pods_MyTryTests.framework */; };
@@ -85,6 +86,7 @@
 		0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITests.swift; sourceTree = "<group>"; };
 		0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0FFD1026282311F2006E0D5C /* FirstTry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTry.swift; sourceTree = "<group>"; };
 		2DFD5708B387BC4694E31774 /* Pods-MyTry-MyTryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTry-MyTryUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyTry-MyTryUITests/Pods-MyTry-MyTryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C532786404074EA7878626B /* Pods_MyTryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFE544412815343E29514B3 /* Pods-MyTryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTryTests.debug.xcconfig"; path = "Target Support Files/Pods-MyTryTests/Pods-MyTryTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				0F6C89B1280B5A8800BB1398 /* StartPages */,
 				0FACDB4B27FE2D3A007FDDA0 /* Users */,
 				0FACDB4A27FE2CFB007FDDA0 /* Providers */,
+				0FFD1025282311C4006E0D5C /* Another */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -246,6 +249,14 @@
 				0F5F2FE528109FBA007200F8 /* UserItems.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		0FFD1025282311C4006E0D5C /* Another */ = {
+			isa = PBXGroup;
+			children = (
+				0FFD1026282311F2006E0D5C /* FirstTry.swift */,
+			);
+			path = Another;
 			sourceTree = "<group>";
 		};
 		56E50180ED49B31C300AEBD5 /* Pods */ = {
@@ -523,6 +534,7 @@
 				0F01FD82280F3DF200557511 /* UserCell.swift in Sources */,
 				0F410BE027FB7285003CDC15 /* TabBarMain.swift in Sources */,
 				0F6C89B3280B5D0600BB1398 /* ProvidersCell.swift in Sources */,
+				0FFD1027282311F2006E0D5C /* FirstTry.swift in Sources */,
 				0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */,
 				0F6BB22527F6F4FE0083742A /* UsersSignUp.swift in Sources */,
 				0F991CF227F5D11800EFC028 /* MyTry.xcdatamodeld in Sources */,

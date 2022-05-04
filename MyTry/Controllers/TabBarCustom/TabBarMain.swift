@@ -7,9 +7,9 @@ class TabBarMain: UITabBarController {
         super.viewDidLoad()
         
         viewControllers = [
-            barItem(tabBarTitle: "Cafes".Localizable(), tabBarImage: UIImage(systemName: "cup.and.saucer.fill")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: UsersVC()),
+            barItem(tabBarTitle: "Home".Localizable(), tabBarImage: UIImage(systemName: "house")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: Register()),
             
-            barItem(tabBarTitle: "New Places".Localizable(), tabBarImage: UIImage(systemName: "house")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: ProvidersVC()),
+            barItem(tabBarTitle: "Go To ..".Localizable(), tabBarImage: UIImage(systemName: "doc.fill")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: FirstTry()),
             
 //            barItem(tabBarTitle: "Recommendations".Localizable(), tabBarImage: UIImage(systemName: "photo.artframe")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: RecommVC1()),
             
