@@ -10,6 +10,7 @@
 		0F01FD82280F3DF200557511 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F01FD81280F3DF200557511 /* UserCell.swift */; };
 		0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CC8280CB1A000689B33 /* AddNew.swift */; };
 		0F0A5CCB280CBA3D00689B33 /* UserGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CCA280CBA3D00689B33 /* UserGetData.swift */; };
+		0F1B23EE2825AC80007E9DCE /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B23ED2825AC80007E9DCE /* WeatherVC.swift */; };
 		0F239E8727F741BE0059396F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F239E8627F741BE0059396F /* Login.swift */; };
 		0F252A0D28133A8A00520C43 /* ProviderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F252A0C28133A8A00520C43 /* ProviderInfo.swift */; };
 		0F26E3EA27FA355A00736A9D /* CheakUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F26E3E927FA355A00736A9D /* CheakUser.swift */; };
@@ -58,6 +59,7 @@
 		0F01FD81280F3DF200557511 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = MyTry/Models/UserCell.swift; sourceTree = SOURCE_ROOT; };
 		0F0A5CC8280CB1A000689B33 /* AddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNew.swift; sourceTree = "<group>"; };
 		0F0A5CCA280CBA3D00689B33 /* UserGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGetData.swift; sourceTree = "<group>"; };
+		0F1B23ED2825AC80007E9DCE /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		0F239E8627F741BE0059396F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0F252A0C28133A8A00520C43 /* ProviderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderInfo.swift; sourceTree = "<group>"; };
 		0F26E3E927FA355A00736A9D /* CheakUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheakUser.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				0FFD1026282311F2006E0D5C /* FirstTry.swift */,
+				0F1B23ED2825AC80007E9DCE /* WeatherVC.swift */,
 			);
 			path = Another;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				0FFD1027282311F2006E0D5C /* FirstTry.swift in Sources */,
 				0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */,
 				0F6BB22527F6F4FE0083742A /* UsersSignUp.swift in Sources */,
+				0F1B23EE2825AC80007E9DCE /* WeatherVC.swift in Sources */,
 				0F991CF227F5D11800EFC028 /* MyTry.xcdatamodeld in Sources */,
 				0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */,
 				0F5F2FE628109FBA007200F8 /* UserItems.swift in Sources */,

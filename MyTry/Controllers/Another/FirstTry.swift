@@ -8,6 +8,8 @@ class FirstTry: UITableViewController {
         view.backgroundColor = .systemIndigo
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "See Weather", style: .done, target: self, action: #selector(WeatherTpd))
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,6 +22,11 @@ class FirstTry: UITableViewController {
         cell.textLabel?.text = "Here I will git Info from API"
         
         return cell
+    }
+    
+    @objc func WeatherTpd(){
+        navigationController?.pushViewController(WeatherVC(), animated: true)
+        
     }
     
     
