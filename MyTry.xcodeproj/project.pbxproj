@@ -32,6 +32,8 @@
 		0F991D0C27F5D11900EFC028 /* MyTryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */; };
 		0F991D0E27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */; };
 		0F991D1B27F5D92F00EFC028 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */; };
+		0FF423DE282991A80061E9E0 /* CovidApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF423DD282991A80061E9E0 /* CovidApi.swift */; };
+		0FF423E0282995040061E9E0 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF423DF282995040061E9E0 /* Covid.swift */; };
 		0FFD1027282311F2006E0D5C /* FirstTry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD1026282311F2006E0D5C /* FirstTry.swift */; };
 		2B769AF00A745DA56CDE5145 /* Pods_MyTry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3666B5E475347EB328BB32 /* Pods_MyTry.framework */; };
 		3AF9E6B23B76EFB92ADBC257 /* Pods_MyTry_MyTryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909C67B3FF8EB722598DEC57 /* Pods_MyTry_MyTryUITests.framework */; };
@@ -88,6 +90,8 @@
 		0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITests.swift; sourceTree = "<group>"; };
 		0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0FF423DD282991A80061E9E0 /* CovidApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidApi.swift; sourceTree = "<group>"; };
+		0FF423DF282995040061E9E0 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		0FFD1026282311F2006E0D5C /* FirstTry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTry.swift; sourceTree = "<group>"; };
 		2DFD5708B387BC4694E31774 /* Pods-MyTry-MyTryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTry-MyTryUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyTry-MyTryUITests/Pods-MyTry-MyTryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4C532786404074EA7878626B /* Pods_MyTryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +146,8 @@
 				0F6BB22427F6F4FE0083742A /* UsersSignUp.swift */,
 				0F0A5CCA280CBA3D00689B33 /* UserGetData.swift */,
 				0F252A0C28133A8A00520C43 /* ProviderInfo.swift */,
+				0FF423DD282991A80061E9E0 /* CovidApi.swift */,
+				0FF423DF282995040061E9E0 /* Covid.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF423DE282991A80061E9E0 /* CovidApi.swift in Sources */,
 				0F239E8727F741BE0059396F /* Login.swift in Sources */,
 				0F0A5CCB280CBA3D00689B33 /* UserGetData.swift in Sources */,
 				0F26E3EA27FA355A00736A9D /* CheakUser.swift in Sources */,
@@ -545,6 +552,7 @@
 				0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */,
 				0F5F2FE628109FBA007200F8 /* UserItems.swift in Sources */,
 				0F410BE227FB7381003CDC15 /* UsersVC.swift in Sources */,
+				0FF423E0282995040061E9E0 /* Covid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
