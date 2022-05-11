@@ -2,11 +2,11 @@
 import Foundation
 
 struct Covid: Decodable {
-    let countries: [countrie]
+    let countries: [Country]
     
 }
 
-struct countrie: Decodable {
+struct Country: Decodable {
     let name: String
     let iso2: String
 }

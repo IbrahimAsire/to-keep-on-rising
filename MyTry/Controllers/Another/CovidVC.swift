@@ -2,13 +2,17 @@
 
 import UIKit
 
-class WeatherVC: UIViewController {
+class CovidVC: UIViewController {
+    
+    lazy var covid = CovidApi()
+    var country = [Country(name: "", iso2: "")]
     
     let textTF: UITextField = {
         $0.borderStyle = .bezel
         $0.placeholder = "Type Any City!"
         $0.textAlignment = .center
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.returnKeyType = .search
         return $0
     }(UITextField())
     
@@ -18,6 +22,7 @@ class WeatherVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemCyan
+        textTF.delegate = self
         
         view.addSubview(textTF)
         view.addSubview(nameCountry)
@@ -41,5 +46,13 @@ class WeatherVC: UIViewController {
 
     }
     
+}
 
+extension CovidVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        print(textTF)
+        return true
+    }
+    
 }

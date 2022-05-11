@@ -25,7 +25,7 @@ class FirstTry: UITableViewController {
     }
     
     @objc func WeatherTpd(){
-        navigationController?.pushViewController(WeatherVC(), animated: true)
+        navigationController?.pushViewController(CovidVC(), animated: true)
         
     }
     
