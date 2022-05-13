@@ -23,6 +23,8 @@ class CovidVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemCyan
         textTF.delegate = self
+        covid.delegate = self
+        covid.getInfo()
         
         view.addSubview(textTF)
         view.addSubview(nameCountry)
@@ -64,5 +66,17 @@ extension CovidVC: UITextFieldDelegate {
         print(textTF.text!)
         return true
     }
+    
+}
+
+extension CovidVC: NewsAPIDelegate {
+    func didFetchInfo(info: Covid) {
+        print(info)
+    }
+    
+    func didFailWithError(error: Error?) {
+        print(error)
+    }
+    
     
 }
