@@ -1,5 +1,4 @@
 
-
 import UIKit
 
 class CovidVC: UIViewController {
@@ -16,6 +15,7 @@ class CovidVC: UIViewController {
         return $0
     }(UITextField())
     
+    let resultBtn = UIButton()
     let nameCountry = UILabel()
     let test = UILabel()
 
@@ -27,7 +27,11 @@ class CovidVC: UIViewController {
         view.addSubview(textTF)
         view.addSubview(nameCountry)
         view.addSubview(test)
+        view.addSubview(resultBtn)
         
+        resultBtn.translatesAutoresizingMaskIntoConstraints = false
+        resultBtn.setTitle("Get Info ..", for: .normal)
+        resultBtn.addTarget(self, action: #selector(getTpd), for: .touchUpInside)
         nameCountry.translatesAutoresizingMaskIntoConstraints = false
         nameCountry.text = "Here name of country choose"
         test.translatesAutoresizingMaskIntoConstraints = false
@@ -37,13 +41,19 @@ class CovidVC: UIViewController {
             textTF.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             textTF.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             textTF.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
-            nameCountry.topAnchor.constraint(equalTo: textTF.bottomAnchor, constant: 18),
+            resultBtn.topAnchor.constraint(equalTo: textTF.bottomAnchor, constant: 18),
+            resultBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nameCountry.topAnchor.constraint(equalTo: resultBtn.bottomAnchor, constant: 18),
             nameCountry.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             test.topAnchor.constraint(equalTo: nameCountry.bottomAnchor, constant: 12),
             test.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
         
         ])
-
+    }
+    
+    @objc func getTpd() {
+        print(textTF.text!)
     }
     
 }
@@ -51,7 +61,7 @@ class CovidVC: UIViewController {
 extension CovidVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        print(textTF)
+        print(textTF.text!)
         return true
     }
     
