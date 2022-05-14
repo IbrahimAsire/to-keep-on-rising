@@ -2,13 +2,15 @@
 import UIKit
 
 class FirstTry: UITableViewController {
+    
+    var test1 = " REALLY I like var more than let "
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemIndigo
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "See Weather", style: .done, target: self, action: #selector(WeatherTpd))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "See Covid Info", style: .done, target: self, action: #selector(CovidTpd))
         
     }
     
@@ -24,7 +26,7 @@ class FirstTry: UITableViewController {
         return cell
     }
     
-    @objc func WeatherTpd(){
+    @objc func CovidTpd(){
         navigationController?.pushViewController(CovidVC(), animated: true)
         
     }
