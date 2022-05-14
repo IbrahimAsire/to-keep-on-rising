@@ -23,7 +23,6 @@ struct CovidApi {
                     let info = try JSONDecoder().decode(Covid.self, from: data!)
                     
                     delegate?.didFetchInfo(info: info)
-                    print(info)
                 }catch{
                     print(error)
                 }

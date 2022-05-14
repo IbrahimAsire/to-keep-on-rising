@@ -185,6 +185,21 @@ class Register: UITableViewController {
         
     }
     
+    private func setUpStackView() {
+        
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(whereImg)
+        stackView.addArrangedSubview(coffeImg)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            //            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5),
+            stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            stackView.heightAnchor.constraint(equalToConstant: 160),
+            whereImg.widthAnchor.constraint(equalToConstant: 180)
+            
+        ])
+    }
+    
     @objc func chooseRegTpd() {
         let imageEmpty = UIImage(systemName: "circlebadge")
         let image = UIImage(systemName: "circlebadge.fill")
@@ -263,23 +278,7 @@ class Register: UITableViewController {
         
     }
 }
-
-extension Register {
-    private func setUpStackView() {
-        
-        view.addSubview(stackView)
-        stackView.addArrangedSubview(whereImg)
-        stackView.addArrangedSubview(coffeImg)
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            //            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5),
-            stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            stackView.heightAnchor.constraint(equalToConstant: 160),
-            whereImg.widthAnchor.constraint(equalToConstant: 180)
-            
-        ])
-    }
-}
+    
 
 extension Register: UITextViewDelegate {
     

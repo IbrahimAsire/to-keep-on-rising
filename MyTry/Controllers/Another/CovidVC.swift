@@ -4,7 +4,6 @@ import UIKit
 class CovidVC: UIViewController {
     
     lazy var covid = CovidApi()
-    var country = [Country(name: "", iso2: "")]
     
     let textTF: UITextField = {
         $0.borderStyle = .bezel
@@ -16,8 +15,8 @@ class CovidVC: UIViewController {
     }(UITextField())
     
     let resultBtn = UIButton()
-    let nameCountry = UILabel()
-    let test = UILabel()
+    var nameCountry = UILabel()
+    var test = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +54,7 @@ class CovidVC: UIViewController {
     }
     
     @objc func getTpd() {
+        
         print(textTF.text!)
     }
     
@@ -71,6 +71,7 @@ extension CovidVC: UITextFieldDelegate {
 
 extension CovidVC: NewsAPIDelegate {
     func didFetchInfo(info: Covid) {
+        
         print(info)
     }
     
