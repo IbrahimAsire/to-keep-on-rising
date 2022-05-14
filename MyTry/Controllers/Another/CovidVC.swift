@@ -4,6 +4,8 @@ import UIKit
 class CovidVC: UIViewController {
     
     lazy var covid = CovidApi()
+    var country = [Country(name: "", iso2: "")]
+
     
     let textTF: UITextField = {
         $0.borderStyle = .bezel
@@ -71,7 +73,7 @@ extension CovidVC: UITextFieldDelegate {
 
 extension CovidVC: NewsAPIDelegate {
     func didFetchInfo(info: Covid) {
-        
+        country = info.countries
         print(info)
     }
     
