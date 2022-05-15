@@ -271,8 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				0FFD1026282311F2006E0D5C /* FirstTry.swift */,
-				0F1B23ED2825AC80007E9DCE /* CovidVC.swift */,
 				0F1CE85C2830224000B811E5 /* WeatherVC.swift */,
+				0F1B23ED2825AC80007E9DCE /* CovidVC.swift */,
 			);
 			path = Another;
 			sourceTree = "<group>";

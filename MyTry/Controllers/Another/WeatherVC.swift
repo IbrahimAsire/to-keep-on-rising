@@ -16,25 +16,22 @@ class WeatherVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let gradient = CAGradientLayer()
-//        gradient.frame = self.view.bounds
-//        gradient.colors = [UIColor.gray.cgColor, UIColor.white.cgColor, UIColor.blue.cgColor]
-//        self.view.layer.insertSublayer(gradient, at: 0)
- 
-        let mode = UITapGestureRecognizer(target: self, action: #selector(Mode))
-        mode.numberOfTapsRequired = 2
-        view.addGestureRecognizer(mode)
-        
-        let mode2 = UITapGestureRecognizer(target: self, action: #selector(Mode2))
-        view.addGestureRecognizer(mode2)
-        
-        view.isUserInteractionEnabled = true
+        view.backgroundColor = .lightGray
         
         weatherApi.delegate = self
         searchTextField.delegate = self
         
-        
-        view.backgroundColor = .lightGray
+        barButtonItem(); setUpUI(); backgroundColorMix()
+//        gestureRecognizer()
+
+    }
+    
+    private func barButtonItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "see Covid Info", style: .plain, target: self, action: #selector(CovidTpd))
+        navigationItem.rightBarButtonItem?.tintColor = .systemIndigo
+    }
+    
+    private func setUpUI() {
         
         cityLabel.text = "City"
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +102,25 @@ class WeatherVC: UIViewController {
             textArLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 315),
             textArLbl.heightAnchor.constraint(equalToConstant: 50)
         ])
-
+    }
+    
+    private func backgroundColorMix() {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.view.bounds
+        gradient.colors = [UIColor.gray.cgColor, UIColor.white.cgColor, UIColor.blue.cgColor]
+        self.view.layer.insertSublayer(gradient, at: 0)
+    }
+    
+    private func gestureRecognizer(){
+        let mode = UITapGestureRecognizer(target: self, action: #selector(Mode))
+        mode.numberOfTapsRequired = 2
+        view.addGestureRecognizer(mode)
+        
+        let mode2 = UITapGestureRecognizer(target: self, action: #selector(Mode2))
+        view.addGestureRecognizer(mode2)
+        
+        view.isUserInteractionEnabled = true
+        
     }
     
     @objc func Mode() {
@@ -114,6 +129,11 @@ class WeatherVC: UIViewController {
     
     @objc func Mode2() {
         view.backgroundColor = UIColor(named: "background2")
+    }
+    
+    @objc func CovidTpd(){
+        navigationController?.pushViewController(CovidVC(), animated: true)
+        
     }
 
 }
