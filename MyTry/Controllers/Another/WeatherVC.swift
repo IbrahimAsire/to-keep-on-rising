@@ -39,7 +39,7 @@ class WeatherVC: UIViewController {
         cityLabel.font = .boldSystemFont(ofSize: 40)
         NSLayoutConstraint.activate([
             cityLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-            cityLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 115)
+            cityLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 130)
         ])
         
         mapImg.image = UIImage(systemName: "mappin")
@@ -47,7 +47,7 @@ class WeatherVC: UIViewController {
         view.addSubview(mapImg)
         NSLayoutConstraint.activate([
            mapImg.leftAnchor.constraint(equalTo: cityLabel.leftAnchor, constant: -20),
-           mapImg.topAnchor.constraint(equalTo: view.topAnchor, constant: 130)
+           mapImg.topAnchor.constraint(equalTo: view.topAnchor, constant: 145)
            
         ])
         
@@ -57,7 +57,7 @@ class WeatherVC: UIViewController {
         temperatureLabel.font = .systemFont(ofSize: 75)
         NSLayoutConstraint.activate([
             temperatureLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
-            temperatureLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 215)
+            temperatureLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 45)
         ])
         
         imgC.text = "°C"
@@ -66,7 +66,7 @@ class WeatherVC: UIViewController {
         imgC.font = .systemFont(ofSize: 80)
         NSLayoutConstraint.activate([
             imgC.rightAnchor.constraint(equalTo: temperatureLabel.rightAnchor, constant: 100),
-            imgC.topAnchor.constraint(equalTo: view.topAnchor, constant: 215)
+            imgC.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 45)
         ])
         
         conditionImageView.layer.masksToBounds = true
@@ -87,9 +87,10 @@ class WeatherVC: UIViewController {
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(searchTextField)
         searchTextField.font = .boldSystemFont(ofSize: 40)
+        searchTextField.textAlignment = .center
         NSLayoutConstraint.activate([
             searchTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
-            searchTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 315),
+            searchTextField.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor, constant: 45),
             searchTextField.widthAnchor.constraint(equalToConstant: 210)
         ])
         
@@ -99,7 +100,7 @@ class WeatherVC: UIViewController {
         textArLbl.font = .boldSystemFont(ofSize: 10)
         NSLayoutConstraint.activate([
             textArLbl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5),
-            textArLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 315),
+            textArLbl.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor, constant: 45),
             textArLbl.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
