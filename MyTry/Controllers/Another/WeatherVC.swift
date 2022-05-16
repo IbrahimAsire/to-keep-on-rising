@@ -4,7 +4,7 @@ import UIKit
 class WeatherVC: UIViewController {
     
     var weatherApi = WeatherApi()
-    
+    let textOne = "Hi there, what is this"
     let cityLabel = UILabel()
     let temperatureLabel = UILabel()
     let conditionImageView = UIImageView()

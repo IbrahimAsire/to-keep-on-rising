@@ -19,6 +19,11 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         readInfo()
 //        readData()
+        setUpUI()
+
+    }
+    
+    private func setUpUI(){
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
@@ -44,7 +49,6 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         
         ])
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
