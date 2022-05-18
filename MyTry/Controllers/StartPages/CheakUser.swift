@@ -6,6 +6,8 @@ import FirebaseFirestore
 
 class CheakUser: UIViewController {
     
+    let userVC = UsersVC()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,7 +20,9 @@ class CheakUser: UIViewController {
                 let date = Snapshot!.documents
                 for ID in date {
                     if userID == ID["UserId"] as! String {
+                        self.userVC.userName = ID["name"] as! String
                         print("Is a User")
+                        print(self.userVC.userName)
                         self.navigationController?.pushViewController(
                             UsersVC(), animated: true)
                     }else{

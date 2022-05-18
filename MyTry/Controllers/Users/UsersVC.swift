@@ -4,6 +4,8 @@ import FirebaseAuth
 
 class UsersVC: UIViewController {
     
+    var userName = ""
+    
     var arrayData: [UserGetData] = []
     let userID = Auth.auth().currentUser?.uid
 
