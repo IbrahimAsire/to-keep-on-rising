@@ -23,6 +23,7 @@ class UsersVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         readData()
+        print(userName)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Go your page", style: .done, target: self, action: #selector(goUserPage))
         navigationItem.rightBarButtonItem?.tintColor = .systemMint
@@ -31,7 +32,7 @@ class UsersVC: UIViewController {
         view.addSubview(tableView)
         
         greetLbl.translatesAutoresizingMaskIntoConstraints = false
-        greetLbl.text = "Welcome user"
+        greetLbl.text = "Welcome user " + userName
         greetLbl.font = .systemFont(ofSize: 24)
         greetLbl.textColor = .black
         

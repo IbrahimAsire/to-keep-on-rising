@@ -24,7 +24,7 @@ class CheakUser: UIViewController {
                         print("Is a User")
                         print(self.userVC.userName)
                         self.navigationController?.pushViewController(
-                            UsersVC(), animated: true)
+                            self.userVC, animated: true)
                     }else{
                         self.navigationController?.pushViewController(
                             ProvidersVC(), animated: true)
