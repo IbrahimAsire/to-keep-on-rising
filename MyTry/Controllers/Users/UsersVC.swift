@@ -32,7 +32,7 @@ class UsersVC: UIViewController {
         view.addSubview(tableView)
         
         greetLbl.translatesAutoresizingMaskIntoConstraints = false
-        greetLbl.text = "Welcome user " + userName
+        greetLbl.text = "Welcome " + userName
         greetLbl.font = .systemFont(ofSize: 24)
         greetLbl.textColor = .black
         
