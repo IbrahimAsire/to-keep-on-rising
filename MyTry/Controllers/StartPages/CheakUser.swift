@@ -10,8 +10,11 @@ class CheakUser: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectLogin()
         
-        
+    }
+    
+    private func selectLogin() {
         let userID = Auth.auth().currentUser?.uid
 //        print(userID as! String)
         let db = Firestore.firestore()
