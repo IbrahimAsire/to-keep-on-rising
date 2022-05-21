@@ -19,9 +19,12 @@ class AddNew: UIViewController {
         view.backgroundColor = .secondarySystemGroupedBackground
         setUpUI()
         readInfo()
-        print(nameProv)
-        print(myId)
         
+    }
+    
+//    To test get the information
+    override func viewDidAppear(_ animated: Bool) {
+        print(nameProv)
     }
     
     private func setUpUI() {
