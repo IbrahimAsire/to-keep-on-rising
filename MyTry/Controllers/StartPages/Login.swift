@@ -3,7 +3,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class Login: UIViewController {
+class Login: UIViewController, UITextFieldDelegate {
     
     
     let emailTF = UITextField()
@@ -13,6 +13,7 @@ class Login: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemPurple
+        passwordTF.delegate = self
         
         setUpUI()
     }
@@ -32,6 +33,7 @@ class Login: UIViewController {
         passwordTF.placeholder = "password"
         passwordTF.textAlignment = .center
         passwordTF.borderStyle = .roundedRect
+        passwordTF.returnKeyType = .search
         loginBtn.setTitle("Login", for: .normal)
         loginBtn.setTitleColor(.systemPurple, for: .normal)
         loginBtn.backgroundColor = .white
@@ -57,6 +59,13 @@ class Login: UIViewController {
             
         ])
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        loginTpd()
+        return true
+    }
+    
+    
     
     @objc func loginTpd(){
         if let email = emailTF.text, email.isEmpty == false,
