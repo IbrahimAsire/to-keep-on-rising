@@ -9,7 +9,6 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     let userName = db.collection("providers")
     let greetLbl = UILabel()
     let tableView = UITableView()
-    var providerName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

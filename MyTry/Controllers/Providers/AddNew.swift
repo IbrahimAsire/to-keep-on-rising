@@ -1,8 +1,12 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class AddNew: UIViewController {
+    
+    let userID = Auth.auth().currentUser?.uid
+
     
     let addTF = UITextField()
     let addBtn = UIButton()
@@ -13,8 +17,14 @@ class AddNew: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemGroupedBackground
+        setUpUI()
+        readInfo()
         print(nameProv)
+        print(myId)
         
+    }
+    
+    private func setUpUI() {
         view.addSubview(addTF)
         view.addSubview(addBtn)
         
@@ -39,19 +49,33 @@ class AddNew: UIViewController {
             addBtn.widthAnchor.constraint(equalToConstant: 80)
             
         ])
+        
+    }
+    
+    private func readInfo() {
+        db.collection("providers").getDocuments { snapshot, error in
+            if error == nil {
+                let info = snapshot!.documents
+                for doc in info {
+                    if self.userID == doc["UserId"] as? String{
+                        self.nameProv = doc["name"] as? String ?? "nil"
+                        self.myId = doc["myId"] as? String ?? "nil"
+                    }
+                }
+            }
+        }
 
     }
     
     @objc func addTpd(){
         print("DONE")
-        let userID = Auth.auth().currentUser?.uid
         let userEmail = Auth.auth().currentUser?.email
         db.collection("providers").document(myId).setData([
             "content": addTF.text,
             "name": nameProv,
-            "userID": userID,
+            "UserId": userID,
             "email": userEmail,
-            "muId": myId
+            "myId": myId
         ])
         
     }
