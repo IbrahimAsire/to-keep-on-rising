@@ -99,7 +99,8 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
         let data = arrayData[indexPath.row]
         db.collection("userschoices").document(myId).setData([
             "content" : data.content,
-            "userID" : userID
+            "userID" : userID,
+            "muID" : myId
         ])
         print("add done")
         navigationController?.pushViewController(UserItems(), animated: true)
