@@ -26,9 +26,6 @@ class UserCell: UITableViewCell {
         
         ])
         
-        
-        
-        
     }
     
     required init?(coder: NSCoder) {

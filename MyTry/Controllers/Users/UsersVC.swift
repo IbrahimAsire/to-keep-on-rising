@@ -8,7 +8,7 @@ class UsersVC: UIViewController {
     
     var arrayData: [UserGetData] = []
     let userID = Auth.auth().currentUser?.uid
-
+    
     let greetLbl = UILabel()
     let tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -16,7 +16,7 @@ class UsersVC: UIViewController {
         $0.rowHeight = 60
         return $0
     }(UITableView())
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemPurple
@@ -27,7 +27,7 @@ class UsersVC: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Go your page", style: .done, target: self, action: #selector(goUserPage))
         navigationItem.rightBarButtonItem?.tintColor = .systemMint
-
+        
         view.addSubview(greetLbl)
         view.addSubview(tableView)
         
@@ -44,26 +44,28 @@ class UsersVC: UIViewController {
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        
+            
         ])
-
+        
     }
     
     func readData() {
-        db.collection("provAdd").addSnapshotListener { snapshot, error in
+        db.collection("providers").addSnapshotListener { snapshot, error in
             if error != nil {
                 return
             }
             
             guard let docs = snapshot?.documents else {return}
-
+            
             for doc in docs {
                 let data = doc.data()
-                guard let content = data["content"] as? String
+                guard
+                    let content = data["content"] as? String,
+                    let nameProve = data["name"] as? String
                 else {
                     continue
                 }
-                self.arrayData.append(UserGetData(myId: nil, content: content))
+                self.arrayData.append(UserGetData(myId: nil, content: content, nameProvide: nameProve))
             }
             self.tableView.reloadData()
         }
@@ -78,17 +80,16 @@ class UsersVC: UIViewController {
 extension UsersVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return arrayData.count
-        return 2
+        return arrayData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserCell
         
-//        let data = arrayData[indexPath.row]
-//
-//        cell.textLabel?.text = data.content
-//        cell.textLabel?.textColor = .systemOrange
+        let data = arrayData[indexPath.row]
+        
+        cell.nameProv.text = "by: " + (data.nameProvide ?? "nil")
+        cell.content.text = data.content
         
         return cell
     }
@@ -102,7 +103,7 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
         ])
         print("add done")
         navigationController?.pushViewController(UserItems(), animated: true)
-    
+        
     }
-
+    
 }
