@@ -78,16 +78,17 @@ class UsersVC: UIViewController {
 extension UsersVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayData.count
+//        return arrayData.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserCell
         
-        let data = arrayData[indexPath.row]
-        
-        cell.textLabel?.text = data.content
-        cell.textLabel?.textColor = .systemOrange
+//        let data = arrayData[indexPath.row]
+//
+//        cell.textLabel?.text = data.content
+//        cell.textLabel?.textColor = .systemOrange
         
         return cell
     }

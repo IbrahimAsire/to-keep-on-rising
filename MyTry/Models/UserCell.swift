@@ -1,23 +1,38 @@
-//
-//  UserCell.swift
-//  MyTry
-//
-//  Created by ibrahim asiri on 18/09/1443 AH.
-//
 
 import UIKit
 
 class UserCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    var nameProv = UILabel()
+    var content = UILabel()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
+        super.init(style: style , reuseIdentifier: reuseIdentifier )
+        
+        self.addSubview(nameProv)
+        self.addSubview(content)
+        
+        nameProv.translatesAutoresizingMaskIntoConstraints = false
+        nameProv.text = "by: "
+        nameProv.textColor = .systemIndigo
+        content.translatesAutoresizingMaskIntoConstraints = false
+        content.text = "here what you choose .."
+        
+        NSLayoutConstraint.activate([
+            content.centerXAnchor.constraint(equalTo: centerXAnchor),
+            content.leftAnchor.constraint(equalTo: leftAnchor, constant: 12),
+            nameProv.rightAnchor.constraint(equalTo: rightAnchor, constant: -12),
+            nameProv.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
+        
+        ])
+        
+        
+        
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
-
+    
 }
