@@ -5,7 +5,7 @@ import FirebaseAuth
 class UserItems: UITableViewController {
     
     var arrContent: [Userschoices] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cyan
@@ -52,10 +52,10 @@ class UserItems: UITableViewController {
         
         if editingStyle == .delete {
             print("Deleted")
-
+            
             self.arrContent.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-          }
+        }
     }
     
 }
