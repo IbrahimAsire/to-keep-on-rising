@@ -15,14 +15,14 @@ class CheakUser: UIViewController {
     }
     
     private func selectLogin() {
-        let userID = Auth.auth().currentUser?.uid
 //        print(userID as! String)
+        let userID = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
         db.collection("Users").getDocuments { Snapshot, error in
             if error == nil {
                 let date = Snapshot!.documents
                 for ID in date {
-                    if userID == ID["UserId"] as! String {
+                    if userID == ID["UserId"] as? String {
                         self.userVC.userName = ID["name"] as! String
                         print("Is a User")
                         print(self.userVC.userName)
@@ -36,5 +36,16 @@ class CheakUser: UIViewController {
             }
         }
     }
+    
+//    private func readProviderInfo (){
+//        db.collection("providers").getDocuments { snapshot, error in
+//            if error == nil {
+//                let info = snapshot!.documents
+//                for ID in info {
+//                    
+//                }
+//            }
+//        }
+//    }
     
 }

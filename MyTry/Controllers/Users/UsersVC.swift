@@ -5,6 +5,7 @@ import FirebaseAuth
 class UsersVC: UIViewController {
     
     var userName = ""
+    var myID = ""
     
     var arrayData: [UserGetData] = []
     let userID = Auth.auth().currentUser?.uid
@@ -23,7 +24,7 @@ class UsersVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         readData()
-        print(userName)
+        print(myID)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Go your page", style: .done, target: self, action: #selector(goUserPage))
         navigationItem.rightBarButtonItem?.tintColor = .systemMint
@@ -91,6 +92,9 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.nameProv.text = "by: " + (data.nameProvide ?? "nil")
         cell.content.text = data.content
+        cell.myID = data.myId ?? "nil"
+        
+        myID = cell.myID
         
         return cell
     }
@@ -106,7 +110,7 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
                         db.collection("userschoices").document(myId).setData([
                             "content" : data.content ?? "nil",
                             "userID" : self.userID ?? "nil",
-                            "myID" : myId ?? "nil"
+                            "myID" : myId 
                         ])
                         self.navigationController?.pushViewController(UserItems(), animated: true)
                     }
