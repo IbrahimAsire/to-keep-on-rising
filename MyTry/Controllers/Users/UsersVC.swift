@@ -103,18 +103,19 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
         let data = self.arrayData[indexPath.row]
         db.collection("providers").getDocuments { result, error in
             if error == nil {
-                let docs = result!.documents
-                for doc in docs {
-                    if data.myId != doc["myId"] as? String {
-                        let myId = UUID().uuidString
-                        db.collection("userschoices").document(myId).setData([
+//                let docs = result!.documents
+//                for doc in docs {
+//                    if data.myId != doc["myId"] as? String {
+                        let myId = data.myId
+                        db.collection("userschoices").document(myId!).setData([
                             "content" : data.content ?? "nil",
                             "userID" : self.userID ?? "nil",
                             "myID" : myId 
                         ])
                         self.navigationController?.pushViewController(UserItems(), animated: true)
-                    }
-                }
+//                    }
+//                }
+                
             }
         }
         
