@@ -5,7 +5,6 @@ import FirebaseAuth
 class UsersVC: UIViewController {
     
     var userName = ""
-    var myID = ""
     
     var arrayData: [UserGetData] = []
     let userID = Auth.auth().currentUser?.uid
@@ -24,7 +23,6 @@ class UsersVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         readData()
-        print(myID)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Go your page", style: .done, target: self, action: #selector(goUserPage))
         navigationItem.rightBarButtonItem?.tintColor = .systemMint
@@ -94,8 +92,6 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
         cell.content.text = data.content
         cell.myID = data.myId ?? "nil"
         
-        myID = cell.myID
-        
         return cell
     }
     
@@ -103,23 +99,16 @@ extension UsersVC: UITableViewDataSource, UITableViewDelegate {
         let data = self.arrayData[indexPath.row]
         db.collection("providers").getDocuments { result, error in
             if error == nil {
-//                let docs = result!.documents
-//                for doc in docs {
-//                    if data.myId != doc["myId"] as? String {
-                        let myId = data.myId
-                        db.collection("userschoices").document(myId!).setData([
-                            "content" : data.content ?? "nil",
-                            "userID" : self.userID ?? "nil",
-                            "myID" : myId 
-                        ])
-                        self.navigationController?.pushViewController(UserItems(), animated: true)
-//                    }
-//                }
                 
+                let myId = data.myId
+                db.collection("userschoices").document(myId!).setData([
+                    "content" : data.content ?? "nil",
+                    "userID" : self.userID ?? "nil",
+                    "myID" : myId
+                ])
+                self.navigationController?.pushViewController(UserItems(), animated: true)
             }
         }
-        
-        
     }
     
 }
