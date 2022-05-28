@@ -4,9 +4,10 @@ import FirebaseAuth
 
 class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var provName = ""
+    
     var arrayInfo: [ProviderInfo] = []
     let userID = Auth.auth().currentUser?.uid
-    let userName = db.collection("providers")
     let greetLbl = UILabel()
     let tableView = UITableView()
     
@@ -15,10 +16,9 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
         tableView.delegate = self
-        print(userName)
-        
+        print(provName)
+
         readInfo()
-//        readData()
         setUpUI()
 
     }
@@ -31,7 +31,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         view.addSubview(tableView)
         
         greetLbl.translatesAutoresizingMaskIntoConstraints = false
-        greetLbl.text = "Welcome provide"
+        greetLbl.text = "Welcome " + provName
         greetLbl.font = .systemFont(ofSize: 24)
         greetLbl.textColor = .black
         

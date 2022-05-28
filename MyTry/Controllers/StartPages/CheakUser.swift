@@ -7,6 +7,7 @@ import FirebaseFirestore
 class CheakUser: UIViewController {
     
     let userVC = UsersVC()
+    let providerVC = ProvidersVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +16,6 @@ class CheakUser: UIViewController {
     }
     
     private func selectLogin() {
-//        print(userID as! String)
         let userID = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
         db.collection("Users").getDocuments { Snapshot, error in
@@ -25,27 +25,25 @@ class CheakUser: UIViewController {
                     if userID == ID["UserId"] as? String {
                         self.userVC.userName = ID["name"] as! String
                         print("Is a User")
-                        print(self.userVC.userName)
                         self.navigationController?.pushViewController(
                             self.userVC, animated: true)
                     }else{
-                        self.navigationController?.pushViewController(
-                            ProvidersVC(), animated: true)
+                        db.collection("providers").getDocuments { result, error in
+                            if error == nil {
+                                let data = result!.documents
+                                for name in data {
+                                    self.providerVC.provName = name["name"] as! String
+                                }
+                                self.navigationController?.pushViewController(
+                                    self.providerVC, animated: true)
+                            }
+                        }
+                        
                     }
                 }
             }
         }
     }
     
-//    private func readProviderInfo (){
-//        db.collection("providers").getDocuments { snapshot, error in
-//            if error == nil {
-//                let info = snapshot!.documents
-//                for ID in info {
-//                    
-//                }
-//            }
-//        }
-//    }
-    
 }
+
