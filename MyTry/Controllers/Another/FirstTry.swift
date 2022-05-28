@@ -4,6 +4,7 @@ import UIKit
 class FirstTry: UITableViewController {
     
     var test1 = " REALLY I like var more than let "
+    var test2 = "I want styde english and I "
 
     override func viewDidLoad() {
         super.viewDidLoad()
