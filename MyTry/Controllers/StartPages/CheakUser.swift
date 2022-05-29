@@ -7,7 +7,6 @@ import FirebaseFirestore
 class CheakUser: UIViewController {
     
     let userVC = UsersVC()
-    let providerVC = ProvidersVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,24 +26,14 @@ class CheakUser: UIViewController {
                         self.navigationController?.pushViewController(
                             self.userVC, animated: true)
                     }else{
-                        db.collection("providers").getDocuments { result, error in
-                            if error == nil {
-                                let data = result!.documents
-                                for name in data {
-                                    self.providerVC.provName = name["name"] as! String
-                                    
-                                }
-                                self.navigationController?.pushViewController(
-                                    self.providerVC, animated: true)
-                            }
-                            
-                        }
-                        
+                        print("this is no printing")
+                        self.navigationController?.pushViewController(
+                            ProvidersVC(), animated: true)
                     }
                 }
+                
             }
         }
     }
-    
 }
 
