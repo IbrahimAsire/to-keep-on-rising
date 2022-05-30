@@ -5,15 +5,14 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class CheakUser: UIViewController {
-    
-    let userVC = UsersVC()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         selectLogin()
     }
     
     private func selectLogin() {
+        let userVC = UsersVC()
         let userID = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
         db.collection("Users").getDocuments { Snapshot, error in
@@ -21,14 +20,14 @@ class CheakUser: UIViewController {
                 let date = Snapshot!.documents
                 for ID in date {
                     if userID == ID["UserId"] as? String {
-                        self.userVC.userName = ID["name"] as! String
+                        userVC.userName = ID["name"] as! String
                         print("Is a User")
                         self.navigationController?.pushViewController(
-                            self.userVC, animated: true)
+                            userVC, animated: true)
                     }else{
                         print("this is no printing")
-                        self.navigationController?.pushViewController(
-                            ProvidersVC(), animated: true)
+//                        self.navigationController?.pushViewController(
+//                            ProvidersVC(), animated: true)
                         
                     }
                 }
@@ -37,4 +36,5 @@ class CheakUser: UIViewController {
         }
     }
 }
+
 
