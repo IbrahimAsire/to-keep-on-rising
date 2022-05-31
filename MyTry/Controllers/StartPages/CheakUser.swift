@@ -26,8 +26,8 @@ class CheakUser: UIViewController {
                             userVC, animated: true)
                     }else{
                         print("this is no printing")
-//                        self.navigationController?.pushViewController(
-//                            ProvidersVC(), animated: true)
+                        self.navigationController?.pushViewController(
+                            ProvidersVC(), animated: true)
                         
                     }
                 }
