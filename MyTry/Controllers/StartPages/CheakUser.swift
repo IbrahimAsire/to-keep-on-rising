@@ -13,7 +13,7 @@ class CheakUser: UIViewController {
         super.viewDidLoad()
         selectLogin()
         selectProv()
-
+        
     }
     
     private func selectLogin() {
@@ -26,8 +26,10 @@ class CheakUser: UIViewController {
                         userVC.userName = ID["name"] as! String
                         print("Is a User")
                         print(userVC.userName)
-                        //                        self.navigationController?.pushViewController(
-                        //                            self.userVC, animated: true)
+                        self.navigationController?.pushViewController(
+                            userVC, animated: true)
+                        
+                        
                     }
                     
                 }
@@ -46,8 +48,8 @@ class CheakUser: UIViewController {
                         providerVC.provName = ID["name"] as! String
                         print("Is a provider")
                         print(providerVC.provName)
-                        //                        self.navigationController?.pushViewController(
-                        //                            self.userVC, animated: true)
+                        self.navigationController?.pushViewController(
+                            providerVC, animated: true)
                     }
                     
                 }
