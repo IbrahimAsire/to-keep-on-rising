@@ -16,19 +16,6 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
         tableView.delegate = self
-        db.collection("providers").getDocuments { snapshot, error in
-            if error != nil {
-                return
-            }
-            
-            let data = snapshot!.documents
-            for name in data {
-                if self.userID == name["userId"] as? String {
-                    self.provName = name["name"] as! String
-                    print(self.provName)
-                }
-            }
-        }
 
         readInfo()
         setUpUI()

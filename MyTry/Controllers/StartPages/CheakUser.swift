@@ -17,6 +17,7 @@ class CheakUser: UIViewController {
     }
     
     private func selectLogin() {
+        
         let userVC = UsersVC()
         db.collection("Users").getDocuments { Snapshot, error in
             if error == nil {
@@ -28,12 +29,8 @@ class CheakUser: UIViewController {
                         print(userVC.userName)
                         self.navigationController?.pushViewController(
                             userVC, animated: true)
-                        
-                        
                     }
-                    
                 }
-                
             }
         }
     }
@@ -51,9 +48,7 @@ class CheakUser: UIViewController {
                         self.navigationController?.pushViewController(
                             providerVC, animated: true)
                     }
-                    
                 }
-                
             }
         }
     }
