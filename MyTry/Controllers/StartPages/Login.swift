@@ -5,7 +5,6 @@ import FirebaseAuth
 
 class Login: UIViewController, UITextFieldDelegate {
     
-    
     let emailTF = UITextField()
     let passwordTF = UITextField()
     let loginBtn = UIButton()
@@ -96,7 +95,6 @@ class Login: UIViewController, UITextFieldDelegate {
                         let alert = UIAlertController(title: "Oops!".Localizable(), message: "\(error.localizedDescription)", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
                         self.present(alert, animated: true)
-                        
                     }
                 }else{
                     

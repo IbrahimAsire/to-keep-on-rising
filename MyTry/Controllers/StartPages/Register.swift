@@ -4,12 +4,10 @@ import FirebaseAuth
 
 class Register: UITableViewController {
     
-//    let db = Firestore.firestore()
-    
-//    Used here Generic Function
+    //    Used here Generic Function
     public static func InitUI<Type>(value : Type, block: (_ object: Type) -> Void) -> Type {
-       block(value)
-       return value
+        block(value)
+        return value
     }
     
     let containerV = InitUI(value: UIView()) {
@@ -27,7 +25,7 @@ class Register: UITableViewController {
         $0.addTarget(self, action: #selector(register), for: .touchUpInside)
     }
     
-
+    
     let nameTF = InitUI(value: UITextField()) {
         $0.placeholder = "Your Name".Localizable()
         $0.textAlignment = .center
@@ -81,7 +79,6 @@ class Register: UITableViewController {
         $0.addTarget(self, action: #selector(chooseRegTpd), for: .touchUpInside)
     }
     
-    
     let emailSeparatorV = UIView()
     let nameSeparatorV = UIView()
     
@@ -103,11 +100,8 @@ class Register: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
-        //        title = "Register Page"
         setUpStackView()
         setUpConstraint()
-        
-        print(isProvider)
     }
     
     private func setUpConstraint() {
@@ -172,7 +166,7 @@ class Register: UITableViewController {
             
             chooseBtn.leftAnchor.constraint(equalTo: providerLbl.rightAnchor),
             chooseBtn.topAnchor.constraint(equalTo: containerV.bottomAnchor, constant: 37),
-
+            
             loginLbl.topAnchor.constraint(equalTo: registerBtn.bottomAnchor, constant: 30),
             loginLbl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
             
@@ -272,16 +266,13 @@ class Register: UITableViewController {
                     
                 } else {
                     print(error?.localizedDescription ?? "")
-                }                
+                }
             }
         }
-        
     }
 }
-    
 
 extension Register: UITextViewDelegate {
-    
 }
 
 // MARK: - to Localizable

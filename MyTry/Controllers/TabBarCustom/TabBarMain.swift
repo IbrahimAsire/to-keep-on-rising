@@ -10,10 +10,6 @@ class TabBarMain: UITabBarController {
             barItem(tabBarTitle: "Home".Localizable(), tabBarImage: UIImage(systemName: "house")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: Register()),
             
             barItem(tabBarTitle: "Go To ..".Localizable(), tabBarImage: UIImage(systemName: "doc.fill")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: WeatherVC()),
-            
-//            barItem(tabBarTitle: "Recommendations".Localizable(), tabBarImage: UIImage(systemName: "photo.artframe")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: RecommVC1()),
-            
-            
         ]
         
         tabBar.backgroundColor = .systemBrown

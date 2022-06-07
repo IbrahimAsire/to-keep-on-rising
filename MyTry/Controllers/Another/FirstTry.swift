@@ -5,14 +5,13 @@ class FirstTry: UITableViewController {
     
     var test1 = " REALLY I like var more than let "
     var test2 = "I want styde english and I "
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemIndigo
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "See Covid Info", style: .done, target: self, action: #selector(CovidTpd))
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -13,11 +13,9 @@ class CheakUser: UIViewController {
         super.viewDidLoad()
         selectLogin()
         selectProv()
-        
     }
     
     private func selectLogin() {
-        
         let userVC = UsersVC()
         db.collection("Users").getDocuments { Snapshot, error in
             if error == nil {

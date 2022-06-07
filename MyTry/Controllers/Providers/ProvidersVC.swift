@@ -19,7 +19,6 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         readInfo()
         setUpUI()
-
     }
     
     private func setUpUI(){

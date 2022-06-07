@@ -33,7 +33,6 @@ class UserItems: UITableViewController {
             }
             self.tableView.reloadData()
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,5 +56,4 @@ class UserItems: UITableViewController {
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
-    
 }

@@ -6,23 +6,19 @@ import FirebaseFirestore
 class AddNew: UIViewController {
     
     let userID = Auth.auth().currentUser?.uid
-
-    
     let addTF = UITextField()
     let addBtn = UIButton()
     var nameProv = ""
     var myId = ""
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemGroupedBackground
         setUpUI()
         readInfo()
-        
     }
     
-//    To test get the information
+    //    To test get the information
     override func viewDidAppear(_ animated: Bool) {
         print(nameProv)
     }
@@ -67,7 +63,6 @@ class AddNew: UIViewController {
                 }
             }
         }
-
     }
     
     @objc func addTpd(){
@@ -80,7 +75,5 @@ class AddNew: UIViewController {
             "email": userEmail,
             "myId": myId
         ])
-        
     }
-    
 }
