@@ -65,7 +65,7 @@ class CovidVC: UIViewController {
 extension CovidVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        print(textTF.text!)
+//        print(textTF.text!)
         return true
     }
     
@@ -80,6 +80,5 @@ extension CovidVC: NewsAPIDelegate {
     func didFailWithError(error: Error?) {
         print(error)
     }
-    
-    
+
 }
