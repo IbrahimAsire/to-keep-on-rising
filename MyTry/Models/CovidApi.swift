@@ -11,12 +11,12 @@ struct CovidApi {
     var delegate: NewsAPIDelegate?
     
     func getInfo() {
-        
+                
         let urlString = URL(string: "https://covid19.mathdro.id/api/countries/")!
         let urlSession = URLSession(configuration: .default)
         let task = urlSession.dataTask(with: urlString) { data, urlResponse, error in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "eRROR ")
             }else {
                 
                 do {

@@ -2,10 +2,10 @@
 import UIKit
 
 class CovidVC: UIViewController {
-    
+
     lazy var covid = CovidApi()
     var country = [Country(name: "", iso2: "")]
-
+    
     
     let textTF: UITextField = {
         $0.borderStyle = .bezel
@@ -19,13 +19,14 @@ class CovidVC: UIViewController {
     let resultBtn = UIButton()
     var nameCountry = UILabel()
     var test = UILabel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemCyan
         textTF.delegate = self
         covid.delegate = self
         covid.getInfo()
+        print(covid.getInfo())
         
         view.addSubview(textTF)
         view.addSubview(nameCountry)
@@ -51,7 +52,7 @@ class CovidVC: UIViewController {
             test.topAnchor.constraint(equalTo: nameCountry.bottomAnchor, constant: 12),
             test.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-        
+            
         ])
     }
     
@@ -65,7 +66,7 @@ class CovidVC: UIViewController {
 extension CovidVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-//        print(textTF.text!)
+        //        print(textTF.text!)
         return true
     }
     
@@ -80,5 +81,5 @@ extension CovidVC: NewsAPIDelegate {
     func didFailWithError(error: Error?) {
         print(error)
     }
-
+    
 }
