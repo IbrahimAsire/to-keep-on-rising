@@ -5,8 +5,7 @@ class CovidVC: UIViewController {
 
     lazy var covid = CovidApi()
     var country = [Country(name: "", iso2: "")]
-    
-    
+        
     let textTF: UITextField = {
         $0.borderStyle = .bezel
         $0.placeholder = "Type Any City!"
@@ -26,7 +25,7 @@ class CovidVC: UIViewController {
         textTF.delegate = self
         covid.delegate = self
         covid.getInfo()
-        print(covid.getInfo())
+        print(country)
         
         view.addSubview(textTF)
         view.addSubview(nameCountry)
