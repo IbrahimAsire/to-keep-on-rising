@@ -1,30 +1,35 @@
-//
-//  PhotoVC.swift
-//  MyTry
-//
-//  Created by ibrahim asiri on 14/11/1443 AH.
-//
 
 import UIKit
 
-class PhotoVC: UIViewController {
+class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    var currentImage: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemIndigo
+        
+        title = "Photos"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add photo", style: .done, target: self, action: #selector(importPicture))
+        navigationItem.rightBarButtonItem?.tintColor = .cyan
 
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func importPicture() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
     }
-    */
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
 
+        dismiss(animated: true)
+
+        currentImage = image
+    }
+    
+  
 }
