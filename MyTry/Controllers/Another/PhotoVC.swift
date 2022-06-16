@@ -3,7 +3,10 @@ import UIKit
 
 class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    var currentImage: UIImage!
+    var currentImage: UIImage = {
+        
+        return $0
+    }(UIImage())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,7 +15,9 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         title = "Photos"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add photo", style: .done, target: self, action: #selector(importPicture))
         navigationItem.rightBarButtonItem?.tintColor = .cyan
-
+        
+        view.addSubview(currentImage)
+        currentImage
         
     }
     
