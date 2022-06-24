@@ -7,6 +7,8 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         
         return $0
     }(UIImage())
+    
+    var imgTest = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,8 +18,15 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add photo", style: .done, target: self, action: #selector(importPicture))
         navigationItem.rightBarButtonItem?.tintColor = .cyan
         
-        view.addSubview(currentImage)
-        currentImage
+        view.addSubview(imgTest)
+        imgTest.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            imgTest.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        
+        ])
+        
+        
         
     }
     
@@ -29,11 +38,11 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.editedImage] as? UIImage else { return }
+        guard let image = info[.editedImage] as? UIImageView else { return }
 
         dismiss(animated: true)
 
-        currentImage = image
+        imgTest = image
     }
     
   
