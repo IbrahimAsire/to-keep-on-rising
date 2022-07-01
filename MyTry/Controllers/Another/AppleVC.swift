@@ -11,36 +11,37 @@ class AppleVC: UIViewController, WKUIDelegate {
         webView.translatesAutoresizingMaskIntoConstraints = false
         
         return webView
-
+        
     }()
     
     let forwardBarItem = UIBarButtonItem(title: "Forward", style: .plain, target: self,
                                          action: #selector(forwardAction))
     let backBarItem = UIBarButtonItem(title: "Backward", style: .plain, target: self,
                                       action: #selector(backAction))
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBlue
         
         setupUI()
         setupNavItem()
         let myURL = URL(string: "https://www.apple.com")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBar()
     }
-        
-    func setupNavItem() {
+    
+    private func setupNavItem() {
         self.navigationItem.leftBarButtonItem = backBarItem
         self.navigationItem.rightBarButtonItem = forwardBarItem
     }
-        
-    func setupNavBar() {
+    
+    private func setupNavBar() {
         self.navigationController?.navigationBar.barTintColor = .systemBlue
         self.navigationController?.navigationBar.tintColor = .white
     }
@@ -50,7 +51,7 @@ class AppleVC: UIViewController, WKUIDelegate {
             webView.goForward()
         }
     }
-        
+    
     @objc func backAction() {
         if webView.canGoBack {
             webView.goBack()
@@ -66,10 +67,8 @@ class AppleVC: UIViewController, WKUIDelegate {
             webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             webView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             webView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor)
-        
+            
         ])
     }
-
     
-
 }
