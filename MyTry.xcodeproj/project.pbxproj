@@ -36,6 +36,7 @@
 		0F991D0C27F5D11900EFC028 /* MyTryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */; };
 		0F991D0E27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */; };
 		0F991D1B27F5D92F00EFC028 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */; };
+		0F9E3F24286F60B50091F9FD /* AppleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E3F23286F60B50091F9FD /* AppleVC.swift */; };
 		0FF423DE282991A80061E9E0 /* CovidApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF423DD282991A80061E9E0 /* CovidApi.swift */; };
 		0FF423E0282995040061E9E0 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF423DF282995040061E9E0 /* Covid.swift */; };
 		0FFD1027282311F2006E0D5C /* FirstTry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD1026282311F2006E0D5C /* FirstTry.swift */; };
@@ -98,6 +99,7 @@
 		0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITests.swift; sourceTree = "<group>"; };
 		0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F9E3F23286F60B50091F9FD /* AppleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleVC.swift; sourceTree = "<group>"; };
 		0FF423DD282991A80061E9E0 /* CovidApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidApi.swift; sourceTree = "<group>"; };
 		0FF423DF282995040061E9E0 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		0FFD1026282311F2006E0D5C /* FirstTry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTry.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				0FFD1026282311F2006E0D5C /* FirstTry.swift */,
+				0F9E3F23286F60B50091F9FD /* AppleVC.swift */,
 				0F1CE85C2830224000B811E5 /* WeatherVC.swift */,
 				0F1B23ED2825AC80007E9DCE /* CovidVC.swift */,
 				0F073F8A2857C3B40019F463 /* PhotoVC.swift */,
@@ -567,6 +570,7 @@
 				0F991CF227F5D11800EFC028 /* MyTry.xcdatamodeld in Sources */,
 				0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */,
 				0F5F2FE628109FBA007200F8 /* UserItems.swift in Sources */,
+				0F9E3F24286F60B50091F9FD /* AppleVC.swift in Sources */,
 				0F410BE227FB7381003CDC15 /* UsersVC.swift in Sources */,
 				0FF423E0282995040061E9E0 /* Covid.swift in Sources */,
 			);

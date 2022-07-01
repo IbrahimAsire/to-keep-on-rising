@@ -8,9 +8,9 @@ class TabBarMain: UITabBarController {
         
         viewControllers = [
             barItem(tabBarTitle: "Home".Localizable(), tabBarImage: UIImage(systemName: "house")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: Register()),
-            
             barItem(tabBarTitle: "Go To ..".Localizable(), tabBarImage: UIImage(systemName: "doc.fill")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: WeatherVC()),
-            barItem(tabBarTitle: "photo", tabBarImage: UIImage(systemName: "photo")!, viewController: PhotoVC())
+            barItem(tabBarTitle: "photo", tabBarImage: UIImage(systemName: "photo")!, viewController: PhotoVC()),
+            barItem(tabBarTitle: "Apple", tabBarImage: UIImage(systemName: "applelogo")!, viewController: AppleVC())
         ]
         
         tabBar.backgroundColor = .systemBrown
