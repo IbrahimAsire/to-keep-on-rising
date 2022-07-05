@@ -3,7 +3,7 @@ import UIKit
 import WebKit
 
 class AppleVC: UIViewController, WKUIDelegate {
-    
+        
     lazy var webView: WKWebView = {
         let webConfiguration = WKWebViewConfiguration()
         let webView = WKWebView(frame: .zero, configuration: webConfiguration)

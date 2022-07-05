@@ -11,6 +11,7 @@
 		0F073F8B2857C3B40019F463 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F073F8A2857C3B40019F463 /* PhotoVC.swift */; };
 		0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CC8280CB1A000689B33 /* AddNew.swift */; };
 		0F0A5CCB280CBA3D00689B33 /* UserGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CCA280CBA3D00689B33 /* UserGetData.swift */; };
+		0F18CDE22874072000AFD56B /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F18CDE12874072000AFD56B /* Circle.swift */; };
 		0F1B23EE2825AC80007E9DCE /* CovidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B23ED2825AC80007E9DCE /* CovidVC.swift */; };
 		0F1CE8592830218D00B811E5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1CE8582830218D00B811E5 /* Weather.swift */; };
 		0F1CE85B283021B700B811E5 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1CE85A283021B700B811E5 /* WeatherApi.swift */; };
@@ -67,6 +68,7 @@
 		0F073F8A2857C3B40019F463 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		0F0A5CC8280CB1A000689B33 /* AddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNew.swift; sourceTree = "<group>"; };
 		0F0A5CCA280CBA3D00689B33 /* UserGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGetData.swift; sourceTree = "<group>"; };
+		0F18CDE12874072000AFD56B /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		0F1B23ED2825AC80007E9DCE /* CovidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidVC.swift; sourceTree = "<group>"; };
 		0F1CE8582830218D00B811E5 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		0F1CE85A283021B700B811E5 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				0F1CE85C2830224000B811E5 /* WeatherVC.swift */,
 				0F1B23ED2825AC80007E9DCE /* CovidVC.swift */,
 				0F073F8A2857C3B40019F463 /* PhotoVC.swift */,
+				0F18CDE12874072000AFD56B /* Circle.swift */,
 			);
 			path = Another;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				0F991CE827F5D11800EFC028 /* AppDelegate.swift in Sources */,
 				0F1CE85B283021B700B811E5 /* WeatherApi.swift in Sources */,
 				0F410BE427FB73BE003CDC15 /* ProvidersVC.swift in Sources */,
+				0F18CDE22874072000AFD56B /* Circle.swift in Sources */,
 				0F1CE85D2830224000B811E5 /* WeatherVC.swift in Sources */,
 				0F01FD82280F3DF200557511 /* UserCell.swift in Sources */,
 				0F073F8B2857C3B40019F463 /* PhotoVC.swift in Sources */,
