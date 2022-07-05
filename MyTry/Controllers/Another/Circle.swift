@@ -9,6 +9,7 @@ class Circle: UIViewController {
         
         createCircle(startAngle: 0, endAngle: 360)
 
+
     }
     
     
@@ -25,7 +26,22 @@ class Circle: UIViewController {
         segmentLayer.fillColor = UIColor.clear.cgColor
 
         self.view.layer.addSublayer(segmentLayer)
+        // to animate the Circle
+        addAnimation(to: segmentLayer)
+
     }
+    
+    private func addAnimation(to layer: CALayer) {
+        let drawAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        drawAnimation.duration = 0.75
+        drawAnimation.repeatCount = 1.0
+        drawAnimation.isRemovedOnCompletion = false
+        drawAnimation.fromValue = 0
+        drawAnimation.toValue = 1
+        drawAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        layer.add(drawAnimation, forKey: "drawCircleAnimation")
+    }
+    
 }
 
 extension CGFloat {
