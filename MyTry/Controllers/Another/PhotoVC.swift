@@ -8,7 +8,14 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         return $0
     }(UIImage())
     
-    var imgTest = UIImageView()
+    var imgTest: UIImageView = {
+            $0.contentMode = .scaleAspectFit
+            $0.clipsToBounds = true
+            $0.layer.cornerRadius = 80
+            $0.layer.borderColor = UIColor.white.cgColor
+            $0.layer.borderWidth = 1
+            return $0
+        }(UIImageView())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +27,10 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         
         view.addSubview(imgTest)
         imgTest.translatesAutoresizingMaskIntoConstraints = false
+        imgTest.tintColor  = .white
+        imgTest.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTpd))
+        imgTest.addGestureRecognizer(tapRecognizer)
         
         NSLayoutConstraint.activate([
             imgTest.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -30,17 +41,29 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
     
     @objc func importPicture() {
         let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
     }
     
+//    private func setupImgPicker() {
+//            imagePicker.delegate = self
+//            imagePicker.sourceType = .photoLibrary
+//            imagePicker.allowsEditing = true
+//            present(imagePicker, animated: true)
+//        }
+        
+        @objc func imageTpd() {
+            importPicture()
+        }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.editedImage] as? UIImage else { return }
+        guard let image = info[.editedImage] as? UIImageView else { return }
 
         dismiss(animated: true)
 
-        currentImage = image
+        imgTest = image
         print("done")
     }
     
