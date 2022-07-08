@@ -29,6 +29,7 @@ class Circle: UIViewController {
         self.view.layer.addSublayer(segmentLayer)
         // to animate the Circle
         addAnimation(to: segmentLayer)
+        addGradientLayer(to: segmentLayer)
 
     }
     
@@ -41,6 +42,15 @@ class Circle: UIViewController {
         drawAnimation.toValue = 1
         drawAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
         layer.add(drawAnimation, forKey: "drawCircleAnimation")
+    }
+    
+    private func addGradientLayer(to layer: CALayer) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.mask = layer
+        gradientLayer.frame = self.view.frame
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.yellow.cgColor]
+
+        self.view.layer.addSublayer(gradientLayer)
     }
     
 }

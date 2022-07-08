@@ -46,13 +46,6 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         picker.delegate = self
         present(picker, animated: true)
     }
-    
-//    private func setupImgPicker() {
-//            imagePicker.delegate = self
-//            imagePicker.sourceType = .photoLibrary
-//            imagePicker.allowsEditing = true
-//            present(imagePicker, animated: true)
-//        }
         
         @objc func imageTpd() {
             importPicture()
