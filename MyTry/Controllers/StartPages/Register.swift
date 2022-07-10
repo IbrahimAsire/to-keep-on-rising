@@ -3,7 +3,7 @@ import Firebase
 import FirebaseAuth
 
 class Register: UITableViewController {
-    
+        
     //    Used here Generic Function
     public static func InitUI<Type>(value : Type, block: (_ object: Type) -> Void) -> Type {
         block(value)
@@ -24,7 +24,6 @@ class Register: UITableViewController {
         $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(register), for: .touchUpInside)
     }
-    
     
     let nameTF = InitUI(value: UITextField()) {
         $0.placeholder = "Your Name".Localizable()

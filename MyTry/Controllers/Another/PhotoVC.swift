@@ -52,11 +52,11 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.editedImage] as? UIImageView else { return }
+        guard let image = info[.editedImage] as? UIImage else { return }
 
         dismiss(animated: true)
 
-        imgTest = image
+        currentImage = image
         print("done")
     }
     

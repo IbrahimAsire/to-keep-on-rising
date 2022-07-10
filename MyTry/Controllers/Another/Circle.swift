@@ -2,14 +2,12 @@
 import UIKit
 
 class Circle: UIViewController {
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
         
         createCircle(startAngle: 0, endAngle: 360)
-
 
     }
     
