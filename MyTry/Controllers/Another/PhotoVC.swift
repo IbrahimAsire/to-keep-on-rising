@@ -3,6 +3,8 @@ import UIKit
 
 class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    let text = "I want solution foro that"
+    
     var currentImage: UIImage = {
         
         return $0
@@ -56,8 +58,8 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
 
         dismiss(animated: true)
 
-        currentImage = image
+        imgTest.image = image
         print("done")
     }
-    
+
 }
