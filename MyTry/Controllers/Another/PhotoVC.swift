@@ -13,9 +13,6 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
     var imgTest: UIImageView = {
             $0.contentMode = .scaleAspectFit
             $0.clipsToBounds = true
-            $0.layer.cornerRadius = 80
-            $0.layer.borderColor = UIColor.white.cgColor
-            $0.layer.borderWidth = 1
             return $0
         }(UIImageView())
 
@@ -36,6 +33,8 @@ class PhotoVC: UIViewController, UIImagePickerControllerDelegate & UINavigationC
         
         NSLayoutConstraint.activate([
             imgTest.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imgTest.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            imgTest.heightAnchor.constraint(equalToConstant: 250),
         
         ])
         
