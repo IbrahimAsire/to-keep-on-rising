@@ -30,5 +30,6 @@ struct CovidApi {
             }
         }
         task.resume()
+
     }
 }

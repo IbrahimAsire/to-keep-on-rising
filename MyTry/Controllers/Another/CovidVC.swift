@@ -32,6 +32,7 @@ class CovidVC: UIViewController {
         view.addSubview(test)
         view.addSubview(resultBtn)
         
+        
         resultBtn.translatesAutoresizingMaskIntoConstraints = false
         resultBtn.setTitle("Get Info ..", for: .normal)
         resultBtn.addTarget(self, action: #selector(getTpd), for: .touchUpInside)
