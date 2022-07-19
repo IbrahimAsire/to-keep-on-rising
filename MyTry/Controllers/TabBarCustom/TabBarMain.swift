@@ -11,7 +11,8 @@ class TabBarMain: UITabBarController {
             barItem(tabBarTitle: "Go To ..".Localizable(), tabBarImage: UIImage(systemName: "doc.fill")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: WeatherVC()),
             barItem(tabBarTitle: "photo", tabBarImage: UIImage(systemName: "photo")!, viewController: PhotoVC()),
             barItem(tabBarTitle: "Apple", tabBarImage: UIImage(systemName: "applelogo")!, viewController: AppleVC()),
-            barItem(tabBarTitle: "circle", tabBarImage: UIImage(systemName: "circle")!, viewController: Circle())
+            barItem(tabBarTitle: "circle", tabBarImage: UIImage(systemName: "circle")!, viewController: Circle()),
+            barItem(tabBarTitle: "Protocol", tabBarImage: UIImage(systemName: "graduationcap")!.withTintColor(.red), viewController: HashAble())
         ]
         
         tabBar.backgroundColor = .systemBrown
