@@ -22,7 +22,7 @@ class HashAble: UIViewController {
             tappedPoints.insert(nextTap)
             print("New tap detected at (\(nextTap.x), \(nextTap.y)).")
         }
-        // Prints "New tap detected at (0, 1).")
+//         Prints "New tap detected at (0, 1).")
 
     }
 }
