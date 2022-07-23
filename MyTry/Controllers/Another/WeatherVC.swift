@@ -80,7 +80,7 @@ class WeatherVC: UIViewController {
             conditionImageView.widthAnchor.constraint(equalToConstant: 70)
         ])
         
-        searchTextField.placeholder = "Type a city"
+        searchTextField.placeholder = "which City!"
         searchTextField.backgroundColor = .systemGray5
         searchTextField.textColor = .black
         searchTextField.endEditing(true)
