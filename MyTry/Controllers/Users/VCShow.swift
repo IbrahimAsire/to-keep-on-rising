@@ -18,7 +18,9 @@ class VCShow: UIViewController {
         viewContect.backgroundColor = .purple
         
         NSLayoutConstraint.activate([
-            viewContect.topAnchor.constraint(equalTo: view.topAnchor, constant: 200)
+            viewContect.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            viewContect.widthAnchor.constraint(equalToConstant: 400)
+            
         
         ])
     }
