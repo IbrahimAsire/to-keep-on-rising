@@ -3,7 +3,7 @@ import UIKit
 
 class VCShow: UIViewController {
     
-    var viewContect = UITextField()
+    var viewContect = UITextView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +18,9 @@ class VCShow: UIViewController {
         viewContect.backgroundColor = .purple
         
         NSLayoutConstraint.activate([
-            viewContect.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            viewContect.widthAnchor.constraint(equalToConstant: 400)
+            viewContect.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            viewContect.widthAnchor.constraint(equalTo: view.widthAnchor),
+            viewContect.heightAnchor.constraint(equalToConstant: 400)
             
         
         ])
