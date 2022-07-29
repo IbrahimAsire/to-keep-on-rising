@@ -48,7 +48,12 @@ class UserItems: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let vcShow = VCShow()
+        
+        cell.textLabel?.text = arrContent[indexPath.row].content
+        vcShow.viewContect.text = cell.textLabel?.text
+        
         
         navigationController?.pushViewController(vcShow, animated: true)
     }
