@@ -54,7 +54,6 @@ class UserItems: UITableViewController {
         cell.textLabel?.text = arrContent[indexPath.row].content
         vcShow.viewContect.text = cell.textLabel?.text
         
-        
         navigationController?.pushViewController(vcShow, animated: true)
     }
     

@@ -11,7 +11,6 @@ class AppleVC: UIViewController, WKUIDelegate {
         webView.translatesAutoresizingMaskIntoConstraints = false
         
         return webView
-        
     }()
     
     let forwardBarItem = UIBarButtonItem(title: "Forward", style: .plain, target: self,

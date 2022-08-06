@@ -33,7 +33,7 @@ extension GridPoint: Hashable {
     }
 
     func hash(into hasher: inout Hasher) {
-        hasher.combine(x)
         hasher.combine(y)
+        hasher.combine(x)
     }
 }
