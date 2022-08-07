@@ -18,6 +18,7 @@ class VCShow: UIViewController {
         viewContect.translatesAutoresizingMaskIntoConstraints = false
         viewContect.backgroundColor = .purple
         viewContect.textColor = .white
+        viewContect.font = .boldSystemFont(ofSize: 17)
         
         NSLayoutConstraint.activate([
             viewContect.centerYAnchor.constraint(equalTo: view.centerYAnchor),
