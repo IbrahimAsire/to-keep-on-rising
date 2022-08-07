@@ -13,9 +13,11 @@ class VCShow: UIViewController {
     }
     
     private func uiSetUp() {
+        
         view.addSubview(viewContect)
         viewContect.translatesAutoresizingMaskIntoConstraints = false
         viewContect.backgroundColor = .purple
+        viewContect.textColor = .white
         
         NSLayoutConstraint.activate([
             viewContect.centerYAnchor.constraint(equalTo: view.centerYAnchor),
