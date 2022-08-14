@@ -1,14 +1,17 @@
 
 import UIKit
+import FirebaseAuth
 
 class VCShow: UIViewController {
     
     var viewContect = UITextView()
+    var nameProv = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         uiSetUp()
+        
 
     }
     
@@ -27,6 +30,10 @@ class VCShow: UIViewController {
             
         
         ])
+    }
+    
+    func getNameProvider() {
+        
     }
     
 
