@@ -1,8 +1,11 @@
 
 import UIKit
-import FirebaseAuth
+//import Firebase
 
 class VCShow: UIViewController {
+    
+    var name = "here what is name << as test!"
+    let age = "for kza"
     
     var viewContect = UITextView()
     var nameProv = ""
@@ -33,7 +36,9 @@ class VCShow: UIViewController {
     }
     
     func getNameProvider() {
-        
+        db.collection("providers").addSnapshotListener { snapchat, error in
+                
+        }
     }
     
 
