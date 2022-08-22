@@ -4,9 +4,6 @@ import UIKit
 
 class VCShow: UIViewController {
     
-    var name = "here what is name << as test!"
-    let age = "for kza"
-    
     var viewContect = UITextView()
     var nameProv = ""
 

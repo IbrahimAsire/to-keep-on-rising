@@ -5,6 +5,7 @@ import FirebaseAuth
 class UserItems: UITableViewController {
     
     var arrContent: [Userschoices] = []
+    var nameUser = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
