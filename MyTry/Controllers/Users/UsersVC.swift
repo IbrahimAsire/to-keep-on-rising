@@ -73,7 +73,7 @@ class UsersVC: UIViewController {
     
     @objc func goUserPage() {
         let nextVC = UserItems()
-        nextVC.nameUser = ""
+        nextVC.nameUser = userName
         
         navigationController?.pushViewController(nextVC, animated: true)
     }

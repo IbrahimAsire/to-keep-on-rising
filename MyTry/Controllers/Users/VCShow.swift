@@ -12,7 +12,6 @@ class VCShow: UIViewController {
         view.backgroundColor = .white
         uiSetUp()
         
-
     }
     
     private func uiSetUp() {

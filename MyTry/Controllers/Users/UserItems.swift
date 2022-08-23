@@ -6,13 +6,25 @@ class UserItems: UITableViewController {
     
     var arrContent: [Userschoices] = []
     var nameUser = ""
+    var greetUser = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cyan
         
+        title = nameUser
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         readData()
+        
+        greetUser.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(greetUser)
+        greetUser.text = nameUser
+        NSLayoutConstraint.activate([
+            greetUser.topAnchor.constraint(equalTo: view.topAnchor, constant: 18),
+            greetUser.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        
+        ])
     }
     
     private func readData() {
