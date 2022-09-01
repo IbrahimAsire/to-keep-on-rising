@@ -8,6 +8,8 @@ struct GridPoint {
 
 class HashAble: UIViewController {
     
+    let greet = UILabel()
+    
     var tappedPoints: Set = [GridPoint(x: 2, y: 3), GridPoint(x: 4, y: 1)]
     let nextTap = GridPoint(x: 0, y: 1)
     
@@ -15,6 +17,7 @@ class HashAble: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setupUI()
         
         if tappedPoints.contains(nextTap) {
             print("Already tapped at (\(nextTap.x), \(nextTap.y)).")
@@ -24,6 +27,17 @@ class HashAble: UIViewController {
         }
 //         Prints "New tap detected at (0, 1).")
 
+    }
+    
+    private func setupUI() {
+        view.addSubview(greet)
+        greet.translatesAutoresizingMaskIntoConstraints = false
+        greet.text = "this page to try HashAble protocol"
+        NSLayoutConstraint.activate([
+            greet.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            greet.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        
+        ])
     }
 }
 
