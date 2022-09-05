@@ -102,6 +102,7 @@ class Register: UITableViewController {
         $0.setTitle("Navigate to SwiftUI Screen", for: .normal)
         $0.setTitleColor(.purple, for: .normal)
         $0.titleLabel?.textAlignment = .center
+        $0.titleLabel?.font = .boldSystemFont(ofSize: 23)
         $0.addTarget(self, action: #selector(openSwiftUIScreen), for: .touchUpInside)
     }
     
