@@ -1,6 +1,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SwiftUI
 
 class Register: UITableViewController {
         
@@ -96,6 +97,14 @@ class Register: UITableViewController {
         $0.spacing = 5
     }
     
+    let lableSwiftUI = InitUI(value: UIButton()){
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("Navigate to SwiftUI Screen", for: .normal)
+        $0.setTitleColor(.purple, for: .normal)
+        $0.titleLabel?.textAlignment = .center
+        $0.addTarget(self, action: #selector(openSwiftUIScreen), for: .touchUpInside)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
@@ -112,6 +121,7 @@ class Register: UITableViewController {
         view.addSubview(languageBtn)
         view.addSubview(providerLbl)
         view.addSubview(chooseBtn)
+        view.addSubview(lableSwiftUI)
         
         containerV.addSubview(nameTF)
         containerV.addSubview(nameSeparatorV)
@@ -173,7 +183,10 @@ class Register: UITableViewController {
             loginBtn.leftAnchor.constraint(equalTo: loginLbl.rightAnchor, constant: 20),
             
             languageBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            languageBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15)
+            languageBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            
+            lableSwiftUI.topAnchor.constraint(equalTo: languageBtn.bottomAnchor, constant: 8),
+            lableSwiftUI.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
     }
@@ -240,6 +253,12 @@ class Register: UITableViewController {
     @objc func loginGo() {
         navigationController?.pushViewController(Login(), animated: true)
     }
+    
+    @objc func openSwiftUIScreen() {
+        let swiftUIViewController = UIHostingController(rootView: SwiftUIView(navigationController: self.navigationController))
+        self.navigationController?.pushViewController(swiftUIViewController, animated: true)
+    }
+    
     
     // MARK: - to register a new user and save the info for database
     @objc func register(){

@@ -3,9 +3,9 @@
 import SwiftUI
 
 struct SwiftUIView: View {
-    
+
     weak var navigationController: UINavigationController?
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -17,6 +17,7 @@ struct SwiftUIView: View {
                 .frame(width: 1, height: 74, alignment: .bottom)
             VStack(alignment: .center){
                 Button(action: {
+                    navigationController?.popViewController(animated: true)
                 }) {
                     Text("Navigate to UIKit Screen")
                         .font(.system(size: 21.0))
