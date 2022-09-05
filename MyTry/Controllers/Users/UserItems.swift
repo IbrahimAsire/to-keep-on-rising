@@ -19,11 +19,10 @@ class UserItems: UITableViewController {
         
         greetUser.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(greetUser)
-        greetUser.text = nameUser
         NSLayoutConstraint.activate([
             greetUser.topAnchor.constraint(equalTo: view.topAnchor, constant: 18),
             greetUser.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        
+            
         ])
     }
     
@@ -61,13 +60,13 @@ class UserItems: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let vcShow = VCShow()
         
-//        cell.textLabel?.text = arrContent[indexPath.row].content
-//        vcShow.viewContect.text = cell.textLabel?.text
+        //        cell.textLabel?.text = arrContent[indexPath.row].content
+        //        vcShow.viewContect.text = cell.textLabel?.text
         vcShow.viewContect.text = arrContent[indexPath.row].content
-
+        
         
         navigationController?.pushViewController(vcShow, animated: true)
     }
