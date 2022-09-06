@@ -109,6 +109,8 @@ class Register: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
+        view.insetsLayoutMarginsFromSafeArea = false
+
         setUpStackView()
         setUpConstraint()
     }
@@ -138,7 +140,7 @@ class Register: UITableViewController {
         
         NSLayoutConstraint.activate([
             containerV.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-            containerV.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
+            containerV.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 4),
             containerV.widthAnchor.constraint(equalToConstant: 350),
             containerV.heightAnchor.constraint(equalToConstant: 150),
             
@@ -198,7 +200,7 @@ class Register: UITableViewController {
         stackView.addArrangedSubview(whereImg)
         stackView.addArrangedSubview(coffeImg)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
             //            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5),
             stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             stackView.heightAnchor.constraint(equalToConstant: 160),
