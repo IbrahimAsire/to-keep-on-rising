@@ -3,9 +3,9 @@
 import SwiftUI
 
 struct SwiftUIView: View {
-
+    
     weak var navigationController: UINavigationController?
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -27,6 +27,13 @@ struct SwiftUIView: View {
             }
             Spacer()
                 .frame(width: 2, height: 105, alignment: .bottom)
+            HStack(alignment: .bottom){
+                Text("The End ..")
+                    .bold()
+                    .font(.system(size: 23))
+                
+            }
+            
         }.navigationBarHidden(true)
     }
 }
