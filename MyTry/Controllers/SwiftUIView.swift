@@ -7,6 +7,7 @@ struct SwiftUIView: View {
     weak var navigationController: UINavigationController?
     
     var body: some View {
+        
         VStack {
             HStack {
                 Text("SwiftUI Screen")
@@ -35,5 +36,7 @@ struct SwiftUIView: View {
             }
             
         }.navigationBarHidden(true)
+            .background(Color.purple)
+            .accentColor(Color.brown)
     }
 }
