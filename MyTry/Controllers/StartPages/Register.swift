@@ -109,11 +109,19 @@ class Register: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
-        view.insetsLayoutMarginsFromSafeArea = false
-
+        
         setUpStackView()
         setUpConstraint()
     }
+    
+//    to ignore the safe area insets of all edges.
+     override func viewSafeAreaInsetsDidChange(){
+        super.viewSafeAreaInsetsDidChange()
+         var insets = view.safeAreaInsets
+         insets.top = -88
+         tableView.contentInset = insets
+    }
+    
     
     private func setUpConstraint() {
         
