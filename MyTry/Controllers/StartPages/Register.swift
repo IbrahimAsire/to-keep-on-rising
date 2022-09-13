@@ -4,7 +4,7 @@ import FirebaseAuth
 import SwiftUI
 
 class Register: UITableViewController {
-        
+    
     //    Used here Generic Function
     public static func InitUI<Type>(value : Type, block: (_ object: Type) -> Void) -> Type {
         block(value)
@@ -114,13 +114,13 @@ class Register: UITableViewController {
         setUpConstraint()
     }
     
-//    to ignore the safe area insets of all edges.
-     override func viewSafeAreaInsetsDidChange(){
-        super.viewSafeAreaInsetsDidChange()
-         var insets = view.safeAreaInsets
-         insets.top = -88
-         tableView.contentInset = insets
-    }
+  // MARK: - to ignore the safe area insets of all edges.
+//    override func viewSafeAreaInsetsDidChange(){
+//        super.viewSafeAreaInsetsDidChange()
+//        var insets = view.safeAreaInsets
+//        insets.top = -88
+//        tableView.contentInset = insets
+//    }
     
     
     private func setUpConstraint() {
@@ -193,7 +193,7 @@ class Register: UITableViewController {
             loginBtn.topAnchor.constraint(equalTo: registerBtn.bottomAnchor, constant: 22.5),
             loginBtn.leftAnchor.constraint(equalTo: loginLbl.rightAnchor, constant: 20),
             
-            languageBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            languageBtn.topAnchor.constraint(equalTo: view.topAnchor),
             languageBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
             
             lableSwiftUI.topAnchor.constraint(equalTo: languageBtn.bottomAnchor, constant: 8),
