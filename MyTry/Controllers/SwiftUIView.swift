@@ -15,7 +15,14 @@ struct SwiftUIView: View {
                     .font(.system(size: 21.0))
             }
             Spacer()
-                .frame(width: 1, height: 74, alignment: .bottom)
+                //.frame(width: 1, height: 118, alignment: .bottom)
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity,
+                    alignment: .topLeading)
+            
             VStack(alignment: .center){
                 Button(action: {
                     navigationController?.popViewController(animated: true)
