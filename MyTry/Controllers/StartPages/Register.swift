@@ -217,7 +217,7 @@ class Register: UITableViewController {
         ])
     }
     
-    @objc func chooseRegTpd() {
+    @objc private func chooseRegTpd() {
         let imageEmpty = UIImage(systemName: "circlebadge")
         let image = UIImage(systemName: "circlebadge.fill")
         if chooseBtn.imageView?.image == UIImage(systemName: "circlebadge") {
@@ -231,7 +231,7 @@ class Register: UITableViewController {
         }
     }
     
-    @objc func changeLangTpd() {
+    @objc private func changeLangTpd() {
         
         let alertDone = UIAlertController(title: "Change the language!".Localizable(), message: "Must restart to activate".Localizable(), preferredStyle: .alert)
         
@@ -261,18 +261,18 @@ class Register: UITableViewController {
         
     }
     
-    @objc func loginGo() {
+    @objc private func loginGo() {
         navigationController?.pushViewController(Login(), animated: true)
     }
     
-    @objc func openSwiftUIScreen() {
+    @objc private func openSwiftUIScreen() {
         let swiftUIViewController = UIHostingController(rootView: SwiftUIView(navigationController: self.navigationController))
         self.navigationController?.pushViewController(swiftUIViewController, animated: true)
     }
     
     
     // MARK: - to register a new user and save the info for database
-    @objc func register(){
+    @objc private func register(){
         print(isProvider)
         
         if let email = emailTF.text, email.isEmpty == false,
