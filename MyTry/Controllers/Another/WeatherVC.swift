@@ -133,7 +133,7 @@ class WeatherVC: UIViewController {
     }
     
     @objc func CovidTpd(){
-        navigationController?.pushViewController(CovidVC(), animated: true)
+        navigationController?.pushViewController(PrayerTimesVC(), animated: true)
         
     }
 

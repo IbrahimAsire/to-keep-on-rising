@@ -1,7 +1,7 @@
 
 import UIKit
 
-class CovidVC: UIViewController {
+class PrayerTimesVC: UIViewController {
 
     lazy var covid = CovidApi()
     var country = [Country(name: "", iso2: "")]
@@ -63,7 +63,7 @@ class CovidVC: UIViewController {
     
 }
 
-extension CovidVC: UITextFieldDelegate {
+extension PrayerTimesVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         //        print(textTF.text!)
@@ -72,7 +72,7 @@ extension CovidVC: UITextFieldDelegate {
     
 }
 
-extension CovidVC: NewsAPIDelegate {
+extension PrayerTimesVC: NewsAPIDelegate {
     func didFetchInfo(info: Covid) {
         country = info.countries
         print(info)

@@ -24,7 +24,7 @@ class FirstTry: UITableViewController {
     }
     
     @objc func CovidTpd(){
-        navigationController?.pushViewController(CovidVC(), animated: true)
+        navigationController?.pushViewController(PrayerTimesVC(), animated: true)
         
     }
     
