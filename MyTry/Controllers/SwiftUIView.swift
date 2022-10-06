@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct SwiftUIView: View {
-    
+    //to inegration with UIKit
     weak var navigationController: UINavigationController?
     
     var body: some View {

@@ -25,6 +25,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTpd))
         view.addSubview(greetLbl)
         view.addSubview(tableView)
         
@@ -41,7 +42,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             greetLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 77),
             greetLbl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            tableView.topAnchor.constraint(equalTo: greetLbl.bottomAnchor, constant: 12),
+            tableView.topAnchor.constraint(equalTo: greetLbl.bottomAnchor, constant: 24),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
