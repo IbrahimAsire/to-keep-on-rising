@@ -23,9 +23,10 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     private func setUpUI(){
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
+        let addItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
-        navigationItem.rightBarButtonItem  = UIBarButtonItem(title: "ShowItems", style: .done, target: self, action: #selector(showItem))
+        let showItem = UIBarButtonItem(title: "ShowItems", style: .done, target: self, action: #selector(showItem))
+        navigationItem.rightBarButtonItems = UIBarButtonItem(
         
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTpd))
         view.addSubview(greetLbl)
