@@ -26,7 +26,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let addItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
         let showItem = UIBarButtonItem(title: "ShowItems", style: .done, target: self, action: #selector(showItem))
-        navigationItem.rightBarButtonItems = UIBarButtonItem(
+        navigationItem.rightBarButtonItems = [addItem, showItem]
         
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTpd))
         view.addSubview(greetLbl)
@@ -42,11 +42,10 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         tableView.rowHeight = 80
 
         NSLayoutConstraint.activate([
-            greetLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 77),
+            greetLbl.topAnchor.constraint(equalTo: view.topAnchor, constant: 66),
             greetLbl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            tableView.topAnchor.constraint(equalTo: greetLbl.bottomAnchor, constant: 24
-                                          ),
+            tableView.topAnchor.constraint(equalTo: greetLbl.bottomAnchor, constant: 34),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
