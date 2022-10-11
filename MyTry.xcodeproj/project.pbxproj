@@ -194,6 +194,7 @@
 			children = (
 				0F6C89B2280B5D0600BB1398 /* ProvidersCell.swift */,
 				0F01FD81280F3DF200557511 /* UserCell.swift */,
+				0F215EAA28F47BFB008DE962 /* providerItemCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,7 +273,6 @@
 				0F410BE327FB73BE003CDC15 /* ProvidersVC.swift */,
 				0F0A5CC8280CB1A000689B33 /* AddNew.swift */,
 				0F44387E28F1AE730059982C /* ProviderItems.swift */,
-				0F215EAA28F47BFB008DE962 /* providerItemCell.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";

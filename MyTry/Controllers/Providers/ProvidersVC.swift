@@ -25,6 +25,8 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add, target: self, action: #selector(addTpd))
+        navigationItem.rightBarButtonItem  = UIBarButtonItem(title: "ShowItems", style: .done, target: self, action: #selector(showItem))
+        
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTpd))
         view.addSubview(greetLbl)
         view.addSubview(tableView)
@@ -73,6 +75,10 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     @objc func addTpd(){
         navigationController?.pushViewController(AddNew(), animated: true)
+    }
+    
+    @objc func showItem(){
+        
     }
     
     private func readInfo(){
