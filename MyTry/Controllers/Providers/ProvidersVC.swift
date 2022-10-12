@@ -78,7 +78,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     @objc func showItem(){
-        
+        navigationController?.pushViewController(ShowItemVC(), animated: true)
     }
     
     private func readInfo(){

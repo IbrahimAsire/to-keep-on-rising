@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F01FD82280F3DF200557511 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F01FD81280F3DF200557511 /* UserCell.swift */; };
+		0F02BE1928F73E9700F68202 /* ShowItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F02BE1828F73E9700F68202 /* ShowItemVC.swift */; };
 		0F073F8B2857C3B40019F463 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F073F8A2857C3B40019F463 /* PhotoVC.swift */; };
 		0F085C92288DAFD600B52CD4 /* VCShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F085C91288DAFD600B52CD4 /* VCShow.swift */; };
 		0F0A5CC9280CB1A000689B33 /* AddNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0A5CC8280CB1A000689B33 /* AddNew.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		0F01FD81280F3DF200557511 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = MyTry/Models/UserCell.swift; sourceTree = SOURCE_ROOT; };
+		0F02BE1828F73E9700F68202 /* ShowItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowItemVC.swift; sourceTree = "<group>"; };
 		0F073F8A2857C3B40019F463 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		0F085C91288DAFD600B52CD4 /* VCShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCShow.swift; sourceTree = "<group>"; };
 		0F0A5CC8280CB1A000689B33 /* AddNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNew.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				0F410BE327FB73BE003CDC15 /* ProvidersVC.swift */,
 				0F0A5CC8280CB1A000689B33 /* AddNew.swift */,
 				0F44387E28F1AE730059982C /* ProviderItems.swift */,
+				0F02BE1828F73E9700F68202 /* ShowItemVC.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */,
 				0F44387F28F1AE730059982C /* ProviderItems.swift in Sources */,
 				0F1CE8592830218D00B811E5 /* Weather.swift in Sources */,
+				0F02BE1928F73E9700F68202 /* ShowItemVC.swift in Sources */,
 				0F6BB22527F6F4FE0083742A /* UsersSignUp.swift in Sources */,
 				0F1B23EE2825AC80007E9DCE /* PrayerTimesVC.swift in Sources */,
 				0F991CF227F5D11800EFC028 /* MyTry.xcdatamodeld in Sources */,
