@@ -1,7 +1,7 @@
 
 import UIKit
 
-class providerItemCell: UICollectionViewCell {
+class ProviderItemCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
