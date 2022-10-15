@@ -3,16 +3,6 @@
 import UIKit
 
 class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProviderItemCell
-        
-        cell.tintColor = .systemBlue
-        return cell
-    }
     
 
     override func viewDidLoad() {
@@ -40,5 +30,17 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
                     collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16)
                 ])
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProviderItemCell
+        
+        cell.tintColor = .systemBlue
+        return cell
+    }
+    
 
 }
