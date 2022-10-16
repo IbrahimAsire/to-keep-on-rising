@@ -26,7 +26,7 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         NSLayoutConstraint.activate([
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 16),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor , constant: -16),
-            collectionView.topAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16)
         ])
     }
@@ -38,7 +38,7 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProviderItemCell
         
-        cell.tintColor = .systemBlue
+        cell.backgroundColor = .systemBlue
         return cell
     }
     
