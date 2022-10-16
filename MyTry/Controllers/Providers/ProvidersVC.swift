@@ -68,6 +68,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let nextVC = ProviderItems()
         
         navigationController?.pushViewController(nextVC, animated: true)
