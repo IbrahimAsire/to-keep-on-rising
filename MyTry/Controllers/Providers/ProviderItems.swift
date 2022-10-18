@@ -39,6 +39,7 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProviderItemCell
         
         cell.backgroundColor = .systemBlue
+        
         return cell
     }
     
