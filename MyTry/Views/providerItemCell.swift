@@ -9,9 +9,12 @@ class ProviderItemCell: UICollectionViewCell {
         super.init(frame: frame)
         
         text.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(text)
         text.font = .systemFont(ofSize: 37)
         NSLayoutConstraint.activate([
-            text.heightAnchor.constraint(equalToConstant: 37)
+            text.heightAnchor.constraint(equalToConstant: 37),
+            text.topAnchor.constraint(equalTo: topAnchor, constant: 37),
+            
         ])
         
     }
