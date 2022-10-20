@@ -14,6 +14,7 @@ class ProviderItemCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             text.heightAnchor.constraint(equalToConstant: 37),
             text.topAnchor.constraint(equalTo: topAnchor, constant: 37),
+            text.centerXAnchor.constraint(equalTo: centerXAnchor),
             
         ])
         
