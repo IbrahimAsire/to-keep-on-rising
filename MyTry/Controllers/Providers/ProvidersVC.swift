@@ -71,6 +71,8 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         let nextVC = ProviderItems()
         
+        nextVC.userId = userID!
+        
         navigationController?.pushViewController(nextVC, animated: true)
     }
     

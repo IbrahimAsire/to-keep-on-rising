@@ -4,14 +4,16 @@ import UIKit
 
 class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var userId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .black
+        print(userId)
+        
         
         setUpUi()
-        
     }
     
     private func setUpUi() {
@@ -30,6 +32,9 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 4)
         ])
     }
+    
+//
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
