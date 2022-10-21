@@ -33,9 +33,9 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         ])
     }
     
-//
-    
-    
+    private func getInfo(){
+        db.collection("providers").whereField("userId", isEqualTo: userId)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
     }
