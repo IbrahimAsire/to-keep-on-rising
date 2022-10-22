@@ -39,6 +39,12 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
             if error == nil {
                 guard let data = snapshot?.documents else {return}
                 
+                for doc in data {
+                    self.providerInfo.append(ProviderInfo(proviederName: doc.get("name") as! String, content: doc.get("content") as!String, myID: doc.get("myId") as! String))
+                }
+                //                DispatchQueue.main.async {
+                //                                        self.tableView.reloadData()
+                //                                    }
             }
         }
     }
