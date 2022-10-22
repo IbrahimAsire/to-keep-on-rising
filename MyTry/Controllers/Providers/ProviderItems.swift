@@ -5,6 +5,7 @@ import UIKit
 class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var userId = ""
+    var providerInfo : [ProviderInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,12 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     private func getInfo(){
-        db.collection("providers").whereField("userId", isEqualTo: userId)
+        db.collection("providers").whereField("userId", isEqualTo: userId).addSnapshotListener { snapshot, error in
+            if error == nil {
+                guard let data = snapshot?.documents else {return}
+                
+            }
+        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
@@ -62,3 +68,5 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     
 }
+
+
