@@ -4,6 +4,8 @@ import UIKit
 
 class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
     var userId = ""
     var providerInfo : [ProviderInfo] = []
     
@@ -18,7 +20,6 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     private func setUpUi() {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
@@ -35,16 +36,16 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     private func getInfo(){
-        db.collection("providers").whereField("userId", isEqualTo: userId).addSnapshotListener { snapshot, error in
+        db.collection("providers").whereField("UserId", isEqualTo: userId).addSnapshotListener { snapshot, error in
             if error == nil {
                 guard let data = snapshot?.documents else {return}
                 
                 for doc in data {
                     self.providerInfo.append(ProviderInfo(proviederName: doc.get("name") as? String, content: doc.get("content") as? String, myID: doc.get("myId") as? String))
                 }
-                //                DispatchQueue.main.async {
-                //                                        self.tableView.reloadData()
-                //                                    }
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
@@ -58,7 +59,7 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         let dataArr = providerInfo[indexPath.row]
         
         cell.backgroundColor = .systemBlue
-        cell.text.text = dataArr.proviederName
+        cell.text.text = dataArr.content
         return cell
     }
     
