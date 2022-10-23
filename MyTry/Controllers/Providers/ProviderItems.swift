@@ -14,6 +14,7 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         print(userId)
         
         setUpUi()
+        getInfo()
     }
     
     private func setUpUi() {
@@ -57,7 +58,7 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         let dataArr = providerInfo[indexPath.row]
         
         cell.backgroundColor = .systemBlue
-        cell.text.text = "test"
+        cell.text.text = dataArr.proviederName
         return cell
     }
     
