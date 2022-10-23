@@ -13,7 +13,6 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         view.backgroundColor = .black
         print(userId)
         
-        
         setUpUi()
     }
     
@@ -40,7 +39,7 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
                 guard let data = snapshot?.documents else {return}
                 
                 for doc in data {
-                    self.providerInfo.append(ProviderInfo(proviederName: doc.get("name") as! String, content: doc.get("content") as!String, myID: doc.get("myId") as! String))
+                    self.providerInfo.append(ProviderInfo(proviederName: doc.get("name") as? String, content: doc.get("content") as? String, myID: doc.get("myId") as? String))
                 }
                 //                DispatchQueue.main.async {
                 //                                        self.tableView.reloadData()
@@ -49,11 +48,13 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        return providerInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProviderItemCell
+        let dataArr = providerInfo[indexPath.row]
         
         cell.backgroundColor = .systemBlue
         cell.text.text = "test"
