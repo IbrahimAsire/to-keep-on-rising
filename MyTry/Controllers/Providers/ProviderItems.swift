@@ -59,7 +59,7 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         let dataArr = providerInfo[indexPath.row]
         
         cell.backgroundColor = .systemBlue
-        cell.text.text = dataArr.content
+        cell.provContent.text = dataArr.content
         return cell
     }
     

@@ -3,18 +3,26 @@ import UIKit
 
 class ProviderItemCell: UICollectionViewCell {
     
-    let text = UILabel()
+    let provContent = UILabel()
+    let provName = UILabel()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        text.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(text)
-        text.font = .systemFont(ofSize: 37)
+        provContent.translatesAutoresizingMaskIntoConstraints = false
+        provName.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(provContent)
+        self.addSubview(provName)
+        provContent.font; provName.font = .systemFont(ofSize: 37)
         NSLayoutConstraint.activate([
-            text.heightAnchor.constraint(equalToConstant: 37),
-            text.topAnchor.constraint(equalTo: topAnchor, constant: 37),
-            text.centerXAnchor.constraint(equalTo: centerXAnchor),
+            provContent.heightAnchor.constraint(equalToConstant: 37),
+            provContent.topAnchor.constraint(equalTo: topAnchor, constant: 37),
+            provContent.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            provName.heightAnchor.constraint(equalToConstant: 34),
+            provName.topAnchor.constraint(equalTo: provContent.bottomAnchor, constant: 37),
+            provName.leftAnchor.constraint(equalTo: leftAnchor, constant: -17),
             
         ])
         
