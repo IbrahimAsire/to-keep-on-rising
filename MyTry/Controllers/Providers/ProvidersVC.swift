@@ -67,14 +67,14 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let nextVC = ProviderItems()
-        
-        nextVC.userId = userID!
-        
-        navigationController?.pushViewController(nextVC, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        let nextVC = ProviderItems()
+//        
+//        nextVC.userId = userID!
+//        
+//        navigationController?.pushViewController(nextVC, animated: true)
+//    }
     
     @objc func addTpd(){
         navigationController?.pushViewController(AddNew(), animated: true)

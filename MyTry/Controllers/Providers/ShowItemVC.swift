@@ -2,7 +2,8 @@
 
 import UIKit
 
-class ShowItemVC: UIViewController {
+class ShowItemVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,6 +12,14 @@ class ShowItemVC: UIViewController {
     }
     
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath)
+        
+        return cell
+    }
 
 }

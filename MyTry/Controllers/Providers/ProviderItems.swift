@@ -1,80 +1,80 @@
-
-
-import UIKit
-
-class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    
-    var userId = ""
-    var providerInfo : [ProviderInfo] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .black
-        
-        setUpUi()
-        getInfo()
-    }
-    
-    private func setUpUi() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .white
-        collectionView.alwaysBounceVertical = true
-        collectionView.register(ProviderItemCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collectionView)
-        NSLayoutConstraint.activate([
-            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 4),
-            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor , constant: 4),
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 4)
-        ])
-    }
-    
-    private func getInfo(){
-        db.collection("providers").whereField("UserId", isEqualTo: userId).addSnapshotListener { snapshot, error in
-            if error == nil {
-                guard let data = snapshot?.documents else {return}
-                
-                for doc in data {
-                    self.providerInfo.append(ProviderInfo(proviederName: doc.get("name") as? String, content: doc.get("content") as? String, myID: doc.get("myId") as? String))
-                }
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return providerInfo.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProviderItemCell
-        let dataArr = providerInfo[indexPath.row]
-        
-        cell.backgroundColor = .systemBlue
-        cell.provContent.text = dataArr.content
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 350, height: 400)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
-    }
-    
-    
-}
-
-
+//
+//
+//import UIKit
+//
+//class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//    
+//    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+//    
+//    var userId = ""
+//    var providerInfo : [ProviderInfo] = []
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        view.backgroundColor = .black
+//        
+//        setUpUi()
+//        getInfo()
+//    }
+//    
+//    private func setUpUi() {
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
+//        collectionView.backgroundColor = .white
+//        collectionView.alwaysBounceVertical = true
+//        collectionView.register(ProviderItemCell.self, forCellWithReuseIdentifier: "cell")
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(collectionView)
+//        NSLayoutConstraint.activate([
+//            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor , constant: 4),
+//            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor , constant: 4),
+//            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+//            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 4)
+//        ])
+//    }
+//    
+//    private func getInfo(){
+//        db.collection("providers").whereField("UserId", isEqualTo: userId).addSnapshotListener { snapshot, error in
+//            if error == nil {
+//                guard let data = snapshot?.documents else {return}
+//                
+//                for doc in data {
+//                    self.providerInfo.append(ProviderInfo(proviederName: doc.get("name") as? String, content: doc.get("content") as? String, myID: doc.get("myId") as? String))
+//                }
+//                DispatchQueue.main.async {
+//                    self.collectionView.reloadData()
+//                }
+//            }
+//        }
+//    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return providerInfo.count
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProviderItemCell
+//        let dataArr = providerInfo[indexPath.row]
+//        
+//        cell.backgroundColor = .systemBlue
+//        cell.provContent.text = dataArr.content
+//        return cell
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 350, height: 400)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 2
+//    }
+//    
+//    
+//}
+//
+//
