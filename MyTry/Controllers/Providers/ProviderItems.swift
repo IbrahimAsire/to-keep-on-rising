@@ -13,7 +13,6 @@ class ProviderItems: UIViewController, UICollectionViewDelegate, UICollectionVie
         super.viewDidLoad()
         
         view.backgroundColor = .black
-        print(userId)
         
         setUpUi()
         getInfo()
