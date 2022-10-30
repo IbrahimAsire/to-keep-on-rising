@@ -18,6 +18,7 @@ class ShowItemVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 //        tableView.dataSource = self
 //        tableView.delegate = self
         
+        view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
