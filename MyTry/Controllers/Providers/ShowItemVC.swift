@@ -2,7 +2,7 @@
 
 import UIKit
 
-class ShowItemVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ShowItemVC: UIViewController {
     
     lazy var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -15,8 +15,8 @@ class ShowItemVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.dataSource = self
-//        tableView.delegate = self
+        //        tableView.dataSource = self
+        //        tableView.delegate = self
         
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -24,22 +24,28 @@ class ShowItemVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             
-        
+            
         ])
-
+        
         view.backgroundColor = .opaqueSeparator
     }
     
+}
 
+extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath) as! ShowItemCell
         
-        cell.textLabel?.text = "Good Morning!!"
+        cell.contentLbl.text = "Good Morning!!"
+        
         return cell
     }
-
+    
 }
+
+

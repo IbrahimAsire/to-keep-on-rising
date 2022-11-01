@@ -3,10 +3,18 @@
 import UIKit
 
 class ShowItemCell: UITableViewCell {
+    
+    var contentLbl = UILabel()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.addSubview(contentLbl)
+        contentLbl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            contentLbl.centerXAnchor.constraint(equalTo: centerXAnchor)
+        
+        ])
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
