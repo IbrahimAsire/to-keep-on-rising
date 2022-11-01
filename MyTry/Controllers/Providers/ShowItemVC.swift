@@ -4,10 +4,8 @@ import UIKit
 
 class ShowItemVC: UIViewController {
     
-    lazy var tableView: UITableView = {
+    var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.dataSource = self
-        $0.delegate = self
         $0.register(ShowItemCell.self, forCellReuseIdentifier: "showItem")
         $0.rowHeight = 77
         return $0
@@ -15,8 +13,10 @@ class ShowItemVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        tableView.dataSource = self
-        //        tableView.delegate = self
+        
+        view.backgroundColor = .opaqueSeparator
+        tableView.dataSource = self
+        tableView.delegate = self
         
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -27,7 +27,6 @@ class ShowItemVC: UIViewController {
             
         ])
         
-        view.backgroundColor = .opaqueSeparator
     }
     
 }
@@ -42,7 +41,6 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath) as! ShowItemCell
         
         cell.contentLbl.text = "Good Morning!!"
-        
         return cell
     }
     
