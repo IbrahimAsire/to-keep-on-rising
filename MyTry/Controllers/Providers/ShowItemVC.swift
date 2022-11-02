@@ -4,13 +4,15 @@ import UIKit
 
 class ShowItemVC: UIViewController {
     
-    var tableView: UITableView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.register(ShowItemCell.self, forCellReuseIdentifier: "showItem")
-        $0.rowHeight = 77
-        $0.backgroundColor = .purple
-        return $0
-    }(UITableView())
+//    var tableView: UITableView = {
+//        $0.translatesAutoresizingMaskIntoConstraints = false
+//        $0.register(ShowItemCell.self, forCellReuseIdentifier: "showItem")
+//        $0.rowHeight = 77
+//        $0.backgroundColor = .purple
+//        return $0
+//    }(UITableView())
+    
+    var tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +20,10 @@ class ShowItemVC: UIViewController {
         view.backgroundColor = .opaqueSeparator
         tableView.dataSource = self
         tableView.delegate = self
+        
         tableView.backgroundColor = .purple
         
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
