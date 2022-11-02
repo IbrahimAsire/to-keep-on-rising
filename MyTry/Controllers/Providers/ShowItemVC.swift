@@ -8,6 +8,7 @@ class ShowItemVC: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.register(ShowItemCell.self, forCellReuseIdentifier: "showItem")
         $0.rowHeight = 77
+        $0.backgroundColor = .purple
         return $0
     }(UITableView())
     
@@ -17,6 +18,7 @@ class ShowItemVC: UIViewController {
         view.backgroundColor = .opaqueSeparator
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .purple
         
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -41,6 +43,7 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath) as! ShowItemCell
         
         cell.contentLbl.text = "Good Morning!!"
+        
         return cell
     }
     
