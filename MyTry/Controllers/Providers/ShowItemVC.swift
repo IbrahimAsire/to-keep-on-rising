@@ -24,12 +24,11 @@ class ShowItemVC: UIViewController {
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             
         ])
         
     }
-    
 }
 
 extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
