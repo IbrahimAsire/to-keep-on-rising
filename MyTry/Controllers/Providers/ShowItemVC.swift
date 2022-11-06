@@ -7,7 +7,7 @@ class ShowItemVC: UIViewController {
     var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.register(ShowItemCell.self, forCellReuseIdentifier: "showItem")
-        $0.rowHeight = 77
+        $0.rowHeight = 66
         $0.backgroundColor = .purple
         return $0
     }(UITableView())
