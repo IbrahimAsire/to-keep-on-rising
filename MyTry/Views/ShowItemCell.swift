@@ -5,6 +5,7 @@ import UIKit
 class ShowItemCell: UITableViewCell {
     
     var contentLbl = UILabel()
+    var anyThing = UILabel()
     
     //    override func awakeFromNib() {
     //        super.awakeFromNib()
