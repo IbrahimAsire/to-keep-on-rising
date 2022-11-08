@@ -4,6 +4,8 @@ import UIKit
 
 class ShowItemVC: UIViewController {
     
+    var content: [String] = []
+    
     var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.register(ShowItemCell.self, forCellReuseIdentifier: "showItem")
