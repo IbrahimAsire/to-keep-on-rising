@@ -4,7 +4,7 @@ import UIKit
 
 class ShowItemVC: UIViewController {
     
-    var content: [String] = []
+    var content: [Any] = []
     
     var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
