@@ -81,9 +81,9 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     @objc func showItem(){
-        var nextVC = ShowItemVC()
-        
-        nextVC.content = [arrayInfo]
+//        var nextVC = ShowItemVC()
+//
+//        nextVC.content = [arrayInfo]
         
         navigationController?.pushViewController(ShowItemVC(), animated: true)
     }
