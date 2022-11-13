@@ -13,6 +13,7 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .systemYellow
         tableView.dataSource = self
         tableView.delegate = self
@@ -81,11 +82,11 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     @objc func showItem(){
-//        var nextVC = ShowItemVC()
-//
-//        nextVC.content = [arrayInfo]
+        let nextVC = ShowItemVC()
+
+        nextVC.userID = userID ?? "empty"
         
-        navigationController?.pushViewController(ShowItemVC(), animated: true)
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     private func readInfo(){
