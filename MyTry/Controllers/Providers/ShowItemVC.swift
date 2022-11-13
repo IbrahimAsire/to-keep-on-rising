@@ -48,6 +48,10 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    private func getData(){
+        
+    }
+    
 }
 
 
