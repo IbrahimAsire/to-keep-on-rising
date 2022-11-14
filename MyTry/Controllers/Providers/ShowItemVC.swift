@@ -16,6 +16,8 @@ class ShowItemVC: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(userID
+        )
         
         view.backgroundColor = .opaqueSeparator
         tableView.dataSource = self
