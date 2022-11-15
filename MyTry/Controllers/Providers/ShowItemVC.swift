@@ -51,6 +51,7 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     private func getData(){
+        db.collection("provider").whereField("userID", isEqualTo: userID)
         
     }
     
