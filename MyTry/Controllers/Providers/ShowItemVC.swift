@@ -51,7 +51,13 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     private func getData(){
-        db.collection("provider").whereField("userID", isEqualTo: userID)
+        db.collection("provider").whereField("userID", isEqualTo: userID).addSnapshotListener { snapshot, error in
+            if error != nil{
+                return
+            }
+            // here write your code what do you want do after fetch the data
+            
+        }
         
     }
     
