@@ -13,7 +13,7 @@ class ShowItemVC: UIViewController {
         $0.backgroundColor = .purple
         return $0
     }(UITableView())
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(userID
@@ -22,7 +22,7 @@ class ShowItemVC: UIViewController {
         view.backgroundColor = .opaqueSeparator
         tableView.dataSource = self
         tableView.delegate = self
-                
+        
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
@@ -57,6 +57,8 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
             }
             // here write your code what do you want do after fetch the data
             guard let docs = snapshot?.documents else {return}
+            
+            
         }
         
     }
