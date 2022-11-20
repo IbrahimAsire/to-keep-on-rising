@@ -5,6 +5,7 @@ import UIKit
 class ShowItemVC: UIViewController {
     
     var userID = ""
+    var provContent : [ProviderInfo] = []
     
     var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -65,9 +66,11 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
                 else {
                     continue
                 }
-                    
+                 
+                self.provContent.append(ProviderInfo(proviederName: nil, content: content, myID: nil))
                 
             }
+            // refersh the tabelView Here 
             
             
         }
