@@ -60,6 +60,12 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
             
             for doc in docs {
                 let info = doc.data()
+                guard
+                    let content = info["content"] as? String
+                else {
+                    continue
+                }
+                    
                 
             }
             
