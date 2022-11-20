@@ -58,6 +58,11 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
             // here write your code what do you want do after fetch the data
             guard let docs = snapshot?.documents else {return}
             
+            for doc in docs {
+                let info = doc.data()
+                
+            }
+            
             
         }
         
