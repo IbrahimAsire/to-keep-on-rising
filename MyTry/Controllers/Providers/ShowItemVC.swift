@@ -17,8 +17,6 @@ class ShowItemVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userID
-        )
         
         view.backgroundColor = .opaqueSeparator
         tableView.dataSource = self
@@ -46,7 +44,7 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath) as! ShowItemCell
         
         cell.textLabel?.text = "123"
-        cell.contentLbl.text = "test place"
+        cell.contentLbl.text = provContent[indexPath.row].content
         
         return cell
     }
