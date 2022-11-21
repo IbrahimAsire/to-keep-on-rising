@@ -18,6 +18,8 @@ class ShowItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getData()
+        
         view.backgroundColor = .opaqueSeparator
         tableView.dataSource = self
         tableView.delegate = self
@@ -50,7 +52,7 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     private func getData(){
-        db.collection("provider").whereField("userID", isEqualTo: userID).addSnapshotListener { snapshot, error in
+        db.collection("providers").whereField("userId", isEqualTo: userID).addSnapshotListener { snapshot, error in
             if error != nil{
                 return
             }
@@ -68,7 +70,8 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
                 self.provContent.append(ProviderInfo(proviederName: nil, content: content, myID: nil))
                 
             }
-            // refersh the tabelView Here 
+            // refersh the tabelView Here
+            self.tableView.reloadData()
             
             
         }
