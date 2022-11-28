@@ -27,7 +27,6 @@ class VCShow: UIViewController {
             viewContect.widthAnchor.constraint(equalTo: view.widthAnchor),
             viewContect.heightAnchor.constraint(equalToConstant: 400)
             
-        
         ])
     }
     
