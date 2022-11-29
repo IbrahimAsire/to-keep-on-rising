@@ -1,9 +1,11 @@
 
 
 import UIKit
+import FirebaseAuth
 
 class ShowItemVC: UIViewController {
     
+    let userId = Auth.auth().currentUser?.uid
     var userID = ""
     var provContent : [ProviderInfo] = []
     
@@ -18,6 +20,7 @@ class ShowItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(userID)
+        print(userId!)
         print(provContent)
         
         getData()
