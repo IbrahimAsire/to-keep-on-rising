@@ -1,11 +1,9 @@
 
 
 import UIKit
-import FirebaseAuth
 
 class ShowItemVC: UIViewController {
     
-    let userId = Auth.auth().currentUser?.uid
     var userID = ""
     var provContent : [ProviderInfo] = []
     
@@ -20,7 +18,6 @@ class ShowItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(userID)
-        print(userId!)
         print(provContent)
         
         getData()
@@ -50,14 +47,14 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath) as! ShowItemCell
         
-//        cell.textLabel?.text = "123"
+        //        cell.textLabel?.text = "123"
         cell.contentLbl.text = provContent[indexPath.row].content
         
         return cell
     }
     
     private func getData(){
-        db.collection("providers").whereField("userId", isEqualTo: userID).addSnapshotListener { snapshot, error in
+        db.collection("providers").whereField("UserId", isEqualTo: userID).addSnapshotListener { snapshot, error in
             if error != nil{
                 return
             }
@@ -71,7 +68,7 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
                 else {
                     continue
                 }
-                 
+                
                 self.provContent.append(ProviderInfo(proviederName: nil, content: content, myID: nil))
                 
             }
