@@ -47,7 +47,7 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath) as! ShowItemCell
         
-        //        cell.textLabel?.text = "123"
+        cell.anyThing.text = "123"
         cell.contentLbl.text = provContent[indexPath.row].content
         
         return cell
