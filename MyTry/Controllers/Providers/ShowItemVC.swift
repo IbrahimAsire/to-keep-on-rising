@@ -18,7 +18,6 @@ class ShowItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(userID)
-        print(provContent)
         
         getData()
         
