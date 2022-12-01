@@ -20,7 +20,6 @@ class ProvidersVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
         readInfo()
         setUpUI()
-        print(arrayInfo)
     }
     
     private func setUpUI(){
