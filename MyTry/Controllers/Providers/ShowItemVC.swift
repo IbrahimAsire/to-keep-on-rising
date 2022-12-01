@@ -52,6 +52,10 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
     private func getData(){
         db.collection("providers").whereField("UserId", isEqualTo: userID).addSnapshotListener { snapshot, error in
             if error != nil{
