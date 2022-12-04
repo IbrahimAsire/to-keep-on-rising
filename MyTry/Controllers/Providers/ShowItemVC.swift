@@ -53,7 +53,12 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        let nextVC = ContentEdit()
+        
+        navigationController?.pushViewController(nextVC, animated: true
+        )
+        
+        
     }
     
     private func getData(){
