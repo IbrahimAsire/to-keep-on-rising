@@ -5,10 +5,16 @@ import UIKit
 class ContentEdit: UIViewController {
     
     var textView = UITextView()
+    var editeBtn: UIButton = {
+        
+        return $0
+    }(UIButton())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .magenta
+        
+        setUpUi()
         
         textView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(textView)
@@ -21,6 +27,18 @@ class ContentEdit: UIViewController {
         
         ])
 
+    }
+    
+    private func setUpUi(){
+        editeBtn.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(editeBtn)
+        
+        NSLayoutConstraint.activate([
+            editeBtn.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 8),
+            editeBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            editeBtn.heightAnchor.constraint(equalToConstant: 38)
+        
+        ])
     }
     
 
