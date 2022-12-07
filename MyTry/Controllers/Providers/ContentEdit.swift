@@ -6,6 +6,9 @@ class ContentEdit: UIViewController {
     
     var textView = UITextView()
     var editeBtn: UIButton = {
+        $0.setTitle("EDIT", for: .normal)
+        $0.setTitleColor(UIColor.black, for: .normal)
+        $0.backgroundColor = .white
         
         return $0
     }(UIButton())
