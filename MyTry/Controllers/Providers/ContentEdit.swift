@@ -14,8 +14,8 @@ class ContentEdit: UIViewController {
         view.addSubview(textView)
         textView.backgroundColor = .white
         NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: view.topAnchor, constant: 66),
-            textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12),
+            textView.topAnchor.constraint(equalTo: view.topAnchor, constant: 166),
+            textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -118),
             textView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 8),
             textView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: -8),
         
