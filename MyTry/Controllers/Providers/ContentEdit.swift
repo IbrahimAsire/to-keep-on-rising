@@ -9,6 +9,7 @@ class ContentEdit: UIViewController {
         $0.setTitle("EDIT", for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.backgroundColor = .white
+        $0.layer.cornerRadius = 5
         
         return $0
     }(UIButton())
@@ -39,7 +40,8 @@ class ContentEdit: UIViewController {
         NSLayoutConstraint.activate([
             editeBtn.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 8),
             editeBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            editeBtn.heightAnchor.constraint(equalToConstant: 38)
+            editeBtn.heightAnchor.constraint(equalToConstant: 38),
+            editeBtn.widthAnchor.constraint(equalToConstant: 138)
         
         ])
     }
