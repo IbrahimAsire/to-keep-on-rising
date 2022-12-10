@@ -18,7 +18,6 @@ class ContentEdit: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .magenta
         
-        setUpUi()
         
         textView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(textView)
@@ -30,6 +29,9 @@ class ContentEdit: UIViewController {
             textView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: -8),
         
         ])
+        
+        setUpUi()
+
 
     }
     
