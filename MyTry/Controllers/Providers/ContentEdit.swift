@@ -4,7 +4,7 @@ import UIKit
 
 class ContentEdit: UIViewController {
     
-    var textView = UITextField()
+    var textView = UITextView()
     var editeBtn: UIButton = {
         $0.setTitle("EDIT", for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
