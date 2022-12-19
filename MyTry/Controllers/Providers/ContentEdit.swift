@@ -16,7 +16,7 @@ class ContentEdit: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .opaqueSeparator
+        view.backgroundColor = .tintColor
         
         setUpUi()
     }
