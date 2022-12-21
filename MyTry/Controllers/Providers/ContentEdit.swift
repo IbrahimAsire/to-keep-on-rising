@@ -25,7 +25,7 @@ class ContentEdit: UIViewController {
     private func setUpUi(){
         textView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(textView)
-        textView.backgroundColor = .white
+        textView.backgroundColor = .tertiaryLabel
         editeBtn.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(editeBtn)
         
