@@ -55,8 +55,8 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = ContentEdit()
         
-//        nextVC.textView = provContent[indexPath.row].content
-        
+        nextVC.contentGet = provContent[indexPath.row].content ?? ""
+                
         navigationController?.pushViewController(nextVC, animated: true)
         
         
