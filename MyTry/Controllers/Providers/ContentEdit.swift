@@ -10,7 +10,6 @@ class ContentEdit: UIViewController {
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 5
-        $0.backgroundColor = .magenta
         
         return $0
     }(UIButton())
