@@ -19,14 +19,15 @@ class ContentEdit: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        setUpUi()
+        setUpTextV()
     }
     
-    private func setUpUi(){
+    private func setUpTextV(){
         textView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(textView)
         textView.text = contentGet
         textView.font = UIFont.systemFont(ofSize: 36)
+        textView.textAlignment = .center
         textView.backgroundColor = .tertiaryLabel
         textView.textColor = .white
         editeBtn.translatesAutoresizingMaskIntoConstraints = false
