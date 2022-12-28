@@ -26,6 +26,7 @@ class ContentEdit: UIViewController {
         textView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(textView)
         textView.text = contentGet
+        textView.font = UIFont.systemFont(ofSize: 36)
         textView.backgroundColor = .tertiaryLabel
         textView.textColor = .white
         editeBtn.translatesAutoresizingMaskIntoConstraints = false
