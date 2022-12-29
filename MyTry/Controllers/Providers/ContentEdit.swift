@@ -50,6 +50,7 @@ class ContentEdit: UIViewController {
     }
     
     @objc func editTabBtn(){
+        print("test preesed")
         
     }
 
