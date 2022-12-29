@@ -11,6 +11,7 @@ class ContentEdit: UIViewController {
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 5
+        $0.addTarget(self, action: #selector(editTabBtn), for: .touchUpInside)
         
         return $0
     }(UIButton())
@@ -48,5 +49,8 @@ class ContentEdit: UIViewController {
         ])
     }
     
+    @objc func editTabBtn(){
+        
+    }
 
 }
