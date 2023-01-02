@@ -5,6 +5,7 @@ import UIKit
 class ContentEdit: UIViewController {
     
     var textView = UITextView()
+    var userID = ""
     var contentGet = ""
     var editeBtn: UIButton = {
         $0.setTitle("EDIT", for: .normal)
@@ -18,7 +19,8 @@ class ContentEdit: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .darkText
+        
         
         setUpTextV()
     }
@@ -50,7 +52,7 @@ class ContentEdit: UIViewController {
     }
     
     @objc func editTabBtn(){
-        print("test preesed")
+        
         
     }
 

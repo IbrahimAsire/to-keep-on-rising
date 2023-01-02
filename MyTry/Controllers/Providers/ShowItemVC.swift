@@ -56,6 +56,7 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
         let nextVC = ContentEdit()
         
         nextVC.contentGet = provContent[indexPath.row].content ?? ""
+        nextVC.userID = userID
                 
         navigationController?.pushViewController(nextVC, animated: true)
         
