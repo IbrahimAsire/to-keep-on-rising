@@ -20,6 +20,7 @@ class ContentEdit: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkText
+        print(userID)
         
         
         setUpTextV()
