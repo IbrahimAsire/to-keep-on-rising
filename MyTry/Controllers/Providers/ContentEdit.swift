@@ -53,6 +53,7 @@ class ContentEdit: UIViewController {
     }
     
     @objc func editTabBtn(){
+        let contentEdit = ProviderInfo(proviederName: nil, content: textView.text, myID: userID)
         
         
     }
