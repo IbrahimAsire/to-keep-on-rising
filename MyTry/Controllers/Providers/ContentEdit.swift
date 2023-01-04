@@ -55,11 +55,11 @@ class ContentEdit: UIViewController {
     @objc func editTabBtn(){
         let contentEdit = ProviderInfo(proviederName: nil, content: textView.text, myID: userID)
         db.collection("providers").document(userID).setData([
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
+            "userId":"",
+            "content":"",
+            "email":"",
+            "myId":"",
+            "name":"",
             
         ], merge: true)
     }
