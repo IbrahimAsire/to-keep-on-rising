@@ -20,9 +20,9 @@ class AddNew: UIViewController {
     }
     
     //    To test get the information
-    override func viewDidAppear(_ animated: Bool) {
-        print(nameProv)
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        print(nameProv)
+//    }
     
     private func setUpUI() {
         view.addSubview(addTF)
