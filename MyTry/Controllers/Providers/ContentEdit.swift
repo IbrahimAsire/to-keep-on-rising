@@ -1,6 +1,7 @@
 
 
 import UIKit
+import FirebaseAuth
 
 class ContentEdit: UIViewController {
     
@@ -53,11 +54,12 @@ class ContentEdit: UIViewController {
     }
     
     @objc func editTabBtn(){
+        
         let contentEdit = ProviderInfo(proviederName: nil, content: textView.text, myID: userID)
         db.collection("providers").document(userID).setData([
             "userId":"",
             "content":"",
-            "email":"",
+//            "email":"",
             "myId":"",
             "name":"",
             
