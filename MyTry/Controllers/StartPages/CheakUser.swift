@@ -6,7 +6,7 @@ import FirebaseFirestore
 
 class CheakUser: UIViewController {
         
-    let db = Firestore.firestore()
+//    let db = Firestore.firestore()
     let userID = Auth.auth().currentUser?.uid
     
     override func viewDidLoad() {
