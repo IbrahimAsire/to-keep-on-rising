@@ -68,12 +68,12 @@ class AddNew: UIViewController {
     
     @objc func addTpd(){
         print("DONE")
-        let userEmail = Auth.auth().currentUser?.email
+//        let userEmail = Auth.auth().currentUser?.email
         db.collection("providers").document(myId).setData([
             "content": addTF.text,
             "name": nameProv,
             "UserId": userID,
-            "email": userEmail,
+//            "email": userEmail,
             "myId": myId
         ])
     }
