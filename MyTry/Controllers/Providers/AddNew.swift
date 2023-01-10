@@ -14,7 +14,7 @@ class AddNew: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemGroupedBackground
-        print(myId); print("You now in AddNew Page")
+        print(myId); print("You now in AddNew Page"); print(nameProv)
         setUpUI()
         readInfo()
     }
