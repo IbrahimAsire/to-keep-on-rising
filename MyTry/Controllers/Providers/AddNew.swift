@@ -16,7 +16,6 @@ class AddNew: UIViewController {
         view.backgroundColor = .secondarySystemGroupedBackground
         print(myId); print("You now in AddNew Page"); print(nameProv)
         setUpUI()
-        readInfo()
     }
     
     //    To test get the information
@@ -52,19 +51,19 @@ class AddNew: UIViewController {
         
     }
     
-    private func readInfo() {
-        db.collection("providers").getDocuments { snapshot, error in
-            if error == nil {
-                let info = snapshot!.documents
-                for doc in info {
-                    if self.userID == doc["UserId"] as? String{
-                        self.nameProv = doc["name"] as? String ?? "nil"
-                        self.myId = doc["myId"] as? String ?? "nil"
-                    }
-                }
-            }
-        }
-    }
+//    private func readInfo() {
+//        db.collection("providers").getDocuments { snapshot, error in
+//            if error == nil {
+//                let info = snapshot!.documents
+//                for doc in info {
+//                    if self.userID == doc["UserId"] as? String{
+//                        self.nameProv = doc["name"] as? String ?? "nil"
+//                        self.myId = doc["myId"] as? String ?? "nil"
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     @objc func addTpd(){
         print("DONE")
