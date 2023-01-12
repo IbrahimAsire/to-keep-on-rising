@@ -14,15 +14,15 @@ class AddNew: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemGroupedBackground
-        print(myId); print("You now in AddNew Page"); print(nameProv)
-        setUpUI()
         readInfo()
+        setUpUI()
+        print(myId); print("You now in AddNew Page"); print(nameProv)
     }
     
-    //    To test get the information
-//    override func viewDidAppear(_ animated: Bool) {
-//        print(nameProv)
-//    }
+    //To test get the information & I note in viewDidAppear it showing the myId num and did not show in viewDidLoad!?
+    override func viewDidAppear(_ animated: Bool) {
+        print(nameProv); print(myId)
+    }
     
     private func setUpUI() {
         view.addSubview(addTF)
