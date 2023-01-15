@@ -59,6 +59,8 @@ class ContentEdit: UIViewController {
         db.collection("providers").document(userID).setData([
             "userId":"",
             "content":"",
+            "myId":"",
+            "name":""
             
         ], merge: true)
     }

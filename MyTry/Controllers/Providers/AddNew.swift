@@ -16,7 +16,7 @@ class AddNew: UIViewController {
         view.backgroundColor = .secondarySystemGroupedBackground
         readInfo()
         setUpUI()
-        print(myId); print("You now in AddNew Page"); print(nameProv)
+//        print(myId); print("You now in AddNew Page"); print(nameProv)
     }
     
     //To test get the information & I note in viewDidAppear it showing the myId num and did not show in viewDidLoad!?
