@@ -55,11 +55,11 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
         let nextVC = ContentEdit()
         
         nextVC.contentGet = provContent[indexPath.row].content ?? ""
-        nextVC.userID = userID
-                
+        nextVC.myID = provContent[indexPath.row].myID ?? ""
+        
         navigationController?.pushViewController(nextVC, animated: true)
         
-
+        
     }
     
     private func getData(){
@@ -73,12 +73,13 @@ extension ShowItemVC: UITableViewDataSource, UITableViewDelegate {
             for doc in docs {
                 let info = doc.data()
                 guard
-                    let content = info["content"] as? String
+                    let content = info["content"] as? String,
+                    let myId = info["myId"] as? String
                 else {
                     continue
                 }
                 
-                self.provContent.append(ProviderInfo(proviederName: nil, content: content, myID: nil))
+                self.provContent.append(ProviderInfo(proviederName: nil, content: content, myID: myId))
                 
             }
             // refersh the tabelView Here

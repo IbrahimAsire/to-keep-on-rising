@@ -6,7 +6,7 @@ import FirebaseAuth
 class ContentEdit: UIViewController {
     
     var textView = UITextView()
-    var userID = ""
+    var myID = ""
     var contentGet = ""
     var editeBtn: UIButton = {
         $0.setTitle("EDIT", for: .normal)
@@ -21,7 +21,7 @@ class ContentEdit: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .darkText
-        print(userID)
+        print(myID)
         
         
         setUpTextV()
@@ -55,8 +55,8 @@ class ContentEdit: UIViewController {
     
     @objc func editTabBtn(){
         
-        let contentEdit = ProviderInfo(proviederName: nil, content: textView.text, myID: userID)
-        db.collection("providers").document(userID).setData([
+        let contentEdit = ProviderInfo(proviederName: nil, content: textView.text, myID: myID)
+        db.collection("providers").document(myID).setData([
             "userId":"",
             "content":"",
             "myId":"",
