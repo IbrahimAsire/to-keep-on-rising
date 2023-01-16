@@ -54,8 +54,7 @@ class ContentEdit: UIViewController {
     }
     
     @objc func editTabBtn(){
-        
-//        let contentEdit = ProviderInfo(proviederName: nil, content: textView.text, myID: myID)
+        print("Modify is DONE")
         db.collection("providers").document(myID).updateData([
             "content": textView.text ?? "Nothin Add !!!",
             
