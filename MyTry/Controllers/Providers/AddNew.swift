@@ -3,6 +3,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
+//Here should me fix to add content as array/list in firebase
 class AddNew: UIViewController {
     
     let userID = Auth.auth().currentUser?.uid
@@ -21,7 +22,7 @@ class AddNew: UIViewController {
     
     //To test get the information & I note in viewDidAppear it showing the myId num and did not show in viewDidLoad!?
     override func viewDidAppear(_ animated: Bool) {
-        print(nameProv); print(myId)
+        print(myId)
     }
     
     private func setUpUI() {
@@ -78,3 +79,26 @@ class AddNew: UIViewController {
         ])
     }
 }
+
+// MARK: - this to try add array
+//let docData: [String: Any] = [
+//    "stringExample": "Hello world!",
+//    "booleanExample": true,
+//    "numberExample": 3.14159265,
+//    "dateExample": Timestamp(date: Date()),
+//    "arrayExample": [5, true, "hello"],
+//    "nullExample": NSNull(),
+//    "objectExample": [
+//        "a": 5,
+//        "b": [
+//            "nested": "foo"
+//        ]
+//    ]
+//]
+//db.collection("data").document("one").setData(docData) { err in
+//    if let err = err {
+//        print("Error writing document: \(err)")
+//    } else {
+//        print("Document successfully written!")
+//    }
+//}
