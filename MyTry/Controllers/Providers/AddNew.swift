@@ -71,10 +71,10 @@ class AddNew: UIViewController {
         print("DONE")
         let userEmail = Auth.auth().currentUser?.email
         db.collection("providers").document(myId).setData([
-            "content": addTF.text,
+            "content": addTF.text ?? "Nothing here",
             "name": nameProv,
-            "UserId": userID,
-            "email": userEmail,
+            "UserId": userID ?? "Nothing here",
+            "email": userEmail ?? "Nothing here",
             "myId": myId
         ])
     }
