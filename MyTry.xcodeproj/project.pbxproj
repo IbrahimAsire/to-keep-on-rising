@@ -29,6 +29,7 @@
 		0F410BE227FB7381003CDC15 /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F410BE127FB7381003CDC15 /* UsersVC.swift */; };
 		0F410BE427FB73BE003CDC15 /* ProvidersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F410BE327FB73BE003CDC15 /* ProvidersVC.swift */; };
 		0F5940582887324200DDD4F3 /* HashAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5940572887324200DDD4F3 /* HashAble.swift */; };
+		0F5B3D7429BEF8E300A8AEC6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5B3D7329BEF8E300A8AEC6 /* GoogleService-Info.plist */; };
 		0F5F2FE628109FBA007200F8 /* UserItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F2FE528109FBA007200F8 /* UserItems.swift */; };
 		0F6BB22527F6F4FE0083742A /* UsersSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BB22427F6F4FE0083742A /* UsersSignUp.swift */; };
 		0F6C89B3280B5D0600BB1398 /* ProvidersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C89B2280B5D0600BB1398 /* ProvidersCell.swift */; };
@@ -42,7 +43,6 @@
 		0F991D0227F5D11900EFC028 /* MyTryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0127F5D11900EFC028 /* MyTryTests.swift */; };
 		0F991D0C27F5D11900EFC028 /* MyTryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */; };
 		0F991D0E27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */; };
-		0F991D1B27F5D92F00EFC028 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */; };
 		0F9E3F24286F60B50091F9FD /* AppleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E3F23286F60B50091F9FD /* AppleVC.swift */; };
 		0FF423DE282991A80061E9E0 /* CovidApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF423DD282991A80061E9E0 /* CovidApi.swift */; };
 		0FF423E0282995040061E9E0 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF423DF282995040061E9E0 /* Covid.swift */; };
@@ -96,6 +96,7 @@
 		0F410BE127FB7381003CDC15 /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		0F410BE327FB73BE003CDC15 /* ProvidersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersVC.swift; sourceTree = "<group>"; };
 		0F5940572887324200DDD4F3 /* HashAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashAble.swift; sourceTree = "<group>"; };
+		0F5B3D7329BEF8E300A8AEC6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F5F2FE528109FBA007200F8 /* UserItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItems.swift; sourceTree = "<group>"; };
 		0F6BB22427F6F4FE0083742A /* UsersSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersSignUp.swift; sourceTree = "<group>"; };
 		0F6C89B2280B5D0600BB1398 /* ProvidersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersCell.swift; sourceTree = SOURCE_ROOT; };
@@ -113,7 +114,6 @@
 		0F991D0727F5D11900EFC028 /* MyTryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITests.swift; sourceTree = "<group>"; };
 		0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F9E3F23286F60B50091F9FD /* AppleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleVC.swift; sourceTree = "<group>"; };
 		0FF423DD282991A80061E9E0 /* CovidApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidApi.swift; sourceTree = "<group>"; };
 		0FF423DF282995040061E9E0 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 				0F410BDC27FB700E003CDC15 /* Localizable.strings */,
 				0F991CF527F5D11900EFC028 /* LaunchScreen.storyboard */,
 				0F991CF827F5D11900EFC028 /* Info.plist */,
-				0F991D1A27F5D92F00EFC028 /* GoogleService-Info.plist */,
+				0F5B3D7329BEF8E300A8AEC6 /* GoogleService-Info.plist */,
 				0F991CF027F5D11800EFC028 /* MyTry.xcdatamodeld */,
 			);
 			path = MyTry;
@@ -442,7 +442,7 @@
 			files = (
 				0F410BDA27FB700E003CDC15 /* Localizable.strings in Resources */,
 				0F991CF727F5D11900EFC028 /* LaunchScreen.storyboard in Resources */,
-				0F991D1B27F5D92F00EFC028 /* GoogleService-Info.plist in Resources */,
+				0F5B3D7429BEF8E300A8AEC6 /* GoogleService-Info.plist in Resources */,
 				0F991CF427F5D11900EFC028 /* Assets.xcassets in Resources */,
 				0F991CEF27F5D11800EFC028 /* Main.storyboard in Resources */,
 			);

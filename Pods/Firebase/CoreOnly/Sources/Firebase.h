@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
+// I have issue here after update the xcode, if solve that I will delete this comment, I try on 21Sabn/13Mar btu still
 #import <FirebaseCore/FirebaseCore.h>
 
 #if !defined(__has_include)
