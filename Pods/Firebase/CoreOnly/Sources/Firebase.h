@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// I have issue here after update the xcode, if solve that I will delete this comment, I foundn to soluotion for this issue but still really without solution??? and now Ramadan has entered and the issue has not been resolved yet 
+// I have issue here after update the xcode, if solve that I will delete this comment, I foundn to soluotion for this issue but still really without solution??? and now Ramadan has entered and the issue has not been resolved yet and still and I at home 9th Ramadan
 #import <FirebaseCore/FirebaseCore.h>
 
 #if !defined(__has_include)
