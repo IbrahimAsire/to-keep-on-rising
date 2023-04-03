@@ -341,7 +341,7 @@
 				0F991CE027F5D11800EFC028 /* Sources */,
 				0F991CE127F5D11800EFC028 /* Frameworks */,
 				0F991CE227F5D11800EFC028 /* Resources */,
-				0266F13C894FACC316EB3B43 /* [CP] Embed Pods Frameworks */,
+				01F624EE6A7F0CEF358F3941 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,7 +379,7 @@
 				0F991D0327F5D11900EFC028 /* Sources */,
 				0F991D0427F5D11900EFC028 /* Frameworks */,
 				0F991D0527F5D11900EFC028 /* Resources */,
-				558443B0BDA4C48359021724 /* [CP] Embed Pods Frameworks */,
+				010AC365AB030CC771741503 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -465,7 +465,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0266F13C894FACC316EB3B43 /* [CP] Embed Pods Frameworks */ = {
+		010AC365AB030CC771741503 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTry-MyTryUITests/Pods-MyTry-MyTryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTry-MyTryUITests/Pods-MyTry-MyTryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTry-MyTryUITests/Pods-MyTry-MyTryUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		01F624EE6A7F0CEF358F3941 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -502,23 +519,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		558443B0BDA4C48359021724 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyTry-MyTryUITests/Pods-MyTry-MyTryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyTry-MyTryUITests/Pods-MyTry-MyTryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTry-MyTryUITests/Pods-MyTry-MyTryUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4DC68685AF11EBBC16693D6 /* [CP] Check Pods Manifest.lock */ = {
@@ -826,6 +826,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5S67CQMAY2;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyTry/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
