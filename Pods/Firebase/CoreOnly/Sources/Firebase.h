@@ -11,7 +11,8 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-// Today 14th Ramadan and still the issue is existing
+// still the same issue so far 16th Ramadan!
+
 #import <FirebaseCore/FirebaseCore.h>
 
 #if !defined(__has_include)
