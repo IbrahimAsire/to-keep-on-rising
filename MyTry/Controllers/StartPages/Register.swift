@@ -68,7 +68,7 @@ class Register: UITableViewController {
     
     let providerLbl = InitUI(value: UILabel()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "As Provider"
+        $0.text = "As Provider".Localizable()
         $0.textColor = .systemBrown
     }
     var isProvider = false
