@@ -45,6 +45,7 @@
 		0F991D0C27F5D11900EFC028 /* MyTryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */; };
 		0F991D0E27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */; };
 		0F9E3F24286F60B50091F9FD /* AppleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E3F23286F60B50091F9FD /* AppleVC.swift */; };
+		0FE117B029E499E80071684A /* PhotoUpLeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE117AF29E499E80071684A /* PhotoUpLeaderViewController.swift */; };
 		0FF423DE282991A80061E9E0 /* CovidApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF423DD282991A80061E9E0 /* CovidApi.swift */; };
 		0FF423E0282995040061E9E0 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF423DF282995040061E9E0 /* Covid.swift */; };
 		0FFB053D290A4E7A00ACFD59 /* ShowItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFB053C290A4E7A00ACFD59 /* ShowItemCell.swift */; };
@@ -115,6 +116,7 @@
 		0F991D0B27F5D11900EFC028 /* MyTryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITests.swift; sourceTree = "<group>"; };
 		0F991D0D27F5D11900EFC028 /* MyTryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0F9E3F23286F60B50091F9FD /* AppleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleVC.swift; sourceTree = "<group>"; };
+		0FE117AF29E499E80071684A /* PhotoUpLeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUpLeaderViewController.swift; sourceTree = "<group>"; };
 		0FF423DD282991A80061E9E0 /* CovidApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidApi.swift; sourceTree = "<group>"; };
 		0FF423DF282995040061E9E0 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		0FFB053C290A4E7A00ACFD59 /* ShowItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowItemCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				0FACDB4A27FE2CFB007FDDA0 /* Providers */,
 				0FFD1025282311C4006E0D5C /* Another */,
 				0F16F81B28C6658E0035175E /* SwiftUIView.swift */,
+				0FE117AF29E499E80071684A /* PhotoUpLeaderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				0F073F8B2857C3B40019F463 /* PhotoVC.swift in Sources */,
 				0F410BE027FB7285003CDC15 /* TabBarMain.swift in Sources */,
 				0F6C89B3280B5D0600BB1398 /* ProvidersCell.swift in Sources */,
+				0FE117B029E499E80071684A /* PhotoUpLeaderViewController.swift in Sources */,
 				0FFD1027282311F2006E0D5C /* FirstTry.swift in Sources */,
 				0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */,
 				0F1CE8592830218D00B811E5 /* Weather.swift in Sources */,
