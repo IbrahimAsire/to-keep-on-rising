@@ -233,7 +233,7 @@ class Register: UITableViewController {
     
     @objc private func changeLangTpd() {
         
-        let alertDone = UIAlertController(title: "Change the language!".Localizable(), message: "Must restart to activate".Localizable(), preferredStyle: .alert)
+        let alertDone = UIAlertController(title: "To Change the language!".Localizable(), message: "Must restart to activate".Localizable(), preferredStyle: .alert)
         
         // Create the actions
         let okAction = UIAlertAction(title: "OK".Localizable(), style: UIAlertAction.Style.default){

@@ -7,9 +7,9 @@
 "Login" = "دخول";
 "changeLang" = "تغيير اللغة";
 "As Provider" = "مزود";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
+"To Change the language!" = "لتغير اللغة";
+"Must restart to activate" = "يجب إعادة التشغيل";
+"OK" = "نعم";
+"NO" = "لا";
 "" = "";
 "" = "";
