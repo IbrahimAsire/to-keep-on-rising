@@ -2,72 +2,131 @@
 
 import UIKit
 import FirebaseStorage
+import Firebase
 
 class UplodFromAi: UIViewController {
     
-    // Initialize Firebase storage reference
-    let storageRef = Storage.storage().reference()
+    // MARK: - Properties
     
-    // Upload image to Firebase storage
-    func uploadImage(image: UIImage, imageName: String) {
+    private let imagePicker = UIImagePickerController()
+    private var selectedImage: UIImage?
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    // MARK: - View Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        // Create a reference to the image file in Firebase storage
-        let imageRef = storageRef.child("images/\(imageName)")
+        // Set up image picker
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
         
-        // Convert image to data format
-        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+        // Set up Firebase
+        FirebaseApp.configure()
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func selectImageButtonTapped(_ sender: Any) {
+        present(imagePicker, animated: true)
+    }
+    
+    @IBAction func uploadImageButtonTapped(_ sender: Any) {
+        guard let image = selectedImage else { return }
         
-        // Upload image data to Firebase storage
-        let uploadTask = imageRef.putData(imageData, metadata: nil) { metadata, error in
-            if let error = error {
-                print("Error uploading image: \(error.localizedDescription)")
-            } else {
-                print("Image uploaded successfully!")
+        // Create a unique file name for the image
+        let imageName = UUID().uuidString
+        
+        // Get a reference to the Firebase Storage location where the image will be uploaded
+        let storageRef = Storage.storage().reference().child("images/\(imageName)")
+        
+        // Convert the image to data
+        guard let imageData = image.jpegData(compressionQuality: 0.1) else { return }
+        
+        // Upload the data to Firebase Storage
+        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            guard error == nil else {
+                print("Error uploading image: \(error!.localizedDescription)")
+                return
             }
-        }
-        
-        // Track progress of image upload
-        uploadTask.observe(.progress) { snapshot in
-            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
-            print("Upload progress: \(percentComplete)%")
+            
+            // Image uploaded successfully
+            print("Image uploaded successfully!")
         }
     }
     
-    // Update image in Firebase storage
-    func updateImage(image: UIImage, imageName: String) {
+    @IBAction func updateImageButtonTapped(_ sender: Any) {
+        guard let image = selectedImage else { return }
         
-        // Create a reference to the image file in Firebase storage
-        let imageRef = storageRef.child("images/\(imageName)")
+        // Create a unique file name for the image
+        let imageName = UUID().uuidString
         
-        // Convert image to data format
-        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+        // Get a reference to the Firebase Storage location where the image will be uploaded
+        let storageRef = Storage.storage().reference().child("images/\(imageName)")
         
-        // Update image data in Firebase storage
-        imageRef.putData(imageData, metadata: nil) { metadata, error in
-            if let error = error {
-                print("Error updating image: \(error.localizedDescription)")
-            } else {
-                print("Image updated successfully!")
+        // Convert the image to data
+        guard let imageData = image.jpegData(compressionQuality: 0.1) else { return }
+        
+        // Upload the data to Firebase Storage and replace the existing image
+        storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            guard error == nil else {
+                print("Error updating image: \(error!.localizedDescription)")
+                return
             }
+            
+            // Image updated successfully
+            print("Image updated successfully!")
         }
     }
     
-    // Delete image from Firebase storage
-    func deleteImage(imageName: String) {
+    @IBAction func deleteImageButtonTapped(_ sender: Any) {
+        // Get a reference to the Firebase Storage location of the image to be deleted
+        let storageRef = Storage.storage().reference().child("images/image1.jpg")
         
-        // Create a reference to the image file in Firebase storage
-        let imageRef = storageRef.child("images/\(imageName)")
-        
-        // Delete image from Firebase storage
-        imageRef.delete { error in
-            if let error = error {
-                print("Error deleting image: \(error.localizedDescription)")
-            } else {
-                print("Image deleted successfully!")
+        // Delete the image from Firebase Storage
+        storageRef.delete { (error) in
+            guard error == nil else {
+                print("Error deleting image: \(error!.localizedDescription)")
+                return
             }
+            
+            // Image deleted successfully
+            print("Image deleted successfully!")
         }
     }
 }
 
+// MARK: - Extension for UIImagePickerControllerDelegate and UINavigationControllerDelegate
 
-//This code assumes that you have already set up Firebase in your project and have imported the necessary Firebase modules. Also, make sure that you have granted permission to access Firebase storage in your app's Info.plist file.
+extension UplodFromAi: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            dismiss(animated: true)
+            return
+        }
+        
+        selectedImage = image
+        imageView.image = image
+        
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+}
+
+
+/*In this example, the user can select an image from their photo library using an `UIImagePickerController`, which is presented when the "Select Image" button is tapped. The selected image is then displayed in an `UIImageView`.
+
+When the "Upload Image" button is tapped, the selected image is uploaded to Firebase Storage using a unique file name generated by a `UUID`. The data is first compressed to reduce its size using the `jpegData` method. Once the upload is complete, a message is printed to the console.
+
+When the "Update Image" button is tapped, the selected image is uploaded to Firebase Storage using the same unique file name as before, effectively replacing the existing image. Again, a message is printed to the console once the upload is complete.
+
+When the "Delete Image" button is tapped, the image at the specified Firebase Storage location is deleted. A message is printed to the console once the image has been successfully deleted.
+
+ Note that in this example, the Firebase Storage location of the image to be deleted is hard-coded as "images/image1.jpg". In a real-world application, you would likely want to retrieve the storage location dynamically based on some user input or other criteria.*/
