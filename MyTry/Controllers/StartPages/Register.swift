@@ -47,7 +47,7 @@ class Register: UITableViewController {
     
     let loginLbl = InitUI(value: UILabel()) {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "Do you have your account?".Localizable()
+        $0.text = "Do you have an account?".Localizable()
         $0.textColor = .systemBrown
     }
     
