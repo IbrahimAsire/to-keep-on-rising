@@ -28,6 +28,19 @@ class UplodFromAi: UIViewController {
         FirebaseApp.configure()
     }
     
+    //MARK: - layout of Image
+    
+    private func setUpUi() {
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 112),
+            imageView.heightAnchor.constraint(equalToConstant: 122),
+        
+        ])
+    }
+    
     // MARK: - IBActions
     
     @objc func selectImageButtonTapped() {
