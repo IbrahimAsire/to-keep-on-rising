@@ -30,7 +30,7 @@ class UplodFromAi: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func selectImageButtonTapped(_ sender: Any) {
+    @objc func selectImageButtonTapped() {
         present(imagePicker, animated: true)
     }
     
