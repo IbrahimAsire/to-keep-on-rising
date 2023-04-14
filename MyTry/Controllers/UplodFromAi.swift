@@ -36,8 +36,8 @@ class UplodFromAi: UIViewController {
         imageView.backgroundColor = .darkGray
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 112),
-            imageView.heightAnchor.constraint(equalToConstant: 122),
+            imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            imageView.heightAnchor.constraint(equalTo: view.widthAnchor),
             imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 112),
         
         ])
