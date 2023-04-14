@@ -19,13 +19,13 @@ class UplodFromAi: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .cyan
         
         // Set up image picker
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         
-        // Set up Firebase
-        FirebaseApp.configure()
+        setUpUi()
     }
     
     //MARK: - layout of Image
