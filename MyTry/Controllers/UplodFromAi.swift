@@ -13,7 +13,7 @@ class UplodFromAi: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var imageView: UIImageView!
+    let imageView = UIImageView()
     
     // MARK: - View Lifecycle
     
