@@ -33,10 +33,12 @@ class UplodFromAi: UIViewController {
     private func setUpUi() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
+        imageView.backgroundColor = .darkGray
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 112),
             imageView.heightAnchor.constraint(equalToConstant: 122),
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 112),
         
         ])
     }
