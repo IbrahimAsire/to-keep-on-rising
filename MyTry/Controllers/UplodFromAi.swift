@@ -15,6 +15,7 @@ class UplodFromAi: UIViewController {
     
     let imageView = UIImageView()
     let imagBtn = UIButton()
+    let uploadBtn = UIButton()
     
     // MARK: - View Lifecycle
     
@@ -39,6 +40,14 @@ class UplodFromAi: UIViewController {
         imagBtn.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imagBtn)
         imagBtn.addTarget(self, action: #selector(selectImageButtonTapped), for: .touchUpInside)
+        
+        uploadBtn.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(uploadBtn)
+        uploadBtn.setTitle("Save", for: .normal)
+        uploadBtn.layer.cornerRadius = 5
+        
+        uploadBtn.addTarget(self, action: #selector(uploadImageButtonTapped), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
@@ -49,7 +58,12 @@ class UplodFromAi: UIViewController {
             imagBtn.widthAnchor.constraint(equalTo: view.widthAnchor),
             imagBtn.heightAnchor.constraint(equalTo: view.widthAnchor),
             imagBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 112),
-        
+            
+            uploadBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            uploadBtn.widthAnchor.constraint(equalToConstant: 92),
+            uploadBtn.heightAnchor.constraint(equalToConstant: 34),
+            uploadBtn.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 12),
+            
         ])
     }
     
@@ -60,8 +74,9 @@ class UplodFromAi: UIViewController {
         print("Okay")
     }
     
-    @IBAction func uploadImageButtonTapped(_ sender: Any) {
-        guard let image = selectedImage else { return }
+    @objc func uploadImageButtonTapped(_ sender: Any) {
+        print("just to ensure the image si uploaded")
+        /*guard let image = selectedImage else { return }
         
         // Create a unique file name for the image
         let imageName = UUID().uuidString
@@ -81,7 +96,7 @@ class UplodFromAi: UIViewController {
             
             // Image uploaded successfully
             print("Image uploaded successfully!")
-        }
+        }*/
     }
     
     @IBAction func updateImageButtonTapped(_ sender: Any) {
