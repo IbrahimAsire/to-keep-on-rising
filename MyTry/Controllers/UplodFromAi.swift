@@ -14,6 +14,7 @@ class UplodFromAi: UIViewController {
     // MARK: - IBOutlets
     
     let imageView = UIImageView()
+    let imagBtn = UIButton()
     
     // MARK: - View Lifecycle
     
@@ -34,11 +35,20 @@ class UplodFromAi: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
         imageView.backgroundColor = .darkGray
+
+        imagBtn.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(imagBtn)
+        imagBtn.addTarget(self, action: #selector(selectImageButtonTapped), for: .touchUpInside)
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.widthAnchor.constraint(equalTo: view.widthAnchor),
             imageView.heightAnchor.constraint(equalTo: view.widthAnchor),
             imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 112),
+            
+            imagBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imagBtn.widthAnchor.constraint(equalTo: view.widthAnchor),
+            imagBtn.heightAnchor.constraint(equalTo: view.widthAnchor),
+            imagBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 112),
         
         ])
     }
@@ -47,6 +57,7 @@ class UplodFromAi: UIViewController {
     
     @objc func selectImageButtonTapped() {
         present(imagePicker, animated: true)
+        print("Okay")
     }
     
     @IBAction func uploadImageButtonTapped(_ sender: Any) {
