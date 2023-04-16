@@ -10,6 +10,8 @@ class UplodFromAi: UIViewController {
     
     private let imagePicker = UIImagePickerController()
     private var selectedImage: UIImage?
+    var imageUrl : URL?
+    let storage = Storage.storage()
     
     // MARK: - IBOutlets
     
@@ -76,7 +78,7 @@ class UplodFromAi: UIViewController {
     
     @objc func uploadImageButtonTapped(_ sender: Any) {
         print("just to ensure the image is uploaded")
-        guard let image = selectedImage else { return }
+        /*guard let image = selectedImage else { return }
         
         // Create a unique file name for the image
         let imageName = UUID().uuidString
@@ -96,8 +98,32 @@ class UplodFromAi: UIViewController {
             
             // Image uploaded successfully
             print("Image uploaded successfully!")
-        }
+        }*/
     }
+    
+    func fetchImage() {
+            if let imageUrl = imageUrl {
+                let imageRef = storage.reference(forURL: imageUrl.absoluteString)
+                imageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+                    if let error = error {
+                        // Handle error fetching image
+                        print("Error fetching image: \(error)")
+                    } else if let imageData = data, let image = UIImage(data: imageData) {
+                        // Display the fetched image
+                        let imageView = UIImageView(image: image)
+                        imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+                        self.view.addSubview(imageView)
+                    }
+                }
+            }
+        }
+    
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+
+            // Fetch the image if it has been uploaded previously
+            fetchImage()
+        }
     
     @IBAction func updateImageButtonTapped(_ sender: Any) {
         guard let image = selectedImage else { return }
@@ -123,6 +149,7 @@ class UplodFromAi: UIViewController {
         }
     }
     
+    //the updaet and delete may be I don't use them now ...
     @IBAction func deleteImageButtonTapped(_ sender: Any) {
         // Get a reference to the Firebase Storage location of the image to be deleted
         let storageRef = Storage.storage().reference().child("images/image1.jpg")
