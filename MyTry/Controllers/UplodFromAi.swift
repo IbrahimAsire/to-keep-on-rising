@@ -12,6 +12,9 @@ class UplodFromAi: UIViewController {
     private var selectedImage: UIImage?
     var imageUrl : URL?
     let storage = Storage.storage()
+    // Create a unique file name for the image
+    let imageName = UUID().uuidString
+
     
     // MARK: - IBOutlets
     
@@ -30,6 +33,7 @@ class UplodFromAi: UIViewController {
         imagePicker.allowsEditing = true
         
         setUpUi()
+        fetchImage()
     }
     
     //MARK: - layout of Image
@@ -80,11 +84,8 @@ class UplodFromAi: UIViewController {
         print("just to ensure the image is uploaded")
         /*guard let image = selectedImage else { return }
         
-        // Create a unique file name for the image
-        let imageName = UUID().uuidString
-        
         // Get a reference to the Firebase Storage location where the image will be uploaded
-        let storageRef = Storage.storage().reference().child("images/\(imageName)")
+        let storageRef = storage.reference().child("images/\(imageName)")
         
         // Convert the image to data
         guard let imageData = image.jpegData(compressionQuality: 0.1) else { return }
@@ -102,28 +103,28 @@ class UplodFromAi: UIViewController {
     }
     
     func fetchImage() {
-            if let imageUrl = imageUrl {
-                let imageRef = storage.reference(forURL: imageUrl.absoluteString)
-                imageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
-                    if let error = error {
-                        // Handle error fetching image
-                        print("Error fetching image: \(error)")
-                    } else if let imageData = data, let image = UIImage(data: imageData) {
-                        // Display the fetched image
-                        let imageView = UIImageView(image: image)
-                        imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-                        self.view.addSubview(imageView)
-                    }
-                }
+        // Get a reference to the Firebase Storage location of the image
+        let storageRef = storage.reference().child("images/\(imageName)")
+        
+        // Download the image data from Firebase Storage
+        storageRef.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+            guard error == nil else {
+                print("Error downloading image: \(error!.localizedDescription)")
+                return
             }
+            
+            // Convert the image data to a UIImage
+            guard let imageData = data, let image = UIImage(data: imageData) else {
+                print("Error converting image data to UIImage")
+                return
+            }
+            
+            // Display the image in a UIImageView
+            let imageView = UIImageView(image: image)
+            imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+            self.view.addSubview(imageView)
         }
-    
-    override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-
-            // Fetch the image if it has been uploaded previously
-            fetchImage()
-        }
+    }
     
     @IBAction func updateImageButtonTapped(_ sender: Any) {
         guard let image = selectedImage else { return }
