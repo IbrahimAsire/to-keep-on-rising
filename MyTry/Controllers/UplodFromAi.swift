@@ -75,8 +75,8 @@ class UplodFromAi: UIViewController {
     }
     
     @objc func uploadImageButtonTapped(_ sender: Any) {
-        print("just to ensure the image si uploaded")
-        /*guard let image = selectedImage else { return }
+        print("just to ensure the image is uploaded")
+        guard let image = selectedImage else { return }
         
         // Create a unique file name for the image
         let imageName = UUID().uuidString
@@ -96,7 +96,7 @@ class UplodFromAi: UIViewController {
             
             // Image uploaded successfully
             print("Image uploaded successfully!")
-        }*/
+        }
     }
     
     @IBAction func updateImageButtonTapped(_ sender: Any) {
