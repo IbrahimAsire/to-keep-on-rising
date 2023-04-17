@@ -86,7 +86,7 @@ class UplodFromAi: UIViewController {
         let imageName = UUID().uuidString
         
         // Get a reference to the Firebase Storage location where the image will be uploaded
-        let storageRef = storage.reference().child("images/\("1")/\(imageName)")
+        let storageRef = storage.reference().child("images/\(2)/\(imageName)")
         
         // Convert the image to data
         guard let imageData = image.jpegData(compressionQuality: 0.1) else { return }
@@ -105,7 +105,7 @@ class UplodFromAi: UIViewController {
     
     func fetchImage() {
         // Get a reference to the Firebase Storage location of the image
-        let storageRef = storage.reference().child("images/\("1")")
+        let storageRef = storage.reference().child("images/\(2)")
         
         // Download the image data from Firebase Storage
         storageRef.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
@@ -121,9 +121,10 @@ class UplodFromAi: UIViewController {
             }
             
             // Display the image in a UIImageView
-            let imageView = UIImageView(image: image)
+            /*let imageView = UIImageView(image: image)
             imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-            self.view.addSubview(imageView)
+            self.view.addSubview(imageView)*/
+            self.imageView.image = image
         }
     }
     
