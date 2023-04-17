@@ -12,8 +12,6 @@ class UplodFromAi: UIViewController {
     private var selectedImage: UIImage?
     var imageUrl : URL?
     let storage = Storage.storage()
-    // Create a unique file name for the image
-    let imageName = UUID().uuidString
 
     
     // MARK: - IBOutlets
@@ -82,10 +80,13 @@ class UplodFromAi: UIViewController {
     
     @objc func uploadImageButtonTapped(_ sender: Any) {
         print("just to ensure the image is uploaded")
-        /*guard let image = selectedImage else { return }
+        guard let image = selectedImage else { return }
+        
+        // Create a unique file name for the image
+        let imageName = UUID().uuidString
         
         // Get a reference to the Firebase Storage location where the image will be uploaded
-        let storageRef = storage.reference().child("images/\(imageName)")
+        let storageRef = storage.reference().child("images/\("1")/\(imageName)")
         
         // Convert the image to data
         guard let imageData = image.jpegData(compressionQuality: 0.1) else { return }
@@ -99,12 +100,12 @@ class UplodFromAi: UIViewController {
             
             // Image uploaded successfully
             print("Image uploaded successfully!")
-        }*/
+        }
     }
     
     func fetchImage() {
         // Get a reference to the Firebase Storage location of the image
-        let storageRef = storage.reference().child("images/\(imageName)")
+        let storageRef = storage.reference().child("images/\("1")")
         
         // Download the image data from Firebase Storage
         storageRef.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
