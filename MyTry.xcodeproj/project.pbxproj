@@ -34,6 +34,8 @@
 		0F5F2FE628109FBA007200F8 /* UserItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F2FE528109FBA007200F8 /* UserItems.swift */; };
 		0F6BB22527F6F4FE0083742A /* UsersSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BB22427F6F4FE0083742A /* UsersSignUp.swift */; };
 		0F6C89B3280B5D0600BB1398 /* ProvidersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6C89B2280B5D0600BB1398 /* ProvidersCell.swift */; };
+		0F94AFDB29F1B8D900FB2E01 /* HomeOfFeeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94AFDA29F1B8D900FB2E01 /* HomeOfFeeling.swift */; };
+		0F94AFDD29F1C09700FB2E01 /* Feeling2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F94AFDC29F1C09700FB2E01 /* Feeling2.swift */; };
 		0F96D06829E5D00F0077F664 /* UplodFromAi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F96D06729E5D00F0077F664 /* UplodFromAi.swift */; };
 		0F991CE827F5D11800EFC028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991CE727F5D11800EFC028 /* AppDelegate.swift */; };
 		0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F991CE927F5D11800EFC028 /* SceneDelegate.swift */; };
@@ -101,6 +103,8 @@
 		0F5F2FE528109FBA007200F8 /* UserItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItems.swift; sourceTree = "<group>"; };
 		0F6BB22427F6F4FE0083742A /* UsersSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersSignUp.swift; sourceTree = "<group>"; };
 		0F6C89B2280B5D0600BB1398 /* ProvidersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidersCell.swift; sourceTree = SOURCE_ROOT; };
+		0F94AFDA29F1B8D900FB2E01 /* HomeOfFeeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeOfFeeling.swift; sourceTree = "<group>"; };
+		0F94AFDC29F1C09700FB2E01 /* Feeling2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling2.swift; sourceTree = "<group>"; };
 		0F96D06729E5D00F0077F664 /* UplodFromAi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UplodFromAi.swift; sourceTree = "<group>"; };
 		0F991CE427F5D11800EFC028 /* MyTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F991CE727F5D11800EFC028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,8 +194,6 @@
 				0FACDB4B27FE2D3A007FDDA0 /* Users */,
 				0FACDB4A27FE2CFB007FDDA0 /* Providers */,
 				0FFD1025282311C4006E0D5C /* Another */,
-				0F16F81B28C6658E0035175E /* SwiftUIView.swift */,
-				0F96D06729E5D00F0077F664 /* UplodFromAi.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,6 +217,15 @@
 				0F26E3E927FA355A00736A9D /* CheakUser.swift */,
 			);
 			path = StartPages;
+			sourceTree = "<group>";
+		};
+		0F94AFD729F1B83200FB2E01 /* Feeling Cafe */ = {
+			isa = PBXGroup;
+			children = (
+				0F94AFDA29F1B8D900FB2E01 /* HomeOfFeeling.swift */,
+				0F94AFDC29F1C09700FB2E01 /* Feeling2.swift */,
+			);
+			path = "Feeling Cafe";
 			sourceTree = "<group>";
 		};
 		0F991CDB27F5D11800EFC028 = {
@@ -299,6 +310,7 @@
 		0FFD1025282311C4006E0D5C /* Another */ = {
 			isa = PBXGroup;
 			children = (
+				0F94AFD729F1B83200FB2E01 /* Feeling Cafe */,
 				0FFD1026282311F2006E0D5C /* FirstTry.swift */,
 				0F9E3F23286F60B50091F9FD /* AppleVC.swift */,
 				0F1CE85C2830224000B811E5 /* WeatherVC.swift */,
@@ -306,6 +318,8 @@
 				0F073F8A2857C3B40019F463 /* PhotoVC.swift */,
 				0F18CDE12874072000AFD56B /* Circle.swift */,
 				0F5940572887324200DDD4F3 /* HashAble.swift */,
+				0F16F81B28C6658E0035175E /* SwiftUIView.swift */,
+				0F96D06729E5D00F0077F664 /* UplodFromAi.swift */,
 			);
 			path = Another;
 			sourceTree = "<group>";
@@ -592,9 +606,11 @@
 				0F073F8B2857C3B40019F463 /* PhotoVC.swift in Sources */,
 				0F410BE027FB7285003CDC15 /* TabBarMain.swift in Sources */,
 				0F6C89B3280B5D0600BB1398 /* ProvidersCell.swift in Sources */,
+				0F94AFDD29F1C09700FB2E01 /* Feeling2.swift in Sources */,
 				0FFD1027282311F2006E0D5C /* FirstTry.swift in Sources */,
 				0F991CEA27F5D11800EFC028 /* SceneDelegate.swift in Sources */,
 				0F1CE8592830218D00B811E5 /* Weather.swift in Sources */,
+				0F94AFDB29F1B8D900FB2E01 /* HomeOfFeeling.swift in Sources */,
 				0F02BE1928F73E9700F68202 /* ShowItemVC.swift in Sources */,
 				0F6BB22527F6F4FE0083742A /* UsersSignUp.swift in Sources */,
 				0F1B23EE2825AC80007E9DCE /* PrayerTimesVC.swift in Sources */,
