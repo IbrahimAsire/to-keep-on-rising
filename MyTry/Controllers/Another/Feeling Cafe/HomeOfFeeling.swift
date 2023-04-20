@@ -15,9 +15,7 @@ class HomeOfFeeling: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = .init(red: 1, green: 0.6235294118, blue: 0.03921568627, alpha: 0.7595131803)
-        view.backgroundColor = .lightText
-
+        view.backgroundColor = .init(red: 1, green: 0.6235294118, blue: 0.03921568627, alpha: 0.7595131803)
 
         image1.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(image1)
@@ -35,16 +33,14 @@ class HomeOfFeeling: UIViewController {
             page2Btn.topAnchor.constraint(equalTo: view.topAnchor, constant: 86),
             page2Btn.widthAnchor.constraint(equalTo: view.widthAnchor),
             page2Btn.heightAnchor.constraint(equalToConstant: 600),
-
-
         
         ])
-        
 
     }
    
     @objc func goPreesTpd(){
-        navigationController?.pushViewController(Feeling2(), animated: true)
+//        navigationController?.pushViewController(Feeling2(), animated: true)
+        present(Feeling2(), animated: true)
     }
 
 }

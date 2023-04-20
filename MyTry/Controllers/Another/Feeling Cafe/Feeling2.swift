@@ -9,22 +9,30 @@ import UIKit
 
 class Feeling2: UIViewController {
 
+    let image2 = UIImageView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .opaqueSeparator
 
-        // Do any additional setup after loading the view.
+        image2.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(image2)
+        image2.image = UIImage(named: "f2")
+
+//        image2.addTarget(self, action: #selector(actionBtnTpd), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            image2.topAnchor.constraint(equalTo: view.topAnchor, constant: 86),
+            image2.widthAnchor.constraint(equalTo: view.widthAnchor),
+            image2.heightAnchor.constraint(equalToConstant: 600),
+        
+        ])
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func actionBtnTpd(){
+        print("DoNe")
+        
     }
-    */
-
 }
