@@ -17,7 +17,7 @@ class Feeling2: UIViewController {
 
         image2.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(image2)
-        image2.image = UIImage(named: "f2")
+        image2.image = UIImage(named: "de")
 
 //        image2.addTarget(self, action: #selector(actionBtnTpd), for: .touchUpInside)
 
