@@ -30,9 +30,4 @@ class Feeling2: UIViewController {
         
     }
     
-
-    @objc func actionBtnTpd(){
-        print("DoNe")
-        
-    }
 }

@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-// still the same issue so far 17th Ramadan!
 
 #import <FirebaseCore/FirebaseCore.h>
 
@@ -51,8 +50,8 @@
     #import <FirebaseFirestore/FirebaseFirestore.h>
   #endif
 
-  #if __has_include(<FirebaseFunctions/FirebaseFunctions.h>)
-    #import <FirebaseFunctions/FirebaseFunctions.h>
+  #if __has_include("FirebaseFunctions-umbrella.h")
+    #import <FirebaseFunctions/FirebaseFunctions-Swift.h>
   #endif
 
   #if __has_include(<FirebaseInAppMessaging/FirebaseInAppMessaging.h>)
@@ -75,8 +74,8 @@
     #import <FirebaseRemoteConfig/FirebaseRemoteConfig.h>
   #endif
 
-  #if __has_include(<FirebaseStorage/FirebaseStorage.h>)
-    #import <FirebaseStorage/FirebaseStorage.h>
+  #if __has_include("FirebaseStorage-umbrella.h")
+    #import <FirebaseStorage/FirebaseStorage-Swift.h>
   #endif
 
 #endif  // defined(__has_include)
