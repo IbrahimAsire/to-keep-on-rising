@@ -38,7 +38,7 @@ class Login: UIViewController, UITextFieldDelegate {
         loginBtn.setTitleColor(.systemPurple, for: .normal)
         loginBtn.backgroundColor = .white
         loginBtn.layer.cornerRadius = 5
-        loginBtn.addTarget(self, action: #selector(loginTpd), for: .touchUpInside)
+//        loginBtn.addTarget(self, action: #selector(loginTpd), for: .touchUpInside)
         
         
         NSLayoutConstraint.activate([
