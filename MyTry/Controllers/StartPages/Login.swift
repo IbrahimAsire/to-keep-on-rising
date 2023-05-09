@@ -72,8 +72,8 @@ class Login: UIViewController, UITextFieldDelegate {
             
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 
-                if let error = error as NSError? {
-                    switch AuthErrorCode(rawValue: error.code) {
+                /*if let error = error as NSError? {
+                    switch AuthErrorCode(error.code) {
                     case .wrongPassword:
                         
                         let alert = UIAlertController(title: "Oops!".Localizable(), message: "you entered a wrong password".Localizable(), preferredStyle: .alert)
@@ -98,7 +98,7 @@ class Login: UIViewController, UITextFieldDelegate {
                         alert.addAction(UIAlertAction(title: "OK".Localizable(), style: .cancel, handler: nil))
                         self.present(alert, animated: true)
                     }
-                }else{
+                }else*/
                     
                     if error == nil {
                         
@@ -110,4 +110,4 @@ class Login: UIViewController, UITextFieldDelegate {
             }
         }
     }
-}
+//}
